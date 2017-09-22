@@ -48,7 +48,22 @@ Also, bot triggers notification to team members whenever task state changes (whe
 
     Sub flows: (Sudipto and Pavneet are working on TEST-1234)<br>
     [S1] Sudipto changes the status of TEST-1234 from “Dev in Progress” to “Completed”.<br>
-    [S2] Bot sends notification to both Sudipto and Pavneet: UPDATE TEST-1234 has been marked as ‘Completed’ by Sudipto.
+    [S2] Bot sends notification to both Sudipto and Pavneet: UPDATE TEST-1234 has been marked as ‘Completed’ by Sudipto. 
+    
+3. Use Case 3: Find similar issues from Jira
+ 
+     Preconditions: None
+
+     Main:<br> [S1] Developer provides an issue number to our bot.<br>[S2] Bot return issues similar to this one to the user.
+
+     Sub flows:<br>
+     [S1] User types ‘Help’ to the bot.<br>
+     [S2] Bot will provide its possible functionalities 1) $create {project_id} 2) match {issue_id}.<br>
+     [S3] User types $match TEST-3452.<br>
+     [S4] Bot returns similar issues found on Jira.<br>
+
+     Alternate flows:
+     [E1] No similar issues are found.
 
     
 ## Design Sketches 
