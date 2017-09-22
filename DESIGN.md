@@ -75,10 +75,8 @@ Also, bot triggers notification to team members whenever task state changes (whe
      __Bot Service:__ Our bot will be a slack bot and will be connected to all the 3 other components. It will be able to interact with team members on Slack. It will fetch a list of relevant issues from Jira, create new issues on Jira and also receive/notify about updates when the status of an issue undergoes a change on Jira. 
 
     There are three main components of the bot service:
-    1. Similar Issue Suggestions: When the user wants to create a new issue, he will provide a summary of this issue to the bot.  The bot will then provide links of similar issues from Jira to the user. For this we have 2 approaches in mind. 
-    
-        §  The bot will initially query the Jira API for a list of all the existing issues for that project. Once it has this, it will compare the summary of each of these issues with the current issue summary and try to find a similarity percentage between them using a text similarity comparison tool. After this it will select the top 3 issues and return their links. 
-        
+    1. Similar Issue Suggestions: When the user wants to create a new issue, he will provide a summary of this issue to the bot.  The bot will then provide links of similar issues from Jira to the user. For this we have 2 approaches in mind. <br>    
+        §  The bot will initially query the Jira API for a list of all the existing issues for that project. Once it has this, it will compare the summary of each of these issues with the current issue summary and try to find a similarity percentage between them using a text similarity comparison tool. After this it will select the top 3 issues and return their links. <br>        
         §  Because it will be difficult to fetch entire summaries for all the issues belonging to that project on Jira, we will define a set of labels that will define each issue. The bot will then fetch these labels from Jira, and try to match them with labels present in the current issue summary.
                   Alternately the user can also provide an issue number to the bot. The bot will use a     similar process to provide links of relevant issues to the user.  
 
@@ -92,9 +90,7 @@ Also, bot triggers notification to team members whenever task state changes (whe
    3. When a team member changes the status of a task, not all members of that team are notified. Instead, all team members who are assigned the sub-tasks are notified about the status. 
    4. Team members should be using JIRA.
 
- * Additional Design patterns: 
- 
-    Currently,  we identify the following design pattern in our project: 
-    
+ * Additional Design patterns: <br>
+    Currently,  we identify the following design pattern in our project:<br>
     Observer - users are notified about the status change of tasks on JIRA
 
