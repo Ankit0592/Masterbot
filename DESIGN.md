@@ -34,7 +34,7 @@ Hence, our bot includes conversation with the user as well as it triggers notifi
     
 ## Design Sketches 
    Wireframe of bot in action
-      ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Wireframe1.png) 
+      ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/Wireframe1.png) 
       
    Wireframe bot in action
       ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/Wireframe2.png) 
