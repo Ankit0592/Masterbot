@@ -2,6 +2,10 @@
 
 ## Problem Statement 
 
+Issue tracking and duplication has always been an obstruction in the productivity of software development teams. Most of the team members having worked for a couple of years at corporates have experienced this problem and are coming together to bring a one stop solution to it. Our bot – ‘Master-Bot’ is an intelligent tracker and issue creator which knows when an issue is a duplicate of other instance. It also provides suggestions about whom to assign an issue currently being created based on the history of bugs raised. 
+
+ A developer can encounter multiple bugs with similar steps to reproduce and consequently a similar root cause. Having a bot who can track somewhat similar bugs possesses an amazing power to avoid duplication and also boost productivity by avoiding parallel investigations by multiple teams. This also helps a non-technical person raise and assign bugs to the appropriate team without any debugging required. Master-bot is an initiative aimed to boost the output of teams through its intelligence and automation.
+
 Dependency among two or more team members is another issue that software engineers face. When one member progresses on a particular user story and other members are concerned about it, there can be wastage of time if the status is not communicated immediately. Scrum call or email is useful here but it takes time to give update. A better approach would be to notify about the progress immediately to all the team members who are assigned sub tasks of the user story. Otherwise, completion of all sub tasks of a user story may take longer time due to gap in communication. 
 
 ## Bot Description 
