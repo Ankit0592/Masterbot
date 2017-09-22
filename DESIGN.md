@@ -43,8 +43,10 @@ Hence, our bot includes conversation with the user as well as it triggers notifi
    * Wireframe bot in action
       ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/Wireframe2.png) 
       
-   * StoryBoard of primary task that a user undergoes with bot 
-       ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/StoryBoard.jpeg) 
+   * StoryBoard of primary task that a user undergoes with bot (Part1)
+       ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/StoryBoard1.jpeg) 
+     Part 2 
+       ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/StoryBoard2.jpeg) 
     
 ## Architecture Design 
  * Diagram illustrating the components of the bot:
