@@ -44,5 +44,10 @@ Hence, our bot includes conversation with the user as well as it triggers notifi
     
 ## Architecture Design 
  * Diagram illustrating the components of the bot
-  ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/Architecture.png) 
+  ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/Architecture.png)  
+ 
+ 
+ * Additional Design patterns
+    Currently,  we identify the following design pattern in our project:
+      Observer - users are notified about the status change of tasks on JIRA
 
