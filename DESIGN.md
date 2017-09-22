@@ -7,11 +7,11 @@ Facing similar issues has always been an obstruction in the productivity of soft
 Dependency among two or more team members is another issue that software engineers face. When one member progresses on a particular user story and other members are concerned about it, there can be wastage of time if the status is not communicated immediately. Scrum call or email is useful here but it may take time to give update. A better approach would be to notify about the progress immediately to all the team members who are assigned sub tasks of the user story. Otherwise, completion of all sub tasks of a user story may take longer time due to gap in communication. 
 
 ## Bot Description 
-Our bot 'Master-Bot' creates tasks on JIRA and assigns them to team members based upon suggestions from JIRA. User needs to provide the task summary to the bot and JIRA provides the list of users who have worked on similar issues using the history of previous tasks. The bot can then create a task on JIRA based on the selection from the users list. This bot is a good solution to simplify the process of assigning the tasks by providing the right suggestions for whom to assign the task. It ensures that the task gets assigned to a person who has already worked on similar tasks and expedite the development of new task. Master-bot is an initiative aimed to boost the productivity of teams.
+Our bot 'Master-Bot' provides suggestions, creates issues on JIRA, and assigns them to team members depending on input from the user. User needs to provide the issue summary to the bot and the bot extracts a list of links of issues, similar to the current issue, from Jira. The bot can then create an issue on JIRA based on the issue number that the user selects. This bot is a good solution to simplify the process of assigning the issues by providing the right suggestions for whom to assign. It ensures that the task gets assigned to a person who has already worked on similar tasks and expedites the development of the new task. Also if the user has an issue number with him, he can provide this number to the bot and the bot will return a list of similar issues. Master-bot is an initiative aimed to boost the productivity of teams.
 
 This bot also notifies the team members whenever the state of a task changes on JIRA(In Progress, Done etc.) which is useful when different team members are working on subtasks within a task and their tasks have dependency on each other. 
 
-Our bot belongs the category of Chatbot as the user provides the description of task to create and bot replies with the users list, then bot creates task on JIRA and assign task to appropriate team member.
+Our bot belongs the category of Chatbot as the user provides the description of task to create and bot replies with the issue list, then bot creates task on JIRA and assign task to appropriate team member (as decided by user).
 Also, bot triggers notification to team members whenever task state changes (when event occurs).
 
 ## Use Cases 
@@ -94,7 +94,7 @@ Following are the major components in our bot <br>
     1. Similar Issue Suggestions: When the user wants to create a new issue, he will provide a summary of this issue to the bot.  The bot will then provide links of similar issues from Jira to the user. For this we have 2 approaches in mind. <br>    
         §  The bot will initially query the Jira API for a list of all the existing issues for that project. Once it has this, it will compare the summary of each of these issues with the current issue summary and try to find a similarity percentage between them using a text similarity comparison tool. After this it will select the top 3 issues and return their links. <br>        
         §  Because it will be difficult to fetch entire summaries for all the issues belonging to that project on Jira, we will define a set of labels that will define each issue. The bot will then fetch these labels from Jira, and try to match them with labels present in the current issue summary.
-                  Alternately the user can also provide an issue number to the bot. The bot will use a     similar process to provide links of relevant issues to the user.  
+       Alternately the user can also provide an issue number to the bot. The bot will use a similar process to provide links of relevant issues to the user.  
 
     2. Issue creator: Once these links are provided, the user will go through each of them and decide which is most relevant to the issue on hand. Then he will provide the required option number to the bot who will create the issue with the relevant assignee name. For this the bot will use Jira’s REST API service. Some of the parameters provided will be project name, summary, issue type, and assignee name (optional).
 
@@ -112,6 +112,6 @@ Following are the major components in our bot <br>
    5. Bot only provides suggestions about similar bugs and create tasks. Team member need to decide if the task can be marked duplicate or whom to assign the task.
 
  ##### Additional Design patterns:
-    Currently,  we identify the following design pattern in our project:  
+    Currently,  we identify the following design pattern in our project:
     Observer - users are notified about the status change of tasks on JIRA
 
