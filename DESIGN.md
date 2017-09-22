@@ -43,5 +43,5 @@ Hence, our bot includes conversation with the user as well as it triggers notifi
        ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/StoryBoard.jpeg) 
     
 ## Architecture Design 
+  ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/Architecture.png) 
 
-## 
