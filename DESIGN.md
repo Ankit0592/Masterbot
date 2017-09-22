@@ -60,6 +60,7 @@ Hence, our bot includes conversation with the user as well as it triggers notifi
    4. Team members should be using JIRA.
 
  * Additional Design patterns 
+ 
     Currently,  we identify the following design pattern in our project:
       Observer - users are notified about the status change of tasks on JIRA
 
