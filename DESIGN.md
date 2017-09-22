@@ -35,10 +35,10 @@ Also, bot triggers notification to team members whenever task state changes (whe
    [S11] The user provides the relevant issue number.<br>
    [S12] Bot creates a new issue on Jira with the required assignee and provides success message.<br>
 
-  Alternate flows:<br>
-  [E1] No similar issues found. In this case, bot will inform the developer accordingly.<br>
-  [E2] User does not want to create a new bug. In this case bot conversation terminates.<br>
-  [E3] User wants to assign the issue to some other developer (other than the ones suggested by bot). In this case the issue is created without any assignee.<br>
+   Alternate flows:<br>
+   [E1] No similar issues found. In this case, bot will inform the developer accordingly.<br>
+   [E2] User does not want to create a new bug. In this case bot conversation terminates.<br>
+   [E3] User wants to assign the issue to some other developer (other than the ones suggested by bot). In this case the issue is created without any assignee.<br>
     
 2. Use Case 2: Status change updates (This use case demonstrates how our bot can notify relevant team members about status changes on the tasks they are working on)
  
@@ -46,8 +46,7 @@ Also, bot triggers notification to team members whenever task state changes (whe
 
     Main:<br> [S1] Developer changes the status of an issue from “Dev in Progress” to “Completed”.<br>[S2] Bot receives notification from Jira about this event.<br>[S3] Bot sends message about this to relevant team members on Slack.
 
-    Sub flows: (Sudipto and Pavneet are working on TEST-1234)
-
+    Sub flows: (Sudipto and Pavneet are working on TEST-1234)<br>
     [S1] Sudipto changes the status of TEST-1234 from “Dev in Progress” to “Completed”.<br>
     [S2] Bot sends notification to both Sudipto and Pavneet: UPDATE TEST-1234 has been marked as ‘Completed’ by Sudipto.
 
