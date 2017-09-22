@@ -99,13 +99,14 @@ Also, bot triggers notification to team members whenever task state changes (whe
 
     3. Status updates: Whenever there is a change in the status of an issue, Jira will notify our Slack Bot about this change. For this we will make use of Webhooks callback provided by Jira. The bot will notify the relevant team members about these status updates.
  
- * Constraints: 
+ ##### Constraints/Guidelines: 
    1. The bot will be embedded in Slack. So developers using slack can add this bot to their channel.
    2. User should specify the project ID, summary of the issue and issue type as asked by bot. This information is required for                        the bot to provide suggestions for similar issues. 
    3. When a team member changes the status of a task, not all members of that team are notified. Instead, all team members who are assigned the sub-tasks are notified about the status. 
    4. Team members should be using JIRA.
+   5. Bot only provides suggestions about similar bugs and create tasks. Team member need to decide if the task can be marked duplicate or whom to assign the task.
 
- * Additional Design patterns: <br>
+ ##### Additional Design patterns:
     Currently,  we identify the following design pattern in our project:<br>
     Observer - users are notified about the status change of tasks on JIRA
 
