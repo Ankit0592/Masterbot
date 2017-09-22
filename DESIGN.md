@@ -17,28 +17,28 @@ Also, bot triggers notification to team members whenever task state changes (whe
 ## Use Cases 
 1. Use Case 1: Issue creation on Jira (This use case demonstrates how our bot helps in selecting an appropriate assignee for a particular issue if an issue similar to this already exists Jira)
  
- Preconditions: None
+   Preconditions: None
 
- Main:<br>[S1] Developer will provide a description of the bug to our bot.<br>[S2] Bot will return links of Jira issues similar to the description we have provided.<br>[S3] User will go through them and decide which one is relevant and provide the suggestion number to the bot.<br>[S4] Bot creates Jira issue with given description and assignee name. 
+   Main:<br>[S1] Developer will provide a description of the bug to our bot.<br>[S2] Bot will return links of Jira issues similar to the description we have provided.<br>[S3] User will go through them and decide which one is relevant and provide the suggestion number to the bot.<br>[S4] Bot creates Jira issue with given description and assignee name. 
 
- Sub flows:
- [S1] User types ‘Help’ to the bot.<br>
- [S2] Bot will provide its possible functionalities 1) $create {project_id} 2) match {issue_id}.<br>
- [S3] User types $create TEST.<br>
- [S4] Bot asks whether it is a Bug(B) or Task(T)<br>
- [S5] User replies with B.<br>
- [S6] Bot asks user for summary.<br>
- [S7] User provides summary ‘Sample summary 1’.<br>
- [S8] Bot provides a list of relevant issues and asks if user wants to continue with the issue creation.<br>
- [S9] The user types Y.<br>
- [S10] Bot asks which issue to choose assignee from or whether the user wants to specify the assignee manually on Jira.<br>
- [S11] The user provides the relevant issue number.<br>
- [S12] Bot creates a new issue on Jira with the required assignee and provides success message.<br>
- 
-Alternate flows:
-[E1] No similar issues found. In this case, bot will inform the developer accordingly.<br>
-[E2] User does not want to create a new bug. In this case bot conversation terminates.<br>
-[E3] User wants to assign the issue to some other developer (other than the ones suggested by bot). In this case the issue is created without any assignee.<br>
+   Sub flows:<br>
+   [S1] User types ‘Help’ to the bot.<br>
+   [S2] Bot will provide its possible functionalities 1) $create {project_id} 2) match {issue_id}.<br>
+   [S3] User types $create TEST.<br>
+   [S4] Bot asks whether it is a Bug(B) or Task(T)<br>
+   [S5] User replies with B.<br>
+   [S6] Bot asks user for summary.<br>
+   [S7] User provides summary ‘Sample summary 1’.<br>
+   [S8] Bot provides a list of relevant issues and asks if user wants to continue with the issue creation.<br>
+   [S9] The user types Y.<br>
+   [S10] Bot asks which issue to choose assignee from or whether the user wants to specify the assignee manually on Jira.<br>
+   [S11] The user provides the relevant issue number.<br>
+   [S12] Bot creates a new issue on Jira with the required assignee and provides success message.<br>
+
+  Alternate flows:<br>
+  [E1] No similar issues found. In this case, bot will inform the developer accordingly.<br>
+  [E2] User does not want to create a new bug. In this case bot conversation terminates.<br>
+  [E3] User wants to assign the issue to some other developer (other than the ones suggested by bot). In this case the issue is created without any assignee.<br>
     
 2. Use Case 2:
  
