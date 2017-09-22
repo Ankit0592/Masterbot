@@ -96,9 +96,10 @@ Following are the major components in our bot <br>
           §  Because it will be difficult to fetch entire summaries for all the issues belonging to that project on Jira, we will define a set of labels that will define each issue. The bot will then fetch these labels from Jira, and try to match them with labels present in the current issue summary.
          Alternately the user can also provide an issue number to the bot. The bot will use a similar process to provide links of relevant issues to the user.<br>  
        
-  2. Issue creator: Once these links are provided, the user will go through each of them and decide which is most relevant to the issue on hand. Then he will provide the required option number to the bot who will create the issue with the relevant assignee name. For this the bot will use Jira’s REST API service. Some of the parameters provided will be project name, summary, issue type, and assignee name (optional).<br>
+2. Issue creator: Once these links are provided, the user will go through each of them and decide which is most relevant to the   issue on hand. Then he will provide the required option number to the bot who will create the issue with the relevant assignee ame. For this the bot will use Jira’s REST API service. Some of the parameters provided will be project name, summary, issue type, and assignee name (optional).<br>
     
-  3. Status updates: Whenever there is a change in the status of an issue, Jira will notify our Slack Bot about this change. For this we will make use of Webhooks callback provided by Jira. The bot will notify the relevant team members about these status updates.
+
+3. Status updates: Whenever there is a change in the status of an issue, Jira will notify our Slack Bot about this change. For this we will make use of Webhooks callback provided by Jira. The bot will notify the relevant team members about these status updates.
     
     
 ###### Platform the bot is embedded in: Slack
