@@ -33,10 +33,10 @@ Hence, our bot includes conversation with the user as well as it triggers notifi
     Main: [S1] Developer changes the status of an issue from “Dev in Progress” to “Dev Completed”. [S2] Bot receives notification from Jira about this event. [S3] Bot post a message about this on the status channel in Slack. 
     
 ## Design Sketches 
-   Wireframe 1
+   Wireframe of bot in action
       ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Wireframe1.png) 
       
-   Wireframe 2
+   Wireframe bot in action
       ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Wireframe2.png) 
       
    StoryBoard of primary task that a user undergoes with bot 
