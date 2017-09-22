@@ -82,7 +82,7 @@ Also, bot triggers notification to team members whenever task state changes (whe
  * Diagram illustrating the components of the bot:
   ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/Architecture.png)  
   
- * Architecture components in text: <br>
+##### Architecture components: 
      Following are the major components in our bot <br>
      __Users:__ Software Development team <br>
      __Slack:__ A portal where team members can interact with each other. <br>
@@ -98,6 +98,9 @@ Also, bot triggers notification to team members whenever task state changes (whe
     2. Issue creator: Once these links are provided, the user will go through each of them and decide which is most relevant to the issue on hand. Then he will provide the required option number to the bot who will create the issue with the relevant assignee name. For this the bot will use Jira’s REST API service. Some of the parameters provided will be project name, summary, issue type, and assignee name (optional).
 
     3. Status updates: Whenever there is a change in the status of an issue, Jira will notify our Slack Bot about this change. For this we will make use of Webhooks callback provided by Jira. The bot will notify the relevant team members about these status updates.
+    
+###### Platform the bot is embedded in: Slack
+###### Third Party Services: Jira REST Api
  
  ##### Constraints/Guidelines: 
    1. The bot will be embedded in Slack. So developers using slack can add this bot to their channel.
