@@ -62,16 +62,11 @@ Also, bot triggers notification to team members whenever task state changes (whe
  * Diagram illustrating the components of the bot:
   ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/Architecture.png)  
   
- * Architecture components in text: 
- 
-     Following are the major components in our bot 
-
-     __Users:__ Software Development team 
-
-     __Slack:__ A portal where team members can interact with each other. 
-
-     __Jira:__ A tool for tracking and managing software projects. We are planning to use the free trial version of Jira for our purpose. 
-
+ * Architecture components in text: <br>
+     Following are the major components in our bot <br>
+     __Users:__ Software Development team <br>
+     __Slack:__ A portal where team members can interact with each other. <br>
+     __Jira:__ A tool for tracking and managing software projects. We are planning to use the free trial version of Jira for our purpose. <br>
      __Bot Service:__ Our bot will be a slack bot and will be connected to all the 3 other components. It will be able to interact with team members on Slack. It will fetch a list of relevant issues from Jira, create new issues on Jira and also receive/notify about updates when the status of an issue undergoes a change on Jira. 
 
     There are three main components of the bot service:
