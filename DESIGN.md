@@ -47,20 +47,21 @@ Hence, our bot includes conversation with the user as well as it triggers notifi
        ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/StoryBoard.jpeg) 
     
 ## Architecture Design 
- * Diagram illustrating the components of the bot
+ * Diagram illustrating the components of the bot:
   ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/Architecture.png)  
   
- * Architecture components in text 
+ * Architecture components in text: 
    
  
- * Constraints 
+ * Constraints: 
    1. The bot will be embedded in Slack. So developers using slack can add this bot to their channel.
    2. User should specify the project ID, summary of the issue and issue type as asked by bot. This information is required for                        the bot to provide suggestions for similar issues. 
    3. When a team member changes the status of a task, not all members of that team are notified. Instead, all team members who are assigned the sub-tasks are notified about the status. 
    4. Team members should be using JIRA.
 
- * Additional Design patterns 
+ * Additional Design patterns: 
  
-    Currently,  we identify the following design pattern in our project:
-      Observer - users are notified about the status change of tasks on JIRA
+    Currently,  we identify the following design pattern in our project: 
+    
+    Observer - users are notified about the status change of tasks on JIRA
 
