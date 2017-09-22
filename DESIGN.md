@@ -112,6 +112,6 @@ Following are the major components in our bot <br>
    5. Bot only provides suggestions about similar bugs and create tasks. Team member need to decide if the task can be marked duplicate or whom to assign the task.
 
  ##### Additional Design patterns:
-    Currently,  we identify the following design pattern in our project:<br>
+    Currently,  we identify the following design pattern in our project:  
     Observer - users are notified about the status change of tasks on JIRA
 
