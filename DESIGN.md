@@ -38,4 +38,7 @@ Hence, our bot includes conversation with the user as well as it triggers notifi
       
    Wireframe 2
       ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Wireframe2.png) 
+      
+   StoryBoard of primary task that a user undergoes with bot 
+       ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/StoryBoard.jpeg) 
     
