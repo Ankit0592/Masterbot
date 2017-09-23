@@ -121,4 +121,5 @@ Following are the major components in our bot <br>
     Currently,  we identify the following design pattern in our project:
     Observer - users are notified about the status change of tasks on JIRA
     Observer - Webhook callback waits for changes to be made to the status of an issue on JIRA
+    Iterator - We could use Iterator pattern for iterating through the list of fetched issues while comparing summaries
 
