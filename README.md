@@ -5,4 +5,7 @@
 2. Ankit Arora(aarora6) 
 3. Abhinav Medhekar(amedhek) 
 4. Pavneet Singh Anand (panand4) 
-5. Sudipto Biswas (sbiswas4)
+5. Sudipto Biswas (sbiswas4)    
+
+## Bot Design   
+[Link](./DESIGN.md) to design file.   
