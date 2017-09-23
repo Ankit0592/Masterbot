@@ -17,7 +17,7 @@ Also, bot triggers notification to team members whenever task state changes (whe
 ## Use Cases 
 1. Use Case 1: Issue creation on Jira (This use case demonstrates how our bot helps in selecting an appropriate assignee for a particular issue if an issue similar to this already exists Jira)
  
-   Preconditions: None
+   Preconditions: Bot must be able to access Jira API
 
    Main:<br>[S1] Developer will provide a description of the bug to our bot.<br>[S2] Bot will return links of Jira issues similar to the description we have provided.<br>[S3] User will go through them and decide which one is relevant and provide the suggestion number to the bot.<br>[S4] Bot creates Jira issue with given description and assignee name. 
 
@@ -52,7 +52,7 @@ Also, bot triggers notification to team members whenever task state changes (whe
     
 3. Use Case 3: Find similar issues from Jira
  
-     Preconditions: None
+     Preconditions: Bot must be able to access Jira API
 
      Main:<br> [S1] Developer provides an issue number to our bot.<br>[S2] Bot return issues similar to this one to the user.
 
@@ -120,4 +120,5 @@ Following are the major components in our bot <br>
  ##### Additional Design patterns:
     Currently,  we identify the following design pattern in our project:
     Observer - users are notified about the status change of tasks on JIRA
+    Observer - Webhook callback waits for changes to be made to the status of an issue on Jira
 
