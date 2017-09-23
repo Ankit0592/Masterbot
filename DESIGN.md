@@ -67,16 +67,21 @@ Also, bot triggers notification to team members whenever task state changes (whe
 
     
 ## Design Sketches 
-   * Wireframe of bot in action
-      ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/Wireframe1.png) 
+   * Wireframe of bot in action  
+      ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/bot_1.PNG)   
       
    * Wireframe bot in action
-      ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/Wireframe2.png) 
+      ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/bot_2.PNG)  
       
-   * StoryBoard of primary task that a user undergoes with bot (Part1)
-       ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/StoryBoard1.jpeg) 
-     Part 2 
-       ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/StoryBoard2.jpeg) 
+   * Prototypes of bot  
+     ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/Wireframe1.png)   
+        
+     ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/Wireframe2.png)   
+         
+   * StoryBoard of primary task that a user undergoes with bot (Part1)  
+       ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/StoryBoard1.jpeg)  
+     Part 2  
+       ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/StoryBoard2.jpeg)  
     
 ## Architecture Design 
  * Diagram illustrating the components of the bot:
