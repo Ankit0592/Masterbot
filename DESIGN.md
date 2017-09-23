@@ -9,13 +9,13 @@ Dependency among two or more team members is another issue that software enginee
 ## Bot Description 
 Our bot 'Master-Bot' provides suggestions, creates issues on JIRA, and assigns them to team members depending on input from the user. User needs to provide the issue summary to the bot and the bot extracts a list of links of issues, similar to the current issue, from Jira. The bot can then create an issue on JIRA based on the issue number that the user selects. This bot is a good solution to simplify the process of assigning the issues by providing the right suggestions for whom to assign. It ensures that the task gets assigned to a person who has already worked on similar tasks and expedites the development of the new task. Also if the user has an issue number with him, he can provide this number to the bot and the bot will return a list of similar issues. Master-bot is an initiative aimed to boost the productivity of teams.
 
-This bot also notifies the team members whenever the state of a task changes on JIRA(In Progress, Done etc.) which is useful when different team members are working on subtasks within a task and their tasks have dependency on each other. 
+This bot also notifies the team members whenever the state of a task changes on JIRA(In Progress, Completed etc.) which is useful when different team members are working on subtasks within a task and their tasks have dependency on each other. 
 
 Our bot belongs the category of Chatbot as the user provides the description of task to create and bot replies with the issue list, then bot creates task on JIRA and assign task to appropriate team member (as decided by user).
 Also, bot triggers notification to team members whenever task state changes (when event occurs).
 
 ## Use Cases 
-1. Use Case 1: Issue creation on Jira (This use case demonstrates how our bot helps in selecting an appropriate assignee for a particular issue if an issue similar to this already exists Jira)
+1. Use Case 1: Issue creation on Jira (This use case demonstrates how our bot helps in selecting an appropriate assignee for a particular issue if an issue similar to this already exists on Jira)
  
    Preconditions: Bot must be able to access Jira API
 
@@ -23,7 +23,7 @@ Also, bot triggers notification to team members whenever task state changes (whe
 
    Sub flows:<br>
    [S1] User types ‘Help’ to the bot.<br>
-   [S2] Bot will provide its possible functionalities 1) $create {project_id} 2) match {issue_id}.<br>
+   [S2] Bot will provide its possible functionalities 1) $create {project_id} 2) $match {issue_id}.<br>
    [S3] User types $create TEST.<br>
    [S4] Bot asks whether it is a Bug(B) or Task(T)<br>
    [S5] User replies with B.<br>
@@ -32,7 +32,7 @@ Also, bot triggers notification to team members whenever task state changes (whe
    [S8] Bot provides a list of relevant issues and asks if user wants to continue with the issue creation.<br>
    [S9] The user types Y.<br>
    [S10] Bot asks which issue to choose assignee from or whether the user wants to specify the assignee manually on Jira.<br>
-   [S11] The user provides the relevant issue number.<br>
+   [S11] The user provides the relevant issue number (0 in case of manual assignment).<br>
    [S12] Bot creates a new issue on Jira with the required assignee and provides success message.<br>
 
    Alternate flows:<br>
@@ -42,12 +42,12 @@ Also, bot triggers notification to team members whenever task state changes (whe
     
 2. Use Case 2: Status change updates (This use case demonstrates how our bot can notify relevant team members about status changes on the tasks they are working on)
  
-    Preconditions: None
+    Preconditions: JIRA is configured to push update to BOT service.
 
-    Main:<br> [S1] Developer changes the status of an issue from “Dev in Progress” to “Completed”.<br>[S2] Bot receives notification from Jira about this event.<br>[S3] Bot sends message about this to relevant team members on Slack.
+    Main:<br> [S1] Developer changes the status of an issue from “In Progress” to “Completed”.<br>[S2] Bot receives notification from Jira about this event.<br>[S3] Bot sends message about this to relevant team members on Slack.
 
     Sub flows:<br> (Sudipto and Pavneet are working on TEST-1234)<br>
-    [S1] Sudipto changes the status of TEST-1234 from “Dev in Progress” to “Completed”.<br>
+    [S1] Sudipto changes the status of TEST-1234 from “In Progress” to “Completed”.<br>
     [S2] Bot sends notification to both Sudipto and Pavneet: UPDATE TEST-1234 has been marked as ‘Completed’ by Sudipto. 
     
 3. Use Case 3: Find similar issues from Jira
@@ -58,7 +58,7 @@ Also, bot triggers notification to team members whenever task state changes (whe
 
      Sub flows:<br>
      [S1] User types ‘Help’ to the bot.<br>
-     [S2] Bot will provide its possible functionalities 1) $create {project_id} 2) match {issue_id}.<br>
+     [S2] Bot will provide its possible functionalities 1) $create {project_id} 2) $match {issue_id}.<br>
      [S3] User types $match TEST-3452.<br>
      [S4] Bot returns similar issues found on Jira.<br>
 
@@ -120,5 +120,5 @@ Following are the major components in our bot <br>
  ##### Additional Design patterns:
     Currently,  we identify the following design pattern in our project:
     Observer - users are notified about the status change of tasks on JIRA
-    Observer - Webhook callback waits for changes to be made to the status of an issue on Jira
+    Observer - Webhook callback waits for changes to be made to the status of an issue on JIRA
 
