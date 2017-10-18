@@ -10,16 +10,24 @@ User requests creation of a task on Jira [s1] and provide issue type and descrip
 
 Sub flows:
 [S1] User enters ‘Create {project id}’ to the bot.
+
 [S2] Bot requests user to enter issue type and user provides the same.
+
 [S3] Bot asks for description of issue and user enters the text.
+
 [S4] Bot gives list of similar issues and a "Create" button against each similar issue. An option saying "Click Create if most releavant similar issue does not exists" along with a create button is also provided by bot.  
+
 [S5] User go through those issues and after finding out the most relevant one, clicks on corresponding 'Create' button.
+
 [S6] Bot creates the issue with provided description on Jira and assigns it to a team member who worked on the similar issue (from S5, the most relevant similar issue as per the user who created this issue).
+
 [s7] Bot acknowledges the successful creation of issue.
 
 Alternate flows:
 [E1] No similar issues found. Bot provides an option saying "Click Create if most releavant similar issue does not exists" along with a create button. User can click on this create button for issue creation and assign it someone later.
+
 [E2] User does not click on create button for creation of an issue. In this case bot conversation terminates.
+
 [E3] User wants to assign the issue to some other developer (other than the ones suggested by bot). In this case the issue can be created without any assignee.
 
 #### Use Case 2: Notify relevant team members about Status change of an issue. 
@@ -30,11 +38,14 @@ Preconditions: JIRA is configured to push update to BOT service.
 Main:
 Whenever a team member changes the status of an issue, all other team members working on the same will be notfied of the change on slack by this bot.
 [S1] Developer changes the status of an issue from “In Progress” to “Completed”.
+
 [S2] Bot receives notification from Jira about this event.
+
 [S3] Bot sends message about this to relevant team members on Slack.
 
 Sub flows:
 [S1] A developer named Foo changes the status of an issue from “In Progress” to “Completed”.
+
 [S2] Bot sends notification to other team members who are working on the same as: UPDATE TEST-1234 has been marked as ‘Completed’ by Foo.
 
 #### Use Case 3:  Find duplicate issues of a given issue on Jira
@@ -44,6 +55,7 @@ Main: User asks bot to provide duplicate issues of a given issue. Bot lists the 
 
 Sub flows:
 [S1] User types "Duplicate {issue id}". 
+
 [S2] Bot provides list of duplicate issues.
 
 Alternate flows:
