@@ -1,6 +1,7 @@
 
 var Botkit = require('botkit');
 var mockData = require('./mock.json');
+var button = require('./button.json');
 var issue_id = 0;
 
 var controller = Botkit.slackbot({
@@ -20,7 +21,7 @@ controller.on(['direct_mention','direct_message'],function(bot,message) {
     console.log("hii");
 	  createIssue(id,bot,message);
   } else if(command.toLowerCase() == 'duplicate' && id) {
-	  matchIssue(id,bot,message);
+	  findDuplicateIssue(id,bot,message);
   } else {
 	    bot.reply(message,'Hi, I understand following commands: \n Type Create [Project Id] for creating issue\n Type Duplicate [Issue-ID] for finding duplicates of this issue');
   }
@@ -59,6 +60,7 @@ function createIssue(title,bot,message) {
         }
       }
     ],{},'default');
+    
 
   })
 
@@ -67,19 +69,35 @@ function createIssue(title,bot,message) {
 
     convo.addQuestion('Please provide summary',function(response,convo) {
 
-      convo.say('ok, I found these issues similar to one you are creating:');
+      convo.say('ok, I found these issues similar to one you are creating. Click on create against most relevant issue');
+      bot.reply(message, button);
+      
       convo.next();
 
     },{},'default');	
 	
   })
-	//var issues = findIssue(title,bot);
+  //var issues = findIssue(title,bot);
+  bot.startConversation(message,function(err,convo) {
+    
+        convo.addQuestion('Please provide summary',function(response,convo) {
+    
+          convo.say('ok, I found these issues similar to one you are creating:\n issue 1');
+          convo.next();
+    
+        },{},'default');	
+      
+      })
+      //var issues = findIssue(title,bot);
+    
 }
 
-function matchIssue(id,bot,message) {
-	var issues = findIssue(id,bot);
+
+
+
+function findDuplicateIssue(id,bot,message) {
+  bot.reply("finding isues");
+  
 }
 
-function findIssue(id,bot) {
-	bot.reply("finding isues");
-}
+
