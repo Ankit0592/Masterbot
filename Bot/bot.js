@@ -59,11 +59,6 @@ function createIssue(title,bot,message) {
         }
       }
     ],{},'default');
-<<<<<<< HEAD
-    
-
-=======
->>>>>>> 5e0c0f147a38893d05db874a67e4c52cb7c492fc
   })
  
   
@@ -94,14 +89,11 @@ function createIssue(title,bot,message) {
     
 }
 
-<<<<<<< HEAD
-
-
 
 function findDuplicateIssue(id,bot,message) {
   bot.reply("finding isues");
   
-=======
+
 function matchIssue(id,bot,message) {
   var data = mockData["matching_issues"];
   var result = [];
@@ -116,7 +108,6 @@ function matchIssue(id,bot,message) {
       }
     }, 1000 ); 
   }  
->>>>>>> 5e0c0f147a38893d05db874a67e4c52cb7c492fc
 }
 
 
