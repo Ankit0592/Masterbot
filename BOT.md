@@ -15,7 +15,7 @@ Sub flows:
 
 [S3] Bot asks for description of issue and user enters the text.
 
-[S4] Bot gives list of similar issues and a "Create" button against each similar issue. An option saying "Click Create if most releavant similar issue does not exists" along with a create button is also provided by bot.  
+[S4] Bot gives list of similar issues along with the name of team member who worked on it and a "Create" button against each similar issue.
 
 [S5] User go through those issues and after finding out the most relevant one, clicks on corresponding 'Create' button.
 
