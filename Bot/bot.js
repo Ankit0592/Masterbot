@@ -40,7 +40,6 @@ function createIssue(title,bot,message) {
         callback: function(response,conv) {
           // do something else...
           convo.next();
-
         }
       },
       {
@@ -59,9 +58,8 @@ function createIssue(title,bot,message) {
         }
       }
     ],{},'default');
-
   })
-
+ 
   
   bot.startConversation(message,function(err,convo) {
 
@@ -77,9 +75,17 @@ function createIssue(title,bot,message) {
 }
 
 function matchIssue(id,bot,message) {
-	var issues = findIssue(id,bot);
-}
-
-function findIssue(id,bot) {
-	bot.reply("finding isues");
+  var data = mockData["matching_issues"];
+  var result = [];
+  if(data == null || data.length == 0){
+    bot.reply(message, "Cannot find any duplicate issues");
+  }
+  else{
+    bot.reply(message, "Found following issues");
+    setTimeout( function(){
+      for(var i =0; i<data.length; i++){
+        bot.reply(message, data[i].self);
+      }
+    }, 1000 ); 
+  }  
 }
