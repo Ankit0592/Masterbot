@@ -1,5 +1,6 @@
 
 var Botkit = require('botkit');
+var mockData = require('./mock.json');
 var issue_id = 0;
 
 var controller = Botkit.slackbot({
@@ -13,34 +14,30 @@ controller.spawn({
 controller.on(['direct_mention','direct_message'],function(bot,message) {
   // reply to _message_ by using the _bot_ object
   var msg = message.text;
-  console.log("yoyo"+message);
   var command = msg.split(' ')[0];
   var id = msg.split(' ')[1]
-  if(command == '$create' && id) {
+  if(command.toLowerCase() == 'create' && id) {
+    console.log("hii");
 	  createIssue(id,bot,message);
-	  console.log("honey"+message);
-  } else if(command == '$create' && id) {
+  } else if(command.toLowerCase() == 'duplicate' && id) {
 	  matchIssue(id,bot,message);
   } else {
-	    bot.reply(message,'Hi, I understand the following commands \n - $create [Issue_Title]\n - $match [Issue_ID]');
+	    bot.reply(message,'Hi, I understand following commands: \n Type Create [Project Id] for creating issue\n Type Duplicate [Issue-ID] for finding duplicates of this issue');
   }
 });
 
 function createIssue(title,bot,message) {
 	bot.startConversation(message,function(err,convo) {
-		console.log("singh"+message);
     convo.addQuestion('Please enter issue type?\n - Bug(B)\n - Task(T)\n -Exit(E)',[
       {
         pattern: 'E',
-        callback: function(response,convo) {
-          convo.say('OK you are done!');
+        callback: function(response,conv) {
           convo.next();
         }
       },
       {
         pattern: 'B',
-        callback: function(response,convo) {
-          convo.say('Great! I will take this as a bug');
+        callback: function(response,conv) {
           // do something else...
           convo.next();
 
@@ -48,18 +45,17 @@ function createIssue(title,bot,message) {
       },
       {
         pattern: 'T',
-        callback: function(response,convo) {
-          convo.say('Okay, so you are facing an issue.');
+        callback: function(response,conv) {
           // do something else...
           convo.next();
         }
       },
       {
         default: true,
-        callback: function(response,convo) {
+        callback: function(response,conv) {
           // just repeat the question
-          convo.repeat();
-          convo.next();
+          conv.repeat();
+          conv.next();
         }
       }
     ],{},'default');
@@ -67,35 +63,17 @@ function createIssue(title,bot,message) {
   })
 
   
-  	bot.startConversation(message,function(err,convo) {
-    convo.addQuestion('Please enter summary (at least 50 words)',[
-      {
-        pattern: 'E',
-        callback: function(response,convo) {
-    		if(response.text.length > 50) {
-              convo.say('The summary has been recorded!');
-		    } else {
-			  convo.repeat();
-	    	}
-		    convo.next();
-        }
-      }
-    ],{},'default');
-
-  })
-  
-
   bot.startConversation(message,function(err,convo) {
 
     convo.addQuestion('Please provide summary',function(response,convo) {
 
-      convo.say('Cool, you said: ' + response.text);
+      convo.say('ok, I found these issues similar to one you are creating:');
       convo.next();
 
     },{},'default');	
 	
   })
-	var issues = findIssue(title,bot);
+	//var issues = findIssue(title,bot);
 }
 
 function matchIssue(id,bot,message) {
