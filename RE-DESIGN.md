@@ -1,5 +1,5 @@
 ﻿# RE-DESIGN 
- Please not that only use cases, storyboarding and wire frame has been modified
+ Please note that only use cases, storyboarding and wire frame has been modified
 
 ## Problem Statement 
 
