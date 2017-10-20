@@ -23,6 +23,16 @@
         "key":"TEST-3",
         "self":"http://www.example.com/jira/rest/api/2/issue/3"
       }
+      {
+        "id": "4",
+        "key":"TEST-4",
+        "self":"http://www.example.com/jira/rest/api/2/issue/4"
+      }
+      {
+        "id": "5",
+        "key":"TEST-5",
+        "self":"http://www.example.com/jira/rest/api/2/issue/5"
+      }
     ]
 }
   
