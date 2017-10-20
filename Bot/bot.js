@@ -29,12 +29,18 @@ controller.on(['direct_mention','direct_message'],function(bot,message) {
 
 function createIssue(title,bot,message) {
 	bot.createConversation(message,function(err,convo) {
-    console.log("hiiC1");
+    //console.log("hiiC1");
 
     convo.addQuestion('Please provide summary',function(response,convo) {
 
-      convo.say('ok, I found these issues similar to one you are creating. Click on create against most relevant issue');
-      bot.reply(message, button);
+      //convo.say('The summary is: ' + response.text + ' and the issue is {{vars.Type}}');
+      var arrayOfNames = getLikelyUsers(response.text);
+      var reply = 'ok, I found these issues similar to one you are creating. Click on create against most relevant issue: ';
+      for (var i = 0; i < arrayOfNames.length; i++) {
+        reply = reply + arrayOfNames[i] + ' , ';
+       }
+      convo.say(reply);
+      //bot.reply(message, button);
 
       convo.next();
 
@@ -62,6 +68,7 @@ function createIssue(title,bot,message) {
         pattern: 'B',
         callback: function(response,conv) {
           // do something else...
+           convo.setVar('Type','B');
           console.log("B");
           convo.gotoThread('summary');
         }
@@ -70,8 +77,9 @@ function createIssue(title,bot,message) {
         pattern: 'T',
         callback: function(response,conv) {
           // do something else...
+          convo.setVar('Type','T');
           console.log("T");
-            convo.gotoThread('summary');
+          convo.gotoThread('summary');
         }
       },
       {
@@ -107,6 +115,12 @@ function createIssue(title,bot,message) {
 
       //var issues = findIssue(title,bot);
 
+}
+
+function getLikelyUsers(message){
+//Need to use mocking for fetching users....
+var arr3 = [ 'Issue 5143: Abhinav', 'Issue 5173: Akanksha', 'Issue 51: Ankit','Issue 7709: Pavneet','Issue 5000: Sudipto' ];
+return arr3;
 }
 
 
