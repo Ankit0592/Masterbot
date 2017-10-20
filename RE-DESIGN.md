@@ -81,10 +81,10 @@ Alternate flows: [E1] No duplicate issue found.
         
      ![alt text]()   
          
-   * StoryBoard of primary task that a user undergoes with bot (Part1)  
-       ![alt text]()  
-     Part 2  
-       ![alt text]()  
+   * StoryBoard of primary task that a user undergoes with bot 
+       ![Use Case 1](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/20171020_140704.jpg)  
+       ![Use Case 2](CSC510_Fall17_Project/20171020_144520.jpg)
+       ![Use Case 3](CSC510_Fall17_Project/20171020_143408.jpg)  
     
 ## Architecture Design 
  * Diagram illustrating the components of the bot:
