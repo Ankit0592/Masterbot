@@ -28,71 +28,91 @@ controller.on(['direct_mention','direct_message'],function(bot,message) {
 });
 
 function createIssue(title,bot,message) {
-	bot.startConversation(message,function(err,convo) {
+	bot.createConversation(message,function(err,convo) {
+    console.log("hiiC1");
+
+    convo.addQuestion('Please provide summary',function(response,convo) {
+
+      convo.say('ok, I found these issues similar to one you are creating. Click on create against most relevant issue');
+      bot.reply(message, button);
+
+      convo.next();
+
+    },{},'summary');
+
+    convo.addMessage({
+          text: 'Sorry I did not understand. Please come again',
+          action: 'default',
+      },'bad_response');
+
+      convo.addMessage({
+            text: 'Thanks for using me',
+
+        },'Exit');
+
     convo.addQuestion('Please enter issue type?\n - Bug(B)\n - Task(T)\n -Exit(E)',[
       {
         pattern: 'E',
         callback: function(response,conv) {
-          convo.next();
+          console.log("E");
+          convo.gotoThread('Exit');
         }
       },
       {
         pattern: 'B',
         callback: function(response,conv) {
           // do something else...
-          convo.next();
+          console.log("B");
+          convo.gotoThread('summary');
         }
       },
       {
         pattern: 'T',
         callback: function(response,conv) {
           // do something else...
-          convo.next();
+          console.log("T");
+            convo.gotoThread('summary');
         }
       },
       {
         default: true,
         callback: function(response,conv) {
           // just repeat the question
-          conv.repeat();
-          conv.next();
+          console.log("Defaubbblt");
+          convo.gotoThread('bad_response');
         }
       }
     ],{},'default');
-  })
- 
-  
-  bot.startConversation(message,function(err,convo) {
 
+    convo.activate();
+
+  });
+
+
+/*
+  bot.startConversation(message,function(err,convo) {
+    console.log("hiiC2");
     convo.addQuestion('Please provide summary',function(response,convo) {
 
       convo.say('ok, I found these issues similar to one you are creating. Click on create against most relevant issue');
       bot.reply(message, button);
-      
+
       convo.next();
 
-    },{},'default');	
-	
-  })
+    },{},'default');
+
+  });
+  */
   //var issues = findIssue(title,bot);
-  bot.startConversation(message,function(err,convo) {
-    
-        convo.addQuestion('Please provide summary',function(response,convo) {
-    
-          convo.say('ok, I found these issues similar to one you are creating:\n issue 1');
-          convo.next();
-    
-        },{},'default');	
-      
-      })
+
       //var issues = findIssue(title,bot);
-    
+
 }
 
 
 function findDuplicateIssue(id,bot,message) {
-  bot.reply("finding isues");
-  
+  bot.reply(message,"finding isues");
+}
 
 function matchIssue(id,bot,message) {
   var data = mockData["matching_issues"];
@@ -106,8 +126,6 @@ function matchIssue(id,bot,message) {
       for(var i =0; i<data.length; i++){
         bot.reply(message, data[i].self);
       }
-    }, 1000 ); 
-  }  
+    }, 1000 );
+  }
 }
-
-
