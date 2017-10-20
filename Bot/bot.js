@@ -1,7 +1,7 @@
 
 var Botkit = require('botkit');
 var mockData = require('./mock.json');
-var button = require('./button.json');
+//var button = require('./button.json');
 var issue_id = 0;
 
 var controller = Botkit.slackbot({
@@ -35,12 +35,32 @@ function createIssue(title,bot,message) {
 
       //convo.say('The summary is: ' + response.text + ' and the issue is {{vars.Type}}');
       var arrayOfNames = getLikelyUsers(response.text);
-      var reply = 'ok, I found these issues similar to one you are creating. Click on create against most relevant issue: ';
+      var button = {
+        text: 'ok, I found these issues similar to one you are creating. Click on create against most relevant issue: ',
+        attachments: [
+            {
+                text: "Click the most relevant user",
+                color: "#3AA3E3",
+                attachment_type: "default",
+                actions: [],
+            }
+        ],
+
+    }
+    //  var button = require('./button.json');
       for (var i = 0; i < arrayOfNames.length; i++) {
-        reply = reply + arrayOfNames[i] + ' , ';
+        button.attachments[0].actions.push(
+          {
+        "name": arrayOfNames[i],
+        "text": arrayOfNames[i],
+        "type": "button",
+        "value": arrayOfNames[i]
+      }
+      )
+        //reply = reply + arrayOfNames[i] + ' , ';
        }
-      convo.say(reply);
-      //bot.reply(message, button);
+      //convo.say(reply);
+      bot.reply(message, button);
 
       convo.next();
 
