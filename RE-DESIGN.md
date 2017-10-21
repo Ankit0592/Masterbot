@@ -74,6 +74,8 @@ Alternate flows: [E1] No duplicate issue found.
    * Wireframe of bot in action  
       ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/UseCase1.png)   
       
+      ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/UseCase2.png)   
+      
    * Wireframe bot in action
       ![alt text]()  
       
