@@ -18,23 +18,22 @@ controller.on(['direct_mention','direct_message'],function(bot,message) {
   var command = msg.split(' ')[0];
   var id = msg.split(' ')[1];
 
-  if(command.toLowerCase() == 'create' && id) {
-    console.log("hii");
+  if(command.toLowerCase() == 'create' && id) { // Use Case-1
 	  createIssue(id,bot,message);
-  } else if(command.toLowerCase() == 'duplicate' && id) {
+  } else if(command.toLowerCase() == 'duplicate' && id) {// Use Case-3
 	  matchIssue(id,bot,message);
   } else {
 	    bot.reply(message,'Hi, I understand following commands: \n Type Create [Project Id] for creating issue\n Type Duplicate [Issue-ID] for finding duplicates of this issue');
   }
 });
 
+// start conversation for use case-1
 function createIssue(title,bot,message) {
 	bot.createConversation(message,function(err,convo) {
-    //console.log("hiiC1");
 
+    // conversation thread for user summary
     convo.addQuestion('Please provide summary',function(response,convo) {
 
-      //convo.say('The summary is: ' + response.text + ' and the issue is {{vars.Type}}');
       var arrayOfNames = getLikelyUsers(response.text);
       var button = {
         text: 'ok, I found these issues similar to one you are creating. Click on create against most relevant issue: ',
@@ -48,7 +47,8 @@ function createIssue(title,bot,message) {
         ],
 
       }
-      //  var button = require('./button.json');
+      
+      // displaying buttons in bot UI
       for (var i = 0; i < arrayOfNames.length; i++) {
         button.attachments[0].actions.push(
         {
@@ -57,9 +57,8 @@ function createIssue(title,bot,message) {
           "type": "button",
           "value": arrayOfNames[i]
         })
-        //reply = reply + arrayOfNames[i] + ' , ';
       }
-      //convo.say(reply);
+
       bot.reply(message, button);
 
       convo.next();
@@ -137,15 +136,17 @@ function createIssue(title,bot,message) {
 
 }
 
+// fetch mock data for likely users in use case-1
 function getLikelyUsers(message){
-  //Need to use mocking for fetching users....
   var arr3 = mockData["likely_users"];
   return arr3;
 }
 
+// fetch mock data for duplicate issues in use case-3
 function matchIssue(id,bot,message) {
   var data = mockData["matching_issues"];
   var result = [];
+  
   if(data == null || data.length == 0){
     bot.reply(message, "Cannot find any duplicate issues");
   }
