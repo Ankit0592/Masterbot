@@ -16,8 +16,8 @@ controller.on(['direct_mention','direct_message'],function(bot,message) {
   // reply to _message_ by using the _bot_ object
   var msg = message.text;
   var command = msg.split(' ')[0];
-  var id = msg.split(' ')[1]
-  console.log(command);
+  var id = msg.split(' ')[1];
+
   if(command.toLowerCase() == 'create' && id) {
     console.log("hii");
 	  createIssue(id,bot,message);
@@ -47,19 +47,18 @@ function createIssue(title,bot,message) {
             }
         ],
 
-    }
-    //  var button = require('./button.json');
+      }
+      //  var button = require('./button.json');
       for (var i = 0; i < arrayOfNames.length; i++) {
         button.attachments[0].actions.push(
-          {
-        "name": arrayOfNames[i],
-        "text": arrayOfNames[i],
-        "type": "button",
-        "value": arrayOfNames[i]
-      }
-      )
+        {
+          "name": arrayOfNames[i],
+          "text": arrayOfNames[i],
+          "type": "button",
+          "value": arrayOfNames[i]
+        })
         //reply = reply + arrayOfNames[i] + ' , ';
-       }
+      }
       //convo.say(reply);
       bot.reply(message, button);
 
@@ -89,7 +88,7 @@ function createIssue(title,bot,message) {
         pattern: 'B',
         callback: function(response,conv) {
           // do something else...
-           convo.setVar('Type','B');
+          convo.setVar('Type','B');
           console.log("B");
           convo.gotoThread('summary');
         }
@@ -139,9 +138,9 @@ function createIssue(title,bot,message) {
 }
 
 function getLikelyUsers(message){
-//Need to use mocking for fetching users....
-var arr3 = [ 'Issue 5143: Abhinav', 'Issue 5173: Akanksha', 'Issue 51: Ankit','Issue 7709: Pavneet','Issue 5000: Sudipto' ];
-return arr3;
+  //Need to use mocking for fetching users....
+  var arr3 = mockData["likely_users"];
+  return arr3;
 }
 
 function matchIssue(id,bot,message) {

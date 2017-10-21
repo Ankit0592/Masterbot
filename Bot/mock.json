@@ -33,6 +33,7 @@
         "key":"TEST-5",
         "self":"http://www.example.com/jira/rest/api/2/issue/5"
       }
-    ]
+    ],
+    "likely_users":[ "Issue 5143: Abhinav", "Issue 5173: Akanksha", "Issue 51: Ankit","Issue 7709: Pavneet","Issue 5000: Sudipto" ]
 }
   
