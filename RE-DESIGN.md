@@ -83,7 +83,7 @@ Alternate flows: [E1] No duplicate issue found.
    * StoryBoard of primary task that a user undergoes with bot 
        ![Story Board](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/RE-DESIGN_Storyboard1.jpeg) 
        
-       ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/StoryBoard1.jpeg) 
+       ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/RE-DESIGN_Storyboard3.jpg) 
        
        ![Story Board](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/RE-DESIGN_Storyboard2.jpeg) 
           
