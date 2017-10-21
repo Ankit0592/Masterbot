@@ -85,7 +85,11 @@ Alternate flows: [E1] No duplicate issue found.
      ![alt text]()   
          
    * StoryBoard of primary task that a user undergoes with bot 
-       ![Story Board](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/StoryBoarding.pdf)  
+       ![Story Board](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/RE-DESIGN_Storyboard1.jpeg) 
+       
+       ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/StoryBoard1.jpeg) 
+       
+       ![Story Board](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/RE-DESIGN_Storyboard2.jpeg) 
           
 ## Architecture Design 
  * Diagram illustrating the components of the bot:
