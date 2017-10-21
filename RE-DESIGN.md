@@ -79,10 +79,6 @@ Alternate flows: [E1] No duplicate issue found.
       ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/UseCase3.png)   
       
       
-   * Prototypes of bot  
-     ![alt text]()   
-        
-     ![alt text]()   
          
    * StoryBoard of primary task that a user undergoes with bot 
        ![Story Board](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/RE-DESIGN_Storyboard1.jpeg) 
