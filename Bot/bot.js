@@ -17,11 +17,12 @@ controller.on(['direct_mention','direct_message'],function(bot,message) {
   var msg = message.text;
   var command = msg.split(' ')[0];
   var id = msg.split(' ')[1]
+  console.log(command);
   if(command.toLowerCase() == 'create' && id) {
     console.log("hii");
 	  createIssue(id,bot,message);
   } else if(command.toLowerCase() == 'duplicate' && id) {
-	  findDuplicateIssue(id,bot,message);
+	  matchIssue(id,bot,message);
   } else {
 	    bot.reply(message,'Hi, I understand following commands: \n Type Create [Project Id] for creating issue\n Type Duplicate [Issue-ID] for finding duplicates of this issue');
   }
@@ -143,11 +144,6 @@ var arr3 = [ 'Issue 5143: Abhinav', 'Issue 5173: Akanksha', 'Issue 51: Ankit','I
 return arr3;
 }
 
-
-function findDuplicateIssue(id,bot,message) {
-  bot.reply(message,"finding isues");
-}
-
 function matchIssue(id,bot,message) {
   var data = mockData["matching_issues"];
   var result = [];
@@ -155,7 +151,7 @@ function matchIssue(id,bot,message) {
     bot.reply(message, "Cannot find any duplicate issues");
   }
   else{
-    bot.reply(message, "Found following issues");
+    bot.reply(message, "Found following duplicate issues");
     setTimeout( function(){
       for(var i =0; i<data.length; i++){
         bot.reply(message, data[i].self);
