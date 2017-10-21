@@ -2,6 +2,8 @@
 var Botkit = require('botkit');
 var mockData = require('./mock.json');
 //var button = require('./button.json');
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+var request = new XMLHttpRequest();
 var issue_id = 0;
 
 var controller = Botkit.slackbot({
@@ -158,4 +160,21 @@ function matchIssue(id,bot,message) {
       }
     }, 1000 );
   }
+
+  setTimeout( function(){
+    notifications(message, bot);
+  }, 2000 );
+}
+
+// Notifications for Use case-2
+function notifications(message, bot){
+  var url = mockData["notification_users"][Math.floor(Math.random()*mockData["notification_users"].length)].url;
+  var method = "POST";
+  var postData = mockData["notifications"][Math.floor(Math.random()*mockData["notifications"].length)];
+  var async = true;
+
+  request.open(method, url, async);
+  
+  request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+  request.send(JSON.stringify(postData));
 }
