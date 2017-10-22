@@ -59,7 +59,7 @@ public class WebTest
 
 		// Type in our test user login info.
 		email.sendKeys("aarora6@ncsu.edu");
-		pw.sendKeys("Ankit3113!");
+		pw.sendKeys("XXXXXXXX");
 
 		// Click
 		WebElement signin = driver.findElement(By.id("signin_btn"));
