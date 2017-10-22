@@ -59,7 +59,7 @@ public class WebTest
 
 		// Type in our test user login info.
 		email.sendKeys("aarora6@ncsu.edu");
-		pw.sendKeys("XXXXXXXX");
+		pw.sendKeys("xxxxxxxx");
 
 		// Click
 		WebElement signin = driver.findElement(By.id("signin_btn"));
@@ -172,10 +172,13 @@ public class WebTest
 		JSONArray notifications = (JSONArray)jsonObject.get("notifications");
 		
 		// Fetching url for notification
-		object = parser.parse(notification_users.get(0).toString());
+		object = parser.parse(notification_users.get(1).toString());
 		JSONObject jObject = (JSONObject)object;
 		String url = (String) jObject.get("url");
 		
+		// Switch to user channel and wait for it to load.
+		driver.get("https://se-projecthq.slack.com/messages/aarora6");
+		wait.until(ExpectedConditions.titleContains("aarora6"));
 		
 		// Fetching notification
 		String notification = notifications.get(0).toString();
@@ -199,7 +202,7 @@ public class WebTest
 		int responseCode = con.getResponseCode();
 		assertEquals(responseCode, 200);
 		
-		wait.withTimeout(3, TimeUnit.SECONDS).ignoring(StaleElementReferenceException.class);
+		wait.withTimeout(10000, TimeUnit.SECONDS).ignoring(StaleElementReferenceException.class);
 
 		WebElement msg = driver.findElement(
 				By.xpath("//span[@class='message_body' and contains(text(),'UPDATE:')]"));
