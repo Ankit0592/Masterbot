@@ -30,7 +30,8 @@
     ],
     "notification_users":[
       {"url":"https://hooks.slack.com/services/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"},
-      {"url": "https://hooks.slack.com/services/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"}
+      {"url": "https://hooks.slack.com/services/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"},
+      {"url":"https://hooks.slack.com/services/T6WGAMN2G/B7MBDSYGH/dFycquI5"}
     ],
     "likely_users":[ "Issue 5143: Abhinav", "Issue 5173: Akanksha", "Issue 51: Ankit","Issue 7709: Pavneet","Issue 5000: Sudipto" ]
 }

@@ -26,7 +26,7 @@ controller.on(['direct_mention','direct_message'],function(bot,message) {
   else if(command.toLowerCase() == 'duplicate' && id) {// Use Case-3
 	  matchIssue(id,bot,message);
   } 
-  else if(command.toLowerCase() == 'update') { // Use Case-2
+  else if(command.toLowerCase() == 'update') { // Use Case-2... triggering using update command for now
     notifications(message, bot);
   }
   else {
@@ -182,6 +182,13 @@ function notifications(message, bot){
     var postData = mockData["notifications"][Math.floor(Math.random()*mockData["notifications"].length)];
     var async = true;
 
+    
+    request.onload = function () {
+
+      var status = request.status; // HTTP response status, e.g., 200 for "200 OK"
+      if(status == 404)
+        bot.reply(message, "Invalid user has been assigned a task");
+    }
     request.open(method, url, async);
     request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     request.send(JSON.stringify(postData));
