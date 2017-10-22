@@ -22,9 +22,14 @@ controller.on(['direct_mention','direct_message'],function(bot,message) {
 
   if(command.toLowerCase() == 'create' && id) { // Use Case-1
 	  createIssue(id,bot,message);
-  } else if(command.toLowerCase() == 'duplicate' && id) {// Use Case-3
+  } 
+  else if(command.toLowerCase() == 'duplicate' && id) {// Use Case-3
 	  matchIssue(id,bot,message);
-  } else {
+  } 
+  else if(command.toLowerCase() == 'update') { // Use Case-2
+    notifications(message, bot);
+  }
+  else {
 	    bot.reply(message,'Hi, I understand following commands: \n Type Create [Project Id] for creating issue\n Type Duplicate [Issue-ID] for finding duplicates of this issue');
   }
 });
@@ -72,10 +77,10 @@ function createIssue(title,bot,message) {
           action: 'default',
       },'bad_response');
 
-      convo.addMessage({
-            text: 'Thanks for using me',
+    convo.addMessage({
+          text: 'Thanks for using me',
 
-        },'Exit');
+      },'Exit');
 
     convo.addQuestion('Please enter issue type?\n - Bug(B)\n - Task(T)\n -Exit(E)',[
       {
@@ -154,27 +159,31 @@ function matchIssue(id,bot,message) {
   }
   else{
     bot.reply(message, "Found following duplicate issues");
+    var result = "";
     setTimeout( function(){
       for(var i =0; i<data.length; i++){
-        bot.reply(message, data[i].self);
+        result = result + data[i].self + "\n";
       }
+      bot.reply(message, result);
     }, 1000 );
+
   }
 
-  setTimeout( function(){
-    notifications(message, bot);
-  }, 2000 );
+  // setTimeout( function(){
+  //   notifications(message, bot);
+  // }, 2000 );
 }
 
 // Notifications for Use case-2
 function notifications(message, bot){
-  var url = mockData["notification_users"][Math.floor(Math.random()*mockData["notification_users"].length)].url;
-  var method = "POST";
-  var postData = mockData["notifications"][Math.floor(Math.random()*mockData["notifications"].length)];
-  var async = true;
+  if(mockData["notification_users"] != null && mockData["notification_users"].length !=0){
+    var url = mockData["notification_users"][Math.floor(Math.random()*mockData["notification_users"].length)].url;
+    var method = "POST";
+    var postData = mockData["notifications"][Math.floor(Math.random()*mockData["notifications"].length)];
+    var async = true;
 
-  request.open(method, url, async);
-  
-  request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-  request.send(JSON.stringify(postData));
+    request.open(method, url, async);
+    request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    request.send(JSON.stringify(postData));
+  }  
 }
