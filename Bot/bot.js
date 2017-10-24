@@ -9,13 +9,15 @@ var issue_id = 0;
 var controller = Botkit.slackbot({
   interactive_replies: true,
   debug: false
-})
+});
+/*
 .configureSlackApp({
   clientId: process.env.clientId,
     clientSecret: process.env.clientSecret,
     scopes: ['bot'],
 });
-
+*/
+/*
 controller.setupWebserver(process.env.port,function(err,webserver) {
   controller.createWebhookEndpoints(controller.webserver);
 
@@ -27,8 +29,7 @@ controller.setupWebserver(process.env.port,function(err,webserver) {
     }
   });
 });
-
-
+*/
 controller.spawn({
   token: process.env.SLACKTOKEN,
 }).startRTM();
