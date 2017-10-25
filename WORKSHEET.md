@@ -4,7 +4,7 @@
 
 | Deliverable   | Item   | Tasks
 | ------------- | ------------  |  ------------
-| Brainstorming (splitting tasks & time estimates) | 3 Use Cases   | [Trello](https://trello.com/c/gv0Ru18m/18-brainstorming)
+| Brainstorming (splitting tasks & time estimates) | 3 Use Cases   | &nbsp;
 
 ### Week 2
 
