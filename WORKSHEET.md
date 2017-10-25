@@ -31,7 +31,7 @@
 
 | Deliverable   | Item/Status   |  Issues/Tasks
 | ------------- | ------------  |  ------------
-| Srevice Mocking |  &nbsp;  | [Trello](https://trello.com/c/t6QEdML9/23-issue-with-use-case-3-mocking-script-error-try-executing-subflows-of-use-case-3)
+| Srevice Mocking | Failure  | [Trello](https://trello.com/c/t6QEdML9/23-issue-with-use-case-3-mocking-script-error-try-executing-subflows-of-use-case-3)
 | Service Mocking | Use Case 1   | [Trello](https://trello.com/c/4seOJtJo/3-mocking-service-use-case-1)
 | Selenium Testing | Case 1 - Happy | [Trello](https://trello.com/c/hUwrKvxM/6-selenium-testing-use-case-1)
 | Selenium Testing | Case 1 - Sad | [Trello](https://trello.com/c/hUwrKvxM/6-selenium-testing-use-case-1)
