@@ -184,8 +184,6 @@ function getLikelyUsers(message){
     var result=data.interceptors[0].body;
     return JSON.parse(result);
 
-
-
 }
 
 // fetch mock data for duplicate issues in use case-3

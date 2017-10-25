@@ -78,7 +78,7 @@ public class WebTest
 		driver.quit();
 	}
 	
-	@Test // Sad Path for notification i.e. invalid user app id
+	@Test //Use-Case:2 Sad Path for notification i.e. invalid user app id
 	public void altNotification() throws FileNotFoundException, IOException, ParseException
 	{	
 		// Switch to #selenium-bot channel and wait for it to load.
@@ -124,37 +124,9 @@ public class WebTest
 		int responseCode = con.getResponseCode();
 		assertEquals(responseCode, 404);
 		
-		object = parser.parse(notification_users.get(0).toString());
-		jObject = (JSONObject)object;
-		url = (String) jObject.get("url");
-		
-		obj = new URL(url);
-		con = (HttpURLConnection) obj.openConnection();
-		notification = "{'text': 'Invalid user has been assigned a task'}";
-		 
-        // Setting basic post request
-		con.setRequestMethod("POST");
-		con.setRequestProperty("Content-Type","application/json");
-		 
-		// Send post request
-		con.setDoOutput(true);
-		wr = new DataOutputStream(con.getOutputStream());
-		wr.writeBytes(notification);
-		wr.flush();
-		wr.close();
-		
-		responseCode = con.getResponseCode();
-		assertEquals(responseCode, 200);
-		
-		wait.withTimeout(3, TimeUnit.SECONDS).ignoring(StaleElementReferenceException.class);
-		
-		WebElement msg = driver.findElement(
-				By.xpath("//span[@class='message_body' and contains(text(),'Invalid user')]"));
-		assertNotNull(msg);
-		
 	}
 	
-	@Test // Happy Path for notifications in the bot channel
+	@Test //Use Case:2 Happy Path for notifications in the bot channel
 	public void notification() throws FileNotFoundException, IOException, ParseException
 	{	
 		// Switch to #selenium-bot channel and wait for it to load.
@@ -210,7 +182,7 @@ public class WebTest
 		assertNotNull(msg);
 	}
 	
-	@Test // Happy Path for duplicate
+	@Test //Use Case-3 Happy Path for duplicate
 	public void duplicate() throws FileNotFoundException, IOException, ParseException
 	{	
 		// Switch to #selenium-bot channel and wait for it to load.
@@ -225,18 +197,7 @@ public class WebTest
 		actions.click();
 		actions.sendKeys("Duplicate 1");
 		actions.sendKeys(Keys.RETURN);
-		actions.build().perform();
-		/*
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
-		//String query= "token=xoxb-260819033494-edR6l1FRV6NNbxKxwu0ZC7AN&channel=@weather_name&text=Hellooo";
-		
-		//String path=  "/api/chat.postMessage?"+ query;
-		
+		actions.build().perform();		
 		
 		wait.withTimeout(10, TimeUnit.SECONDS).ignoring(StaleElementReferenceException.class);
         
@@ -245,8 +206,37 @@ public class WebTest
 		assertNotNull(msg);
 		
 	}
+	
+	@Test // Use Case-3 Sad case
+	public void DuplicateSadCase() throws FileNotFoundException, IOException, ParseException{	
+		// Switch to #selenium-bot channel and wait for it to load.
+		driver.get("https://se-projecthq.slack.com/messages/"+ bot_name);
+		wait.until(ExpectedConditions.titleContains(bot_name)); 
+		
+		
+		WebElement messageBot = driver.findElement(By.id("msg_input"));
+		assertNotNull(messageBot);
+		Actions actions = new Actions(driver);
+		actions.moveToElement(messageBot);
+		actions.click();
+		actions.sendKeys("Duplicate 4");
+		actions.sendKeys(Keys.RETURN);
+		actions.build().perform();
+		
+		
+		wait.withTimeout(10, TimeUnit.SECONDS).ignoring(StaleElementReferenceException.class);
+        try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		WebElement msg = driver.findElement(
+				By.xpath("//span[@class='message_body' and text() = 'Cannot find any duplicate issues']"));
+		assertNotNull(msg);
+	}
 
-	@Test // Happy Path for duplicate
+	@Test //Use Case-1 Happy Path for create issue
 	public void create() throws FileNotFoundException, IOException, ParseException
 	{	
 		// Switch to #selenium-bot channel and wait for it to load.
@@ -280,14 +270,9 @@ public class WebTest
 		WebElement btn = btns.get(btns.size() - 1);
 		btn.click();
 		wait.until(new PageLoaded(lastElementId, "Issue created and successfully assigned to : Abhinav",false));
-		/*wait.withTimeout(100, TimeUnit.SECONDS).ignoring(StaleElementReferenceException.class);
-        
-		WebElement msg = driver.findElement(
-				By.xpath("//span[@class='msg_inline_attachment_row attachment_flush_text' and text() = 'Click the most relevant user']"));
-		assertNotNull(msg);*/
 	}
 	
-	@Test
+	@Test // Use Case-1 Happy Path for create issue: Exit from bot
 	public void createExitCase() throws FileNotFoundException, IOException, ParseException{
 		driver.get("https://se-projecthq.slack.com/messages/"+ bot_name);
 		wait.until(ExpectedConditions.titleContains(bot_name)); 
@@ -313,7 +298,7 @@ public class WebTest
 		wait.until(new PageLoaded(lastElementId, "Thanks for talking to me",false));
 	}
 	
-	@Test
+	@Test // Use Case-1 Sad Path for create issue No user has worked on similar issue
 	public void createSadCase() throws FileNotFoundException, IOException, ParseException{
 		driver.get("https://se-projecthq.slack.com/messages/"+ bot_name);
 		wait.until(ExpectedConditions.titleContains(bot_name)); 
@@ -343,39 +328,6 @@ public class WebTest
 		wait.until(new PageLoaded(lastElementId, "No user has worked on similar issues",false));
 	}
 	
-	@Test
-	public void DuplicateSadCase() throws FileNotFoundException, IOException, ParseException{	
-		// Switch to #selenium-bot channel and wait for it to load.
-		driver.get("https://se-projecthq.slack.com/messages/"+ bot_name);
-		wait.until(ExpectedConditions.titleContains(bot_name)); 
-		
-		
-		WebElement messageBot = driver.findElement(By.id("msg_input"));
-		assertNotNull(messageBot);
-		Actions actions = new Actions(driver);
-		actions.moveToElement(messageBot);
-		actions.click();
-		actions.sendKeys("Duplicate 4");
-		actions.sendKeys(Keys.RETURN);
-		actions.build().perform();
-		/*
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
-		//String query= "token=xoxb-260819033494-edR6l1FRV6NNbxKxwu0ZC7AN&channel=@weather_name&text=Hellooo";
-		
-		//String path=  "/api/chat.postMessage?"+ query;
-		
-		
-		wait.withTimeout(10, TimeUnit.SECONDS).ignoring(StaleElementReferenceException.class);
-        
-		WebElement msg = driver.findElement(
-				By.xpath("//span[@class='message_body' and text() = 'Cannot find any duplicate issues']"));
-		assertNotNull(msg);
-	}
 }
 
 
