@@ -66,9 +66,30 @@ We will be using JIRA APIs for our bot. In this milestone, we have mocked JIRA A
         
 Please find mock.json file here: [Link](./Bot/mock.json)    
 
-## Bot Platform
-    
-## Bot Integration
+## Bot Implementation        
+
+**Bot Platform:**          
+In this milestone we have implemented hooks into our platform(Slack) and have fully operational bot in Slack that responds to the commands in our platform like: a) create project_id b) duplicate issue_id c) Exit
+
+**Bot Integration:**    
+We have a basic conversation with our bot. If the bot does not understand the user, it specifies what commands, it can understand.      
+        
+Use Case-1:     
+1. Following command starts a conversation with the bot: **create project_id**          
+2. Bot replies with list of options about issue type: 1) Bug(B) 2) Task(T) 3) Exit(E)   
+3. User types: "B"
+4. Bot asks for summary for the issue   
+5. User provides summary        
+6. Bot returns list of users who have worked on similar issue in the form of interactive buttons in slack app.    
+7. Clicking on button assigns issue to appropriate user.        
+
+Use Case-2:     
+1. Notification is sent directly to user using webhooks in slack app.  
+2. If the user does not exist on slack app, it send notification in channel that "Invalid user has been assigned a task"
+        
+Use Case-3:     
+1. User enters command: "duplicate issue_id"    
+2. Bot replies with links of issues which are duplicates else replies "No Duplicates found".    
      
 ## Selenium Testing 
 
