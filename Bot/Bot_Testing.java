@@ -96,7 +96,7 @@ public class WebTest
 		JSONArray notifications = (JSONArray)jsonObject.get("notifications");
 		
 		// Fetching invalid user url for notification
-		object = parser.parse(notification_users.get(2).toString());
+		object = parser.parse(notification_users.get(1).toString());
 		JSONObject jObject = (JSONObject)object;
 		String url = (String) jObject.get("url");
 		

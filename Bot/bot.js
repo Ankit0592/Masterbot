@@ -3,6 +3,7 @@ var Botkit = require('botkit');
 var mockData = require('./mock.json');
 //var button = require('./button.json');
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+var nock = require('nock');
 var request = new XMLHttpRequest();
 var issue_id = 0;
 
@@ -45,9 +46,6 @@ controller.on(['direct_mention','direct_message'],function(bot,message) {
   }
   else if(command.toLowerCase() == 'duplicate' && id) {// Use Case-3
 	  matchIssue(id,bot,message);
-  }
-  else if(command.toLowerCase() == 'update') { // Use Case-2... triggering using update command for now
-    notifications(message, bot);
   }
   else {
 	    bot.reply(message,'Hi, I understand following commands: \n Type Create [Project Id] for creating issue\n Type Duplicate [Issue-ID] for finding duplicates of this issue');
@@ -112,11 +110,10 @@ function createIssue(title,bot,message) {
 
       },'Exit');
 
-    convo.addQuestion('Please enter issue type?\n - Bug(B)\n - Task(T)\n -Exit(E)',[
+    convo.addQuestion('Please enter issue type?\n - Bug(B)\n - Task(T)\n - Exit(E)',[
       {
         pattern: 'E',
         callback: function(response,conv) {
-          console.log("E");
           convo.gotoThread('Exit');
         }
       },
@@ -125,7 +122,6 @@ function createIssue(title,bot,message) {
         callback: function(response,conv) {
           // do something else...
           convo.setVar('Type','B');
-          console.log("B");
           convo.gotoThread('summary');
         }
       },
@@ -134,7 +130,6 @@ function createIssue(title,bot,message) {
         callback: function(response,conv) {
           // do something else...
           convo.setVar('Type','T');
-          console.log("T");
           convo.gotoThread('summary');
         }
       },
@@ -142,7 +137,6 @@ function createIssue(title,bot,message) {
         default: true,
         callback: function(response,conv) {
           // just repeat the question
-          console.log("Defaubbblt");
           convo.gotoThread('bad_response');
         }
       }
@@ -188,7 +182,7 @@ function matchIssue(id,bot,message) {
     bot.reply(message, "Cannot find any duplicate issues");
   }
   else{
-    bot.reply(message, "Found following duplicate issues");
+    bot.reply(message, "Found following duplicate issues:");
     var result = "";
     setTimeout( function(){
       for(var i =0; i<data.length; i++){
@@ -199,9 +193,9 @@ function matchIssue(id,bot,message) {
 
   }
 
-  // setTimeout( function(){
-  //   notifications(message, bot);
-  // }, 2000 );
+  setTimeout( function(){
+    notifications(message, bot);
+  }, 2000 );
 }
 
 // Notifications for Use case-2
