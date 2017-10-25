@@ -239,7 +239,7 @@ public class WebTest
 		wait.withTimeout(3, TimeUnit.SECONDS).ignoring(StaleElementReferenceException.class);
 
 		WebElement msg = driver.findElement(
-				By.xpath("//span[@class='message_body' and text() = 'Found following duplicate issues']"));
+				By.xpath("//span[@class='message_body' and text() = 'Found following duplicate issues:']"));
 		assertNotNull(msg);
 	}
 
