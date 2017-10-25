@@ -1,0 +1,37 @@
+{ 
+    "issue" :
+    {
+      "id": "1",
+      "key":"TEST-1",
+      "self":"http://www.example.com/jira/rest/api/2/issue/1"
+    },
+
+    "matching_issues" :
+    [
+      {
+        "id": "1",
+        "key":"TEST-1",
+        "self":"http://www.example.com/jira/rest/api/2/issue/1"
+      },
+      {
+        "id": "2",
+        "key":"TEST-2",
+        "self":"http://www.example.com/jira/rest/api/2/issue/2"
+      },
+      {
+        "id": "3",
+        "key":"TEST-3",
+        "self":"http://www.example.com/jira/rest/api/2/issue/3"
+      }
+    ],
+    "notifications": [
+      {"text":"UPDATE: Sudipto changed status of task-1 from In Progress to Completed"},
+      {"text": "UPDATE: Pavneet changed status of task-2 from In Progress to Completed"}
+    ],
+    "notification_users":[
+      {"url": "https://hooks.slack.com/services/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"},
+      {"url":"https://hooks.slack.com/services/T6WGAMN2G/B7MBDSYGH/dFycquI5"}
+    ],
+    "likely_users":[ "Issue 5143: Abhinav", "Issue 5173: Akanksha", "Issue 51: Ankit","Issue 7709: Pavneet","Issue 5000: Sudipto" ]
+}
+  
