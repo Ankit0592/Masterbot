@@ -106,11 +106,11 @@ function createIssue(title,bot,message) {
       },'bad_response');
 
     convo.addMessage({
-          text: 'Thanks for using me',
+          text: 'Thanks for talking to me',
 
       },'Exit');
 
-    convo.addQuestion('Please enter issue type?\n - Bug(B)\n - Task(T)\n - Exit(E)',[
+    convo.addQuestion('Please enter issue type? 1) Bug(B) 2) Task(T) 3) Exit(E)',[
       {
         pattern: 'E',
         callback: function(response,conv) {
