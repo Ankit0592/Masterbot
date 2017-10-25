@@ -59,7 +59,7 @@ public class WebTest
 
 		// Type in our test user login info.
 		email.sendKeys("aarora6@ncsu.edu");
-		pw.sendKeys("xxxxxx");
+		pw.sendKeys("Ankit3113!");
 
 		// Click
 		WebElement signin = driver.findElement(By.id("signin_btn"));
@@ -207,6 +207,75 @@ public class WebTest
 		WebElement msg = driver.findElement(
 				By.xpath("//span[@class='message_body' and contains(text(),'UPDATE:')]"));
 		assertNotNull(msg);
+	}
+	
+	@Test // Happy Path for duplicate
+	public void duplicate() throws FileNotFoundException, IOException, ParseException
+	{	
+		// Switch to #selenium-bot channel and wait for it to load.
+		driver.get("https://se-projecthq.slack.com/messages/"+ bot_name);
+		wait.until(ExpectedConditions.titleContains(bot_name)); 
+		
+		
+		WebElement messageBot = driver.findElement(By.id("msg_input"));
+		assertNotNull(messageBot);
+		Actions actions = new Actions(driver);
+		actions.moveToElement(messageBot);
+		actions.click();
+		actions.sendKeys("Duplicate [10]");
+		actions.sendKeys(Keys.RETURN);
+		actions.build().perform();
+		
+		//String query= "token=xoxb-260819033494-edR6l1FRV6NNbxKxwu0ZC7AN&channel=@weather_name&text=Hellooo";
+		
+		//String path=  "/api/chat.postMessage?"+ query;
+		
+		wait.withTimeout(3, TimeUnit.SECONDS).ignoring(StaleElementReferenceException.class);
+
+		WebElement msg = driver.findElement(
+				By.xpath("//span[@class='message_body' and text() = 'Found following duplicate issues']"));
+		assertNotNull(msg);
+	}
+	
+	@Test // Happy Path for create
+	public void create() throws FileNotFoundException, IOException, ParseException
+	{	
+		// Switch to #selenium-bot channel and wait for it to load.
+		driver.get("https://se-projecthq.slack.com/messages/"+ bot_name);
+		wait.until(ExpectedConditions.titleContains(bot_name)); 
+		
+		
+		WebElement messageBot = driver.findElement(By.id("msg_input"));
+		assertNotNull(messageBot);
+		Actions actions = new Actions(driver);
+		actions.moveToElement(messageBot);
+		actions.click();
+		actions.sendKeys("Create 500");
+		actions.sendKeys(Keys.RETURN);
+		actions.build().perform();
+		
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(@class,'message_body') and text() = 'Please enter issue type?']")));
+		//Object o= By.className("message_body");
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		actions.sendKeys("B");
+		actions.sendKeys(Keys.RETURN);
+		actions.build().perform();
+		
+		actions.sendKeys("Description for this defect");
+		actions.sendKeys(Keys.RETURN);
+		actions.build().perform();
+		
+		/*wait.withTimeout(100, TimeUnit.SECONDS).ignoring(StaleElementReferenceException.class);
+
+		WebElement msg = driver.findElement(
+				By.xpath("//span[@class='msg_inline_attachment_row attachment_flush_text' and text() = 'Click the most relevant user']"));
+		assertNotNull(msg);*/
 	}
 
 }
