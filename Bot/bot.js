@@ -181,7 +181,7 @@ function matchIssue(id,bot,message) {
   var mocked=nock("https://jira.atlassian.com/rest/api/2")
   .get("/search?jql=project=123")
   .reply(200, mockData["matching_issues"]);
-  var data=JSON.parse(data.interceptors[0].body);
+  var data=JSON.parse(mocked.interceptors[0].body);
   var result = [];
 
   if(data == null || data.length == 0){
@@ -209,7 +209,8 @@ function notifications(message, bot){
   var mocked=nock("https://jira.atlassian.com/rest/api/2")
   .post("/issue/123/notify")
   .reply(200, mockData["notification_users"]);
-  var data = JSON.parse(mocked);
+  
+  var data = JSON.parse(mocked.interceptors[0].body);
   if(data != null && data.length !=0){
     var url = data[Math.floor(Math.random()*data.length)].url;
     var method = "POST";
