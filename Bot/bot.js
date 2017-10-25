@@ -174,7 +174,7 @@ function createIssue(title,bot,message) {
 // fetch mock data for likely users in use case-1
 function getLikelyUsers(message){
 
-  if(message == 'Description for defect with no matching users'){
+  if(message == 'old issue'){
      return [];
   }
 

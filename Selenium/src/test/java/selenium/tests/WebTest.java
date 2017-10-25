@@ -124,6 +124,13 @@ public class WebTest
 		int responseCode = con.getResponseCode();
 		assertEquals(responseCode, 404);
 		
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 	
 	@Test //Use Case:2 Happy Path for notifications in the bot channel
@@ -180,6 +187,13 @@ public class WebTest
 		WebElement msg = driver.findElement(
 				By.xpath("//span[@class='message_body' and contains(text(),'UPDATE:')]"));
 		assertNotNull(msg);
+		
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@Test //Use Case-3 Happy Path for duplicate
@@ -205,6 +219,13 @@ public class WebTest
 				By.xpath("//span[@class='message_body' and text() = 'Found following duplicate issues:']"));
 		assertNotNull(msg);
 		
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 	
 	@Test // Use Case-3 Sad case
@@ -225,15 +246,17 @@ public class WebTest
 		
 		
 		wait.withTimeout(10, TimeUnit.SECONDS).ignoring(StaleElementReferenceException.class);
-        try {
+        
+		WebElement msg = driver.findElement(
+				By.xpath("//span[@class='message_body' and text() = 'Cannot find any duplicate issues']"));
+		assertNotNull(msg);
+		
+		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		WebElement msg = driver.findElement(
-				By.xpath("//span[@class='message_body' and text() = 'Cannot find any duplicate issues']"));
-		assertNotNull(msg);
 	}
 
 	@Test //Use Case-1 Happy Path for create issue
@@ -270,6 +293,12 @@ public class WebTest
 		WebElement btn = btns.get(btns.size() - 1);
 		btn.click();
 		wait.until(new PageLoaded(lastElementId, "Issue created and successfully assigned to : Abhinav",false));
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@Test // Use Case-1 Happy Path for create issue: Exit from bot
@@ -296,6 +325,12 @@ public class WebTest
 		actions.sendKeys(Keys.RETURN);
 		actions.build().perform();
 		wait.until(new PageLoaded(lastElementId, "Thanks for talking to me",false));
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@Test // Use Case-1 Sad Path for create issue No user has worked on similar issue
@@ -322,10 +357,16 @@ public class WebTest
 		actions.sendKeys(Keys.RETURN);
 		actions.build().perform();
 		wait.until(new PageLoaded(lastElementId, "Please provide summary",false));
-		actions.sendKeys("Description for defect with no matching users");
+		actions.sendKeys("old issue");
 		actions.sendKeys(Keys.RETURN);
 		actions.build().perform();
 		wait.until(new PageLoaded(lastElementId, "No user has worked on similar issues",false));
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 }
