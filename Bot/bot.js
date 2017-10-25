@@ -69,6 +69,7 @@ function createIssue(title,bot,message) {
     convo.addQuestion('Please provide summary',function(response,convo) {
   //convo.say('The summary is: ' + response.text + ' and the issue is {{vars.Type}}');
       var arrayOfNames = getLikelyUsers(response.text);
+
       var button = {
         text: 'ok, I found these issues similar to one you are creating. Click on create against most relevant issue: ',
         attachments: [
@@ -82,8 +83,11 @@ function createIssue(title,bot,message) {
         ],
 
       }
-
+      if(arrayOfNames.length == 0){
+      bot.reply(message, 'No user has worked on similar issues');
+      }
       // displaying buttons in bot UI
+      else{
       for (var i = 0; i < arrayOfNames.length; i++) {
         button.attachments[0].actions.push(
         {
@@ -95,7 +99,7 @@ function createIssue(title,bot,message) {
       }
 
       bot.reply(message, button);
-
+}
       convo.next();
 
     },{},'summary');
@@ -169,11 +173,19 @@ function createIssue(title,bot,message) {
 
 // fetch mock data for likely users in use case-1
 function getLikelyUsers(message){
-  var data=nock("https://jira.atlassian.com/rest/api/2")
-  .get("/search?jql=project=123")
-  .reply(200, mockData["likely_users"]);
-  var result=data.interceptors[0].body;
-  return JSON.parse(result);
+
+  if(message == 'Description for defect with no matching users'){
+     return [];
+  }
+
+    var data=nock("https://jira.atlassian.com/rest/api/2")
+    .get("/search?jql=project=123")
+    .reply(200, mockData["likely_users"]);
+    var result=data.interceptors[0].body;
+    return JSON.parse(result);
+
+
+
 }
 
 // fetch mock data for duplicate issues in use case-3
@@ -182,34 +194,30 @@ function matchIssue(id,bot,message) {
   .get("/search?jql=project=123")
   .reply(200, mockData["matching_issues"]);
   var data=JSON.parse(mocked.interceptors[0].body);
-  var result = [];
-
-  if(data == null || data.length == 0){
+  var result = '';
+  for(var i =0; i<data.length; i++){
+    if (data[i].id === id) {
+	    result += data[i].self + "\n";
+	  }
+  }
+  if(data == null || data.length == 0 || result === ''){
     bot.reply(message, "Cannot find any duplicate issues");
-  }
-  else{
+  } else {
     bot.reply(message, "Found following duplicate issues:");
-    var result = "";
     setTimeout( function(){
-      for(var i =0; i<data.length; i++){
-        result = result + data[i].self + "\n";
-      }
-      bot.reply(message, result);
-    }, 1000 );
-
+        bot.reply(message, result);
+  	}, 1000 );
   }
-
   setTimeout( function(){
     notifications(message, bot);
   }, 2000 );
 }
-
 // Notifications for Use case-2
-function notifications(message, bot){  
+function notifications(message, bot){
   var mocked=nock("https://jira.atlassian.com/rest/api/2")
   .post("/issue/123/notify")
   .reply(200, mockData["notification_users"]);
-  
+
   var data = JSON.parse(mocked.interceptors[0].body);
   if(data != null && data.length !=0){
     var url = data[Math.floor(Math.random()*data.length)].url;

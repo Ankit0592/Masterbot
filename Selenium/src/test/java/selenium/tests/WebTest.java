@@ -223,24 +223,27 @@ public class WebTest
 		Actions actions = new Actions(driver);
 		actions.moveToElement(messageBot);
 		actions.click();
-		actions.sendKeys("Duplicate [10]");
+		actions.sendKeys("Duplicate 1");
 		actions.sendKeys(Keys.RETURN);
 		actions.build().perform();
+		/*
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 		//String query= "token=xoxb-260819033494-edR6l1FRV6NNbxKxwu0ZC7AN&channel=@weather_name&text=Hellooo";
 		
 		//String path=  "/api/chat.postMessage?"+ query;
 		
-		wait.withTimeout(3, TimeUnit.SECONDS).ignoring(StaleElementReferenceException.class);
-
+		
+		wait.withTimeout(10, TimeUnit.SECONDS).ignoring(StaleElementReferenceException.class);
+        
 		WebElement msg = driver.findElement(
 				By.xpath("//span[@class='message_body' and text() = 'Found following duplicate issues:']"));
 		assertNotNull(msg);
+		
 	}
 
 	@Test // Happy Path for duplicate
@@ -264,62 +267,19 @@ public class WebTest
 		List<WebElement> c1 = driver.findElements(By.xpath("//span[.='Create 500']/../.."));
 		WebElement lastElement = c1.get(c1.size()-1);
 		String lastElementId = lastElement.getAttribute("id");
-		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[.='Software Changes Survey']/../../div/div/span/img[@src = '/media/amazongc-micro.jpg']")));
-		//1) Bug(B) 2) Task(T) 3) Exit(E)
 		wait.until(new PageLoaded(lastElementId, "Please enter issue type? 1) Bug(B) 2) Task(T) 3) Exit(E)",false));
-		//List<WebElement> c2 = driver.findElements(By.xpath("//ts-message[@id = '"+lastElementId+"']"));
-		//System.out.println("Hi");
-		/*
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		*/
-		//List<WebElement> c3 = driver.findElements(By.xpath("//span[.='Please enter issue type?']"));
-		//List<WebElement> c1 = driver.findElements(By.xpath("//ts-message"));
-		//Issue 5143: Abhinav
-		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(@class,'message_body') and text() = 'Please enter issue type?']")));
-		//Object o= By.className("message_body");
 		actions.sendKeys("B");
 		actions.sendKeys(Keys.RETURN);
 		actions.build().perform();
 		wait.until(new PageLoaded(lastElementId, "Please provide summary",false));
-		/*
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		*/
-/*"ok, I found these issues similar to one you are creating. Click on create against most relevant issue:
-
-	
-	"*/
 		actions.sendKeys("Description for this defect");
 		actions.sendKeys(Keys.RETURN);
 		actions.build().perform();
 		wait.until(new PageLoaded(lastElementId, "Issue 5143: Abhinav",true));
-		/*
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
-
 		List<WebElement> btns = driver.findElements(By.xpath("//button[@title='Issue 5143: Abhinav']"));
 		WebElement btn = btns.get(btns.size() - 1);
 		btn.click();
 		wait.until(new PageLoaded(lastElementId, "Issue created and successfully assigned to : Abhinav",false));
-		/*try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
 		/*wait.withTimeout(100, TimeUnit.SECONDS).ignoring(StaleElementReferenceException.class);
         
 		WebElement msg = driver.findElement(
@@ -328,7 +288,7 @@ public class WebTest
 	}
 	
 	@Test
-	public void createSad() throws FileNotFoundException, IOException, ParseException{
+	public void createExitCase() throws FileNotFoundException, IOException, ParseException{
 		driver.get("https://se-projecthq.slack.com/messages/"+ bot_name);
 		wait.until(ExpectedConditions.titleContains(bot_name)); 
 		
@@ -351,6 +311,70 @@ public class WebTest
 		actions.sendKeys(Keys.RETURN);
 		actions.build().perform();
 		wait.until(new PageLoaded(lastElementId, "Thanks for talking to me",false));
+	}
+	
+	@Test
+	public void createSadCase() throws FileNotFoundException, IOException, ParseException{
+		driver.get("https://se-projecthq.slack.com/messages/"+ bot_name);
+		wait.until(ExpectedConditions.titleContains(bot_name)); 
+		
+		
+		WebElement messageBot = driver.findElement(By.id("msg_input"));
+		assertNotNull(messageBot);
+		Actions actions = new Actions(driver);
+		actions.moveToElement(messageBot);
+		actions.click();
+		
+		
+		actions.sendKeys("Create 600");
+		actions.sendKeys(Keys.RETURN);
+		actions.build().perform();
+		List<WebElement> c1 = driver.findElements(By.xpath("//span[.='Create 600']/../.."));
+		WebElement lastElement = c1.get(c1.size()-1);
+		String lastElementId = lastElement.getAttribute("id");
+		wait.until(new PageLoaded(lastElementId, "Please enter issue type? 1) Bug(B) 2) Task(T) 3) Exit(E)",false));
+		actions.sendKeys("T");
+		actions.sendKeys(Keys.RETURN);
+		actions.build().perform();
+		wait.until(new PageLoaded(lastElementId, "Please provide summary",false));
+		actions.sendKeys("Description for defect with no matching users");
+		actions.sendKeys(Keys.RETURN);
+		actions.build().perform();
+		wait.until(new PageLoaded(lastElementId, "No user has worked on similar issues",false));
+	}
+	
+	@Test
+	public void DuplicateSadCase() throws FileNotFoundException, IOException, ParseException{	
+		// Switch to #selenium-bot channel and wait for it to load.
+		driver.get("https://se-projecthq.slack.com/messages/"+ bot_name);
+		wait.until(ExpectedConditions.titleContains(bot_name)); 
+		
+		
+		WebElement messageBot = driver.findElement(By.id("msg_input"));
+		assertNotNull(messageBot);
+		Actions actions = new Actions(driver);
+		actions.moveToElement(messageBot);
+		actions.click();
+		actions.sendKeys("Duplicate 4");
+		actions.sendKeys(Keys.RETURN);
+		actions.build().perform();
+		/*
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}*/
+		//String query= "token=xoxb-260819033494-edR6l1FRV6NNbxKxwu0ZC7AN&channel=@weather_name&text=Hellooo";
+		
+		//String path=  "/api/chat.postMessage?"+ query;
+		
+		
+		wait.withTimeout(10, TimeUnit.SECONDS).ignoring(StaleElementReferenceException.class);
+        
+		WebElement msg = driver.findElement(
+				By.xpath("//span[@class='message_body' and text() = 'Cannot find any duplicate issues']"));
+		assertNotNull(msg);
 	}
 }
 
