@@ -98,7 +98,8 @@ Use Case-3:
 1. User enters command: "duplicate issue_id"    
 2. Bot replies with links of issues which are duplicates else replies "No Duplicates found".    
      
-## Selenium Testing 
+## Selenium Testing   
+Selenium test cases for each of the use-case can be found at [link](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Selenium/src/test/java/selenium/tests/WebTest.java)
 
 #### Use Case 1
 
