@@ -62,6 +62,9 @@ Alternate flows:
 [E1] No duplicate issue found.
 
 ## Mocking Service Component
+We will be using JIRA APIs for our bot. In this milestone, we have mocked JIRA APIs using http mock service called **nock**. We have created a JSON file which is returning the data similar to what would be returned by the service to be created in next milestone. The JSON file consists of matching issues, notifications, users to whom notifications will be sent, and likely users to assign issues on JIRA. This mock data is fetched in bot.js file as required in the bot implementation.   
+        
+Please find mock.json file here: Link[Link](./mock.json)    
 
 ## Bot Platform
     
