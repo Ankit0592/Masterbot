@@ -169,13 +169,19 @@ function createIssue(title,bot,message) {
 
 // fetch mock data for likely users in use case-1
 function getLikelyUsers(message){
-  var arr3 = mockData["likely_users"];
-  return arr3;
+  var data=nock("https://jira.atlassian.com/rest/api/2")
+  .get("/search?jql=project=123")
+  .reply(200, mockData["likely_users"]);
+  var result=data.interceptors[0].body;
+  return JSON.parse(result);
 }
 
 // fetch mock data for duplicate issues in use case-3
 function matchIssue(id,bot,message) {
-  var data = mockData["matching_issues"];
+  var mocked=nock("https://jira.atlassian.com/rest/api/2")
+  .get("/search?jql=project=123")
+  .reply(200, mockData["matching_issues"]);
+  var data=JSON.parse(data.interceptors[0].body);
   var result = [];
 
   if(data == null || data.length == 0){
@@ -199,9 +205,13 @@ function matchIssue(id,bot,message) {
 }
 
 // Notifications for Use case-2
-function notifications(message, bot){
-  if(mockData["notification_users"] != null && mockData["notification_users"].length !=0){
-    var url = mockData["notification_users"][Math.floor(Math.random()*mockData["notification_users"].length)].url;
+function notifications(message, bot){  
+  var mocked=nock("https://jira.atlassian.com/rest/api/2")
+  .post("/issue/123/notify")
+  .reply(200, mockData["notification_users"]);
+  var data = JSON.parse(mocked);
+  if(data != null && data.length !=0){
+    var url = data[Math.floor(Math.random()*data.length)].url;
     var method = "POST";
     var postData = mockData["notifications"][Math.floor(Math.random()*mockData["notifications"].length)];
     var async = true;
