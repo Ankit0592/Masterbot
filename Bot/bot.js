@@ -16,6 +16,7 @@ var controller = Botkit.slackbot({
   clientId: process.env.clientId,
     clientSecret: process.env.clientSecret,
     scopes: ['bot'],
+    //Bot AppID
 });
 */
 /*
