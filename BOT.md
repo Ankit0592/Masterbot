@@ -101,13 +101,19 @@ exports.handler = (event, context, callback) => {
      
 ## Selenium Testing   
 Selenium test cases for each of the use-case can be found at [link](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Selenium/src/test/java/selenium/tests/WebTest.java)
-
-#### Use Case 1
-
-#### Use Case 2
-
-#### Use Case 3
- 
+    
+#### Use Case 1   
+Happy Path: Users who have worked on similar issues found in Jira   
+Alternate Path: No user who has worked on a similar issue is found
+    
+#### Use Case 2   
+Happy Path: Notification is sent directly to the member who has to work next on the issue after first person changes status.    
+Alternate Path: If the user does not exist in the slack team, notification should not be sent.  
+    
+#### Use Case 3   
+Happy Path: Duplicate issues found similar to the current issue    
+Alternate Path: Duplicate issues are not found    
+    
 ## Task Tracking 
 [Work Sheet](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/WORKSHEET.md)
 
