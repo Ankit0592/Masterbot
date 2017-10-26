@@ -63,6 +63,7 @@ Please find mock.json file here: [Link](./Bot/mock.json)
 
 ## Bot Implementation        
 
+[Code is here] https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/tree/master/Bot
 **Bot Platform:**          
 In this milestone we have implemented hooks into our platform(Slack) and have fully operational bot in Slack that responds to the commands in our platform like: a) create project_id b) duplicate issue_id c) Exit
 
