@@ -129,4 +129,4 @@ External JARs option.
 6) You are now ready to run Selenium Tests.
 
 ## Screencast
-
+The screencast is available at [Youtube](https://youtu.be/EZw30M7HwUg)
