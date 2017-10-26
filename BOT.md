@@ -84,7 +84,20 @@ Use Case-2:
         
 Use Case-3:     
 1. User enters command: "duplicate issue_id"    
-2. Bot replies with links of issues which are duplicates else replies "No Duplicates found".    
+2. Bot replies with links of issues which are duplicates else replies "No Duplicates found".
+
+**Facilitating use of buttons:**
+We are making use of slack's interactive messaging feature for implementing the buttons that we use for the first test case. This requires us to provide a end point where slack sends a post message when we claick on any button. This end point has been implemented using the Lambda function on Amazon AWS
+```
+exports.handler = (event, context, callback) => {
+    payload = decodeURIComponent(event.body);
+    json = payload.substring(8);
+    json_obj = JSON.parse(json);
+    names = json_obj.actions[0].name.split("+");
+   callback(null, { statusCode: 200, body:"Issue created and successfully assigned to : " + names[2] });
+};
+
+```
      
 ## Selenium Testing   
 Selenium test cases for each of the use-case can be found at [link](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Selenium/src/test/java/selenium/tests/WebTest.java)
@@ -97,6 +110,17 @@ Selenium test cases for each of the use-case can be found at [link](https://gith
  
 ## Task Tracking 
 [Work Sheet](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/WORKSHEET.md)
+
+## Steps to run Selenium Tests on our code:
+1) Clone the Repo.
+2) Go inside Bot folder and run 'npm install'
+3) Once this is done Run 'node bot.js' to start the bot
+4) Import the selenium folder as maven project into Eclipse Workspace.
+5) We need an external jar to be added into the build path. For this follow the steps: a) Right click on the Project, click on
+Properties, then go to Java Build Path b) Remove the json-simple-1.1.1.jar which is added by default. c) Download the same jar from
+our Repo main page. d) Now place this jar in a location on our system and add it as a external JAR to your build path using the Add
+External JARs option.
+6) You are now ready to run Selenium Tests.
 
 ## Screencast
 
