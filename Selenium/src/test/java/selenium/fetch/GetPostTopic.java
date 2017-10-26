@@ -33,6 +33,7 @@ public class GetPostTopic
 		ChromeOptions options = new ChromeOptions();
 
 	    //use the block image extension to prevent images from downloading.
+	    //use the block image extension to prevent images from downloading.
 	    options.addExtensions(new File("Block-image_v1.1.crx"));
 		driver = new ChromeDriver(options);
 	}
