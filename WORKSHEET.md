@@ -20,7 +20,7 @@
 | Deliverable   | Item   |  Tasks
 | ------------- | ------------  |  ------------
 | Service Mocking | Use Case 2   | [Trello](https://trello.com/c/KAd5p6K3/7-mocking-service-use-case-2) 
-| Creating Buttons | Use Case 1  | [Trello] (https://trello.com/c/W0zRaAYD/9-user-interaction-use-case-1)
+| Creating Buttons | Use Case 1  | [Trello](https://trello.com/c/W0zRaAYD/9-user-interaction-use-case-1)
 | Service Mocking | Use Case 3   | [Trello](https://trello.com/c/7wm4SrfV/8-mocking-service-use-case-3)
 | Bot Integration | Interaction case 2   | [Trello](https://trello.com/c/m8ayfzb5/10-user-interaction-use-case-2)
 | Bot Integration | Interaction case 3  | [Trello](https://trello.com/c/cBtZ98hF/11-user-interaction-use-case-3)
