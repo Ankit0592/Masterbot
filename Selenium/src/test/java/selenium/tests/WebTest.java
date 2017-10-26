@@ -280,19 +280,19 @@ public class WebTest
 		List<WebElement> c1 = driver.findElements(By.xpath("//span[.='Create 500']/../.."));
 		WebElement lastElement = c1.get(c1.size()-1);
 		String lastElementId = lastElement.getAttribute("id");
-		wait.until(new PageLoaded(lastElementId, "Please enter issue type? 1) Bug(B) 2) Task(T) 3) Exit(E)",false));
+		wait.until(new ElementCheck(lastElementId, "Please enter issue type? 1) Bug(B) 2) Task(T) 3) Exit(E)",false));
 		actions.sendKeys("B");
 		actions.sendKeys(Keys.RETURN);
 		actions.build().perform();
-		wait.until(new PageLoaded(lastElementId, "Please provide summary",false));
+		wait.until(new ElementCheck(lastElementId, "Please provide summary",false));
 		actions.sendKeys("Description for this defect");
 		actions.sendKeys(Keys.RETURN);
 		actions.build().perform();
-		wait.until(new PageLoaded(lastElementId, "Issue 5143: Abhinav",true));
+		wait.until(new ElementCheck(lastElementId, "Issue 5143: Abhinav",true));
 		List<WebElement> btns = driver.findElements(By.xpath("//button[@title='Issue 5143: Abhinav']"));
 		WebElement btn = btns.get(btns.size() - 1);
 		btn.click();
-		wait.until(new PageLoaded(lastElementId, "Issue created and successfully assigned to : Abhinav",false));
+		wait.until(new ElementCheck(lastElementId, "Issue created and successfully assigned to : Abhinav",false));
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
@@ -320,11 +320,11 @@ public class WebTest
 		List<WebElement> c1 = driver.findElements(By.xpath("//span[.='Create 500']/../.."));
 		WebElement lastElement = c1.get(c1.size()-1);
 		String lastElementId = lastElement.getAttribute("id");
-		wait.until(new PageLoaded(lastElementId, "Please enter issue type? 1) Bug(B) 2) Task(T) 3) Exit(E)",false));
+		wait.until(new ElementCheck(lastElementId, "Please enter issue type? 1) Bug(B) 2) Task(T) 3) Exit(E)",false));
 		actions.sendKeys("E");
 		actions.sendKeys(Keys.RETURN);
 		actions.build().perform();
-		wait.until(new PageLoaded(lastElementId, "Thanks for talking to me",false));
+		wait.until(new ElementCheck(lastElementId, "Thanks for talking to me",false));
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
@@ -352,15 +352,15 @@ public class WebTest
 		List<WebElement> c1 = driver.findElements(By.xpath("//span[.='Create 600']/../.."));
 		WebElement lastElement = c1.get(c1.size()-1);
 		String lastElementId = lastElement.getAttribute("id");
-		wait.until(new PageLoaded(lastElementId, "Please enter issue type? 1) Bug(B) 2) Task(T) 3) Exit(E)",false));
+		wait.until(new ElementCheck(lastElementId, "Please enter issue type? 1) Bug(B) 2) Task(T) 3) Exit(E)",false));
 		actions.sendKeys("T");
 		actions.sendKeys(Keys.RETURN);
 		actions.build().perform();
-		wait.until(new PageLoaded(lastElementId, "Please provide summary",false));
+		wait.until(new ElementCheck(lastElementId, "Please provide summary",false));
 		actions.sendKeys("old issue");
 		actions.sendKeys(Keys.RETURN);
 		actions.build().perform();
-		wait.until(new PageLoaded(lastElementId, "No user has worked on similar issues",false));
+		wait.until(new ElementCheck(lastElementId, "No user has worked on similar issues",false));
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
@@ -372,12 +372,12 @@ public class WebTest
 }
 
 
-class PageLoaded implements ExpectedCondition<Boolean> {		
+class ElementCheck implements ExpectedCondition<Boolean> {		
 	  String lastElementId;
 	  String message;
 	  Boolean isButton;
 		
-	  public PageLoaded(String lastElementId, String message, Boolean isButton) {
+	  public ElementCheck(String lastElementId, String message, Boolean isButton) {
 	    this.lastElementId = lastElementId;	
 	    this.message = message;
 	    this.isButton = isButton;
@@ -387,8 +387,6 @@ class PageLoaded implements ExpectedCondition<Boolean> {
 	  public Boolean apply(WebDriver arg0) {
 		// TODO Auto-generated method stub
 		WebDriver driver = (WebDriver)arg0;
-		//List<WebElement> c1 = driver.findElements(By.xpath("//span[.='Create 500']/../.."));
-		//List<WebElement> c2 = driver.findElements(By.xpath("//span[.='Please enter issue type?']"));
 		List<WebElement> c2;
 		if(isButton){
 			 c2 = driver.findElements(By.xpath("//button[@title='"+message+"']/../../../../../../../../.."));
