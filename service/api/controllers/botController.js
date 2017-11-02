@@ -11,6 +11,10 @@ exports.getIssues = function(req, res) {
 //   });
 };
 
+exports.getMatch = function(str1, str2) {
+	var natural = require('natural');
+	return natural.JaroWinklerDistance(str1, str2);
+};
 
 
 
