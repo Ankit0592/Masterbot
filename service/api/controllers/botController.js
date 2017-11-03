@@ -1,9 +1,19 @@
 'use strict';
+var request = require('request');
+var natural = require('natural');
 
+var token = "Basic YWFyb3JhNkBuY3N1LmVkdTpBbmtpdDMxMTMh";
+var urlRoot = "https://masterbot.atlassian.net/rest/api/2/";
+
+var matchedIssues=[];
 exports.getIssues = function(req, res) {
-    res.status(200).json({
-        message: 'Welcome to the issues api'
-    });
+    var callback=function(){
+        res.status(200).json({
+            matching_issues: matchedIssues
+        });
+    }
+     getIssues('MAS', callback);   
+     
 //   Task.find({}, function(err, task) {
 //     if (err)
 //       res.send(err);
@@ -11,12 +21,34 @@ exports.getIssues = function(req, res) {
 //   });
 };
 
-exports.getMatch = function(str1, str2) {
-	var natural = require('natural');
+function getMatch(str1, str2) {
 	return natural.JaroWinklerDistance(str1, str2);
 };
 
-
+function getIssues(projectName, callback)
+{  
+ 	var options = {
+  		url: urlRoot + '/search?jql=project=' + projectName + "&maxResults=15",
+		method: 'GET',
+		headers: {
+			"content-type": "application/json",
+			"Authorization": token
+		}
+	};
+	// Send a http request to url and specify a callback that will be called upon its return.
+	request(options, function (error, response, body) 
+	{
+        var obj = JSON.parse(body);
+        for(var i =0; i<obj.issues.length; i++){
+             var a=getMatch("ye merry gentlemen",obj.issues[i].fields.summary);
+            if(a > 0.7){
+                var link="https://masterbot.atlassian.net/browse/"
+                matchedIssues.push(link+''+obj.issues[i].key);
+             }
+        }
+        callback(matchedIssues);        
+    });
+}
 
 exports.createIssue = function(req, res) {
     res.json("created");
