@@ -11,8 +11,8 @@ exports.getIssues = function(req, res) {
             matching_issues: matchedIssues
         });
     }
-     getIssues(req.params.id, callback);
-     
+    getIssues(req.params.id, callback);
+
 //   Task.find({}, function(err, task) {
 //     if (err)
 //       res.send(err);
@@ -21,45 +21,45 @@ exports.getIssues = function(req, res) {
 };
 
 function getMatch(str1, str2) {
-	return natural.JaroWinklerDistance(str1, str2);
+    return natural.JaroWinklerDistance(str1, str2);
 };
 
 function getIssues(id, callback)
-{  
-	var projectName = 'MAS';
- 	var options = {
-  		url: urlRoot + '/search?jql=project=' + projectName + "&maxResults=15",
-		method: 'GET',
-		headers: {
-			"content-type": "application/json",
-			"Authorization": token
-		}
-	};
-	// Send a http request to url and specify a callback that will be called upon its return.
-	request(options, function (error, response, body) 
-	{
-		var matchedIssues=[];
-		if(body) {
-			var obj = JSON.parse(body);
-			var issueDescription = '';
-			for(var i =0; i<obj.issues.length; i++){
-				if(obj.issues[i].key === id){
-					issueDescription = obj.issues[i].fields.summary;
-					obj.issues.splice(i,1);
-					break;
-				 }
-			}
-			if (issueDescription.length > 0) {
-				for(var i =0; i<obj.issues.length; i++){
-					var summaryOverlap = getMatch(issueDescription, obj.issues[i].fields.summary);
-					if(summaryOverlap > 0.7){
-						var link="https://masterbot.atlassian.net/browse/"
-						matchedIssues.push(link+''+obj.issues[i].key);
-					 }
-				}
-			}
-		}
-		callback(matchedIssues);
+{
+    var projectName = 'MAS';
+    var options = {
+        url: urlRoot + '/search?jql=project=' + projectName + "&maxResults=15",
+        method: 'GET',
+        headers: {
+            "content-type": "application/json",
+            "Authorization": token
+        }
+    };
+    // Send a http request to url and specify a callback that will be called upon its return.
+    request(options, function (error, response, body)
+    {
+        var matchedIssues=[];
+        if(body) {
+            var obj = JSON.parse(body);
+            var issueDescription = '';
+            for(var i =0; i<obj.issues.length; i++){
+                if(obj.issues[i].key === id){
+                    issueDescription = obj.issues[i].fields.summary;
+                    obj.issues.splice(i,1);
+                    break;
+                }
+            }
+            if (issueDescription.length > 0) {
+                for(var i =0; i<obj.issues.length; i++){
+                    var summaryOverlap = getMatch(issueDescription, obj.issues[i].fields.summary);
+                    if(summaryOverlap > 0.7){
+                        var link="https://masterbot.atlassian.net/browse/"
+                        matchedIssues.push(link+''+obj.issues[i].key);
+                    }
+                }
+            }
+        }
+        callback(matchedIssues);
     });
 }
 

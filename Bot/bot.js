@@ -116,15 +116,15 @@ function createIssue(title,bot,message) {
 
       },'Exit');
 
-    convo.addQuestion('Please enter issue type? 1) Bug(B) 2) Task(T) 3) Exit(E)',[
+    convo.addQuestion('Please enter issue type? 1) Bug 2) Task 3) Exit',[
       {
-        pattern: 'E',
+        pattern: '3',
         callback: function(response,conv) {
           convo.gotoThread('Exit');
         }
       },
       {
-        pattern: 'B',
+        pattern: '1',
         callback: function(response,conv) {
           // do something else...
           convo.setVar('Type','B');
@@ -132,7 +132,7 @@ function createIssue(title,bot,message) {
         }
       },
       {
-        pattern: 'T',
+        pattern: '2',
         callback: function(response,conv) {
           // do something else...
           convo.setVar('Type','T');
