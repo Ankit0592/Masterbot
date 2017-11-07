@@ -11,6 +11,7 @@
   "dependencies": {
     "botkit": "^0.5.8",
     "nock": "^9.0.25",
+    "request": "^2.83.0",
     "slackbots": "^0.5.1",
     "xmlhttprequest": "^1.8.0"
   }

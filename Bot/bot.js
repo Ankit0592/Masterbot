@@ -1,4 +1,5 @@
 var service = require('../service/api/controllers/botController.js');
+var ajax = require('request');
 var Botkit = require('botkit');
 var mockData = require('./mock.json');
 //var button = require('./button.json');
@@ -46,7 +47,7 @@ controller.on(['direct_mention','direct_message'],function(bot,message) {
 	  createIssue(id,bot,message);
   }
   else if(command.toLowerCase() == 'duplicate' && id) {// Use Case-3
-	  matchIssue(id,bot,message);
+	  getIssues(id,bot,message);
   }
   else {
 	    bot.reply(message,'Hi, I understand following commands: \n Type Create [Project Id] for creating issue\n Type Duplicate [Issue-ID] for finding duplicates of this issue');
@@ -187,30 +188,42 @@ function getLikelyUsers(message){
 
 }
 
+// Call Service
+function getIssues(id,bot,message) {
+	var options = {
+  		url: 'http://localhost:3000/' + id,
+		method: 'GET',
+		headers: {
+			"content-type": "application/json"
+		}
+	};
+	// Send a http request to url and specify a callback that will be called upon its return.
+	ajax(options, function (error, response, body) 
+	{
+		matchIssue(body,bot,message);
+    });
+};
+
 // fetch mock data for duplicate issues in use case-3
-function matchIssue(id,bot,message) {
-  var mocked=nock("https://jira.atlassian.com/rest/api/2")
-  .get("/search?jql=project=123")
-  .reply(200, mockData["matching_issues"]);
-//  var data = service.getIssues();
-  var data=JSON.parse(mocked.interceptors[0].body);
-  var result = '';
-  for(var i =0; i<data.length; i++){
-    if (data[i].id === id) {
-	    result += data[i].self + "\n";
-	  }
-  }
-  if(data == null || data.length == 0 || result === ''){
-    bot.reply(message, "Cannot find any duplicate issues");
-  } else {
-    bot.reply(message, "Found following duplicate issues:");
-    setTimeout( function(){
-        bot.reply(message, result);
-  	}, 1000 );
-  }
-  setTimeout( function(){
-    notifications(message, bot);
-  }, 2000 );
+function matchIssue(body,bot,message) {
+	if(body){
+		var data = JSON.parse(body).matching_issues;
+		if(data == undefined || data.length == 0){
+			bot.reply(message, "Cannot find any duplicate issues");
+		} else {
+			var result = '';
+			for(var i = 0; i < data.length; ++i) {
+				result += data[i] + '\n';
+			}
+			bot.reply(message, "Found following duplicate issues:");
+			setTimeout( function(){
+				bot.reply(message, result);
+			}, 1000 );
+		}
+	}
+//  setTimeout( function(){
+//    notifications(message, bot);
+//  }, 2000 );
 }
 // Notifications for Use case-2
 function notifications(message, bot){

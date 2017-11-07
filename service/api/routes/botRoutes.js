@@ -3,7 +3,7 @@ module.exports = function(app) {
   var botList = require('../controllers/botController');
 
     // Routes
-    app.route('/')
+    app.route('/:id')
         .get(botList.getIssues);
 
     app.route('/issues')
