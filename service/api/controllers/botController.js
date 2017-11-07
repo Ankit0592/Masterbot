@@ -1,7 +1,7 @@
 'use strict';
 var request = require('request');
 var natural = require('natural');
-
+var mockData = require('./mock.json');
 var token = "Basic YWFyb3JhNkBuY3N1LmVkdTpBbmtpdDMxMTMh";
 var urlRoot = "https://masterbot.atlassian.net/rest/api/2/";
 
@@ -38,9 +38,9 @@ function getIssues(projectName, callback)
 	// Send a http request to url and specify a callback that will be called upon its return.
 	request(options, function (error, response, body) 
 	{
-        var obj = JSON.parse(body);
+		var obj = mockData;
         for(var i =0; i<obj.issues.length; i++){
-             var a=getMatch("ye merry gentlemen",obj.issues[i].fields.summary);
+            var a=getMatch("Notify",obj.issues[i].fields.summary);
             if(a > 0.7){
                 var link="https://masterbot.atlassian.net/browse/"
                 matchedIssues.push(link+''+obj.issues[i].key);

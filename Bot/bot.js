@@ -1,4 +1,4 @@
-
+var service = require('../service/api/controllers/botController.js');
 var Botkit = require('botkit');
 var mockData = require('./mock.json');
 //var button = require('./button.json');
@@ -189,10 +189,11 @@ function getLikelyUsers(message){
 
 // fetch mock data for duplicate issues in use case-3
 function matchIssue(id,bot,message) {
-  var mocked=nock("https://jira.atlassian.com/rest/api/2")
-  .get("/search?jql=project=123")
-  .reply(200, mockData["matching_issues"]);
-  var data=JSON.parse(mocked.interceptors[0].body);
+//  var mocked=nock("https://jira.atlassian.com/rest/api/2")
+//  .get("/search?jql=project=123")
+//  .reply(200, mockData["matching_issues"]);
+  var data = service.getIssues();
+//  var data=JSON.parse(mocked.interceptors[0].body);
   var result = '';
   for(var i =0; i<data.length; i++){
     if (data[i].id === id) {
