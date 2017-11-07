@@ -1,0 +1,2234 @@
+{
+    "expand": "schema,names",
+    "startAt": 0,
+    "maxResults": 15,
+    "total": 35,
+    "issues": [
+        {
+            "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+            "id": "10034",
+            "self": "https://masterbot.atlassian.net/rest/api/2/issue/10034",
+            "key": "MAS-35",
+            "fields": {
+                "issuetype": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issuetype/10002",
+                    "id": "10002",
+                    "description": "A task that needs to be done.",
+                    "iconUrl": "https://masterbot.atlassian.net/secure/viewavatar?size=xsmall&avatarId=10318&avatarType=issuetype",
+                    "name": "Task",
+                    "subtask": false,
+                    "avatarId": 10318
+                },
+                "timespent": null,
+                "project": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/project/10000",
+                    "id": "10000",
+                    "key": "MAS",
+                    "name": "MasterBot",
+                    "avatarUrls": {
+                        "48x48": "https://masterbot.atlassian.net/secure/projectavatar?avatarId=10324",
+                        "24x24": "https://masterbot.atlassian.net/secure/projectavatar?size=small&avatarId=10324",
+                        "16x16": "https://masterbot.atlassian.net/secure/projectavatar?size=xsmall&avatarId=10324",
+                        "32x32": "https://masterbot.atlassian.net/secure/projectavatar?size=medium&avatarId=10324"
+                    }
+                },
+                "fixVersions": [],
+                "aggregatetimespent": null,
+                "resolution": null,
+                "resolutiondate": null,
+                "workratio": -1,
+                "watches": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issue/MAS-35/watchers",
+                    "watchCount": 1,
+                    "isWatching": true
+                },
+                "lastViewed": "2017-11-06T19:04:48.378-0500",
+                "created": "2017-11-03T15:53:57.807-0400",
+                "customfield_10062": null,
+                "customfield_10063": null,
+                "customfield_10064": null,
+                "customfield_10065": null,
+                "customfield_10066": null,
+                "customfield_10067": null,
+                "priority": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/priority/3",
+                    "iconUrl": "https://masterbot.atlassian.net/images/icons/priorities/medium.svg",
+                    "name": "Medium",
+                    "id": "3"
+                },
+                "customfield_10068": null,
+                "labels": [],
+                "timeestimate": null,
+                "aggregatetimeoriginalestimate": null,
+                "versions": [],
+                "issuelinks": [],
+                "assignee": null,
+                "updated": "2017-11-03T15:53:57.807-0400",
+                "status": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/status/10000",
+                    "description": "",
+                    "iconUrl": "https://masterbot.atlassian.net/",
+                    "name": "To Do",
+                    "id": "10000",
+                    "statusCategory": {
+                        "self": "https://masterbot.atlassian.net/rest/api/2/statuscategory/2",
+                        "id": 2,
+                        "key": "new",
+                        "colorName": "blue-gray",
+                        "name": "To Do"
+                    }
+                },
+                "components": [],
+                "timeoriginalestimate": null,
+                "description": "Creating of an issue using project keys and issue type names using the REST API",
+                "customfield_10010": [],
+                "customfield_10011": "1|i00027:",
+                "customfield_10012": null,
+                "customfield_10013": null,
+                "customfield_10008": null,
+                "aggregatetimeestimate": null,
+                "customfield_10009": null,
+                "summary": "REST ye merry gentlemen.",
+                "creator": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=admin",
+                    "name": "admin",
+                    "key": "admin",
+                    "accountId": "557058:f886df53-eb81-4db8-9024-8ca80372e1bb",
+                    "emailAddress": "aarora6@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Ankit Arora",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "subtasks": [],
+                "reporter": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=admin",
+                    "name": "admin",
+                    "key": "admin",
+                    "accountId": "557058:f886df53-eb81-4db8-9024-8ca80372e1bb",
+                    "emailAddress": "aarora6@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Ankit Arora",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "aggregateprogress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "customfield_10000": "{}",
+                "customfield_10001": null,
+                "customfield_10002": null,
+                "customfield_10003": null,
+                "customfield_10004": null,
+                "environment": null,
+                "duedate": null,
+                "progress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "votes": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issue/MAS-35/votes",
+                    "votes": 0,
+                    "hasVoted": false
+                }
+            }
+        },
+        {
+            "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+            "id": "10033",
+            "self": "https://masterbot.atlassian.net/rest/api/2/issue/10033",
+            "key": "MAS-34",
+            "fields": {
+                "issuetype": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issuetype/10002",
+                    "id": "10002",
+                    "description": "A task that needs to be done.",
+                    "iconUrl": "https://masterbot.atlassian.net/secure/viewavatar?size=xsmall&avatarId=10318&avatarType=issuetype",
+                    "name": "Task",
+                    "subtask": false,
+                    "avatarId": 10318
+                },
+                "timespent": null,
+                "project": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/project/10000",
+                    "id": "10000",
+                    "key": "MAS",
+                    "name": "MasterBot",
+                    "avatarUrls": {
+                        "48x48": "https://masterbot.atlassian.net/secure/projectavatar?avatarId=10324",
+                        "24x24": "https://masterbot.atlassian.net/secure/projectavatar?size=small&avatarId=10324",
+                        "16x16": "https://masterbot.atlassian.net/secure/projectavatar?size=xsmall&avatarId=10324",
+                        "32x32": "https://masterbot.atlassian.net/secure/projectavatar?size=medium&avatarId=10324"
+                    }
+                },
+                "fixVersions": [],
+                "aggregatetimespent": null,
+                "resolution": null,
+                "resolutiondate": null,
+                "workratio": -1,
+                "watches": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issue/MAS-34/watchers",
+                    "watchCount": 1,
+                    "isWatching": true
+                },
+                "lastViewed": null,
+                "created": "2017-11-03T13:48:36.258-0400",
+                "customfield_10062": null,
+                "customfield_10063": null,
+                "customfield_10064": null,
+                "customfield_10065": null,
+                "customfield_10066": null,
+                "customfield_10067": null,
+                "priority": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/priority/3",
+                    "iconUrl": "https://masterbot.atlassian.net/images/icons/priorities/medium.svg",
+                    "name": "Medium",
+                    "id": "3"
+                },
+                "customfield_10068": null,
+                "labels": [],
+                "timeestimate": null,
+                "aggregatetimeoriginalestimate": null,
+                "versions": [],
+                "issuelinks": [],
+                "assignee": null,
+                "updated": "2017-11-03T13:48:36.258-0400",
+                "status": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/status/10000",
+                    "description": "",
+                    "iconUrl": "https://masterbot.atlassian.net/",
+                    "name": "To Do",
+                    "id": "10000",
+                    "statusCategory": {
+                        "self": "https://masterbot.atlassian.net/rest/api/2/statuscategory/2",
+                        "id": 2,
+                        "key": "new",
+                        "colorName": "blue-gray",
+                        "name": "To Do"
+                    }
+                },
+                "components": [],
+                "timeoriginalestimate": null,
+                "description": "Creating of an issue using project keys and issue type names using the REST API",
+                "customfield_10010": [],
+                "customfield_10011": "1|i0001z:",
+                "customfield_10012": null,
+                "customfield_10013": null,
+                "customfield_10008": null,
+                "customfield_10009": null,
+                "aggregatetimeestimate": null,
+                "summary": "REST ye merry gentlemen.",
+                "creator": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=admin",
+                    "name": "admin",
+                    "key": "admin",
+                    "accountId": "557058:f886df53-eb81-4db8-9024-8ca80372e1bb",
+                    "emailAddress": "aarora6@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Ankit Arora",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "subtasks": [],
+                "reporter": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=admin",
+                    "name": "admin",
+                    "key": "admin",
+                    "accountId": "557058:f886df53-eb81-4db8-9024-8ca80372e1bb",
+                    "emailAddress": "aarora6@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Ankit Arora",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "customfield_10000": "{}",
+                "aggregateprogress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "customfield_10001": null,
+                "customfield_10002": null,
+                "customfield_10003": null,
+                "customfield_10004": null,
+                "environment": null,
+                "duedate": null,
+                "progress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "votes": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issue/MAS-34/votes",
+                    "votes": 0,
+                    "hasVoted": false
+                }
+            }
+        },
+        {
+            "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+            "id": "10032",
+            "self": "https://masterbot.atlassian.net/rest/api/2/issue/10032",
+            "key": "MAS-33",
+            "fields": {
+                "issuetype": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issuetype/10002",
+                    "id": "10002",
+                    "description": "A task that needs to be done.",
+                    "iconUrl": "https://masterbot.atlassian.net/secure/viewavatar?size=xsmall&avatarId=10318&avatarType=issuetype",
+                    "name": "Task",
+                    "subtask": false,
+                    "avatarId": 10318
+                },
+                "timespent": null,
+                "project": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/project/10000",
+                    "id": "10000",
+                    "key": "MAS",
+                    "name": "MasterBot",
+                    "avatarUrls": {
+                        "48x48": "https://masterbot.atlassian.net/secure/projectavatar?avatarId=10324",
+                        "24x24": "https://masterbot.atlassian.net/secure/projectavatar?size=small&avatarId=10324",
+                        "16x16": "https://masterbot.atlassian.net/secure/projectavatar?size=xsmall&avatarId=10324",
+                        "32x32": "https://masterbot.atlassian.net/secure/projectavatar?size=medium&avatarId=10324"
+                    }
+                },
+                "fixVersions": [],
+                "aggregatetimespent": null,
+                "resolution": null,
+                "resolutiondate": null,
+                "workratio": -1,
+                "watches": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issue/MAS-33/watchers",
+                    "watchCount": 1,
+                    "isWatching": true
+                },
+                "lastViewed": null,
+                "created": "2017-11-03T13:47:44.343-0400",
+                "customfield_10062": null,
+                "customfield_10063": null,
+                "customfield_10064": null,
+                "customfield_10065": null,
+                "customfield_10066": null,
+                "customfield_10067": null,
+                "priority": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/priority/3",
+                    "iconUrl": "https://masterbot.atlassian.net/images/icons/priorities/medium.svg",
+                    "name": "Medium",
+                    "id": "3"
+                },
+                "customfield_10068": null,
+                "labels": [],
+                "timeestimate": null,
+                "aggregatetimeoriginalestimate": null,
+                "versions": [],
+                "issuelinks": [],
+                "assignee": null,
+                "updated": "2017-11-03T13:47:44.343-0400",
+                "status": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/status/10000",
+                    "description": "",
+                    "iconUrl": "https://masterbot.atlassian.net/",
+                    "name": "To Do",
+                    "id": "10000",
+                    "statusCategory": {
+                        "self": "https://masterbot.atlassian.net/rest/api/2/statuscategory/2",
+                        "id": 2,
+                        "key": "new",
+                        "colorName": "blue-gray",
+                        "name": "To Do"
+                    }
+                },
+                "components": [],
+                "timeoriginalestimate": null,
+                "description": "Creating of an issue using project keys and issue type names using the REST API",
+                "customfield_10010": [],
+                "customfield_10011": "1|i0001r:",
+                "customfield_10012": null,
+                "customfield_10013": null,
+                "customfield_10008": null,
+                "customfield_10009": null,
+                "aggregatetimeestimate": null,
+                "summary": "REST ye merry gentlemen.",
+                "creator": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=admin",
+                    "name": "admin",
+                    "key": "admin",
+                    "accountId": "557058:f886df53-eb81-4db8-9024-8ca80372e1bb",
+                    "emailAddress": "aarora6@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Ankit Arora",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "subtasks": [],
+                "reporter": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=admin",
+                    "name": "admin",
+                    "key": "admin",
+                    "accountId": "557058:f886df53-eb81-4db8-9024-8ca80372e1bb",
+                    "emailAddress": "aarora6@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Ankit Arora",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "aggregateprogress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "customfield_10000": "{}",
+                "customfield_10001": null,
+                "customfield_10002": null,
+                "customfield_10003": null,
+                "customfield_10004": null,
+                "environment": null,
+                "duedate": null,
+                "progress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "votes": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issue/MAS-33/votes",
+                    "votes": 0,
+                    "hasVoted": false
+                }
+            }
+        },
+        {
+            "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+            "id": "10031",
+            "self": "https://masterbot.atlassian.net/rest/api/2/issue/10031",
+            "key": "MAS-32",
+            "fields": {
+                "issuetype": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issuetype/10002",
+                    "id": "10002",
+                    "description": "A task that needs to be done.",
+                    "iconUrl": "https://masterbot.atlassian.net/secure/viewavatar?size=xsmall&avatarId=10318&avatarType=issuetype",
+                    "name": "Task",
+                    "subtask": false,
+                    "avatarId": 10318
+                },
+                "timespent": null,
+                "project": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/project/10000",
+                    "id": "10000",
+                    "key": "MAS",
+                    "name": "MasterBot",
+                    "avatarUrls": {
+                        "48x48": "https://masterbot.atlassian.net/secure/projectavatar?avatarId=10324",
+                        "24x24": "https://masterbot.atlassian.net/secure/projectavatar?size=small&avatarId=10324",
+                        "16x16": "https://masterbot.atlassian.net/secure/projectavatar?size=xsmall&avatarId=10324",
+                        "32x32": "https://masterbot.atlassian.net/secure/projectavatar?size=medium&avatarId=10324"
+                    }
+                },
+                "fixVersions": [],
+                "aggregatetimespent": null,
+                "resolution": null,
+                "resolutiondate": null,
+                "workratio": -1,
+                "lastViewed": null,
+                "watches": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issue/MAS-32/watchers",
+                    "watchCount": 1,
+                    "isWatching": true
+                },
+                "created": "2017-11-03T12:48:38.533-0400",
+                "customfield_10062": null,
+                "customfield_10063": null,
+                "customfield_10064": null,
+                "customfield_10065": null,
+                "customfield_10066": null,
+                "customfield_10067": null,
+                "priority": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/priority/3",
+                    "iconUrl": "https://masterbot.atlassian.net/images/icons/priorities/medium.svg",
+                    "name": "Medium",
+                    "id": "3"
+                },
+                "customfield_10068": null,
+                "labels": [],
+                "timeestimate": null,
+                "aggregatetimeoriginalestimate": null,
+                "versions": [],
+                "issuelinks": [],
+                "assignee": null,
+                "updated": "2017-11-03T12:48:38.533-0400",
+                "status": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/status/10000",
+                    "description": "",
+                    "iconUrl": "https://masterbot.atlassian.net/",
+                    "name": "To Do",
+                    "id": "10000",
+                    "statusCategory": {
+                        "self": "https://masterbot.atlassian.net/rest/api/2/statuscategory/2",
+                        "id": 2,
+                        "key": "new",
+                        "colorName": "blue-gray",
+                        "name": "To Do"
+                    }
+                },
+                "components": [],
+                "timeoriginalestimate": null,
+                "description": "Creating of an issue using project keys and issue type names using the REST API",
+                "customfield_10010": [],
+                "customfield_10011": "1|i0001j:",
+                "customfield_10012": null,
+                "customfield_10013": null,
+                "customfield_10008": null,
+                "aggregatetimeestimate": null,
+                "customfield_10009": null,
+                "summary": "REST ye merry gentlemen.",
+                "creator": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=admin",
+                    "name": "admin",
+                    "key": "admin",
+                    "accountId": "557058:f886df53-eb81-4db8-9024-8ca80372e1bb",
+                    "emailAddress": "aarora6@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Ankit Arora",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "subtasks": [],
+                "reporter": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=admin",
+                    "name": "admin",
+                    "key": "admin",
+                    "accountId": "557058:f886df53-eb81-4db8-9024-8ca80372e1bb",
+                    "emailAddress": "aarora6@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Ankit Arora",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "customfield_10000": "{}",
+                "aggregateprogress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "customfield_10001": null,
+                "customfield_10002": null,
+                "customfield_10003": null,
+                "customfield_10004": null,
+                "environment": null,
+                "duedate": null,
+                "progress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "votes": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issue/MAS-32/votes",
+                    "votes": 0,
+                    "hasVoted": false
+                }
+            }
+        },
+        {
+            "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+            "id": "10030",
+            "self": "https://masterbot.atlassian.net/rest/api/2/issue/10030",
+            "key": "MAS-31",
+            "fields": {
+                "issuetype": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issuetype/10001",
+                    "id": "10001",
+                    "description": "A user story. Created by Jira Software - do not edit or delete.",
+                    "iconUrl": "https://masterbot.atlassian.net/images/icons/issuetypes/story.svg",
+                    "name": "Story",
+                    "subtask": false
+                },
+                "timespent": null,
+                "project": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/project/10000",
+                    "id": "10000",
+                    "key": "MAS",
+                    "name": "MasterBot",
+                    "avatarUrls": {
+                        "48x48": "https://masterbot.atlassian.net/secure/projectavatar?avatarId=10324",
+                        "24x24": "https://masterbot.atlassian.net/secure/projectavatar?size=small&avatarId=10324",
+                        "16x16": "https://masterbot.atlassian.net/secure/projectavatar?size=xsmall&avatarId=10324",
+                        "32x32": "https://masterbot.atlassian.net/secure/projectavatar?size=medium&avatarId=10324"
+                    }
+                },
+                "fixVersions": [],
+                "aggregatetimespent": null,
+                "resolution": null,
+                "resolutiondate": null,
+                "workratio": -1,
+                "lastViewed": "2017-11-03T12:29:40.723-0400",
+                "watches": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issue/MAS-31/watchers",
+                    "watchCount": 1,
+                    "isWatching": true
+                },
+                "created": "2017-11-03T12:29:40.454-0400",
+                "customfield_10062": null,
+                "customfield_10063": null,
+                "customfield_10064": null,
+                "customfield_10065": null,
+                "customfield_10066": null,
+                "priority": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/priority/3",
+                    "iconUrl": "https://masterbot.atlassian.net/images/icons/priorities/medium.svg",
+                    "name": "Medium",
+                    "id": "3"
+                },
+                "customfield_10067": null,
+                "customfield_10068": null,
+                "labels": [],
+                "aggregatetimeoriginalestimate": null,
+                "timeestimate": null,
+                "versions": [],
+                "issuelinks": [],
+                "assignee": null,
+                "updated": "2017-11-03T12:29:40.454-0400",
+                "status": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/status/10000",
+                    "description": "",
+                    "iconUrl": "https://masterbot.atlassian.net/",
+                    "name": "To Do",
+                    "id": "10000",
+                    "statusCategory": {
+                        "self": "https://masterbot.atlassian.net/rest/api/2/statuscategory/2",
+                        "id": 2,
+                        "key": "new",
+                        "colorName": "blue-gray",
+                        "name": "To Do"
+                    }
+                },
+                "components": [],
+                "timeoriginalestimate": null,
+                "description": null,
+                "customfield_10010": [],
+                "customfield_10011": "1|i0001b:",
+                "customfield_10012": null,
+                "customfield_10013": null,
+                "customfield_10059": null,
+                "customfield_10008": null,
+                "customfield_10009": null,
+                "aggregatetimeestimate": null,
+                "summary": "Notify ",
+                "creator": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=admin",
+                    "name": "admin",
+                    "key": "admin",
+                    "accountId": "557058:f886df53-eb81-4db8-9024-8ca80372e1bb",
+                    "emailAddress": "aarora6@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Ankit Arora",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "subtasks": [],
+                "reporter": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=admin",
+                    "name": "admin",
+                    "key": "admin",
+                    "accountId": "557058:f886df53-eb81-4db8-9024-8ca80372e1bb",
+                    "emailAddress": "aarora6@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Ankit Arora",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "aggregateprogress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "customfield_10000": "{}",
+                "customfield_10001": null,
+                "customfield_10002": null,
+                "customfield_10003": null,
+                "customfield_10004": null,
+                "environment": null,
+                "duedate": null,
+                "progress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "votes": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issue/MAS-31/votes",
+                    "votes": 0,
+                    "hasVoted": false
+                }
+            }
+        },
+        {
+            "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+            "id": "10029",
+            "self": "https://masterbot.atlassian.net/rest/api/2/issue/10029",
+            "key": "MAS-30",
+            "fields": {
+                "issuetype": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issuetype/10002",
+                    "id": "10002",
+                    "description": "A task that needs to be done.",
+                    "iconUrl": "https://masterbot.atlassian.net/secure/viewavatar?size=xsmall&avatarId=10318&avatarType=issuetype",
+                    "name": "Task",
+                    "subtask": false,
+                    "avatarId": 10318
+                },
+                "timespent": null,
+                "project": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/project/10000",
+                    "id": "10000",
+                    "key": "MAS",
+                    "name": "MasterBot",
+                    "avatarUrls": {
+                        "48x48": "https://masterbot.atlassian.net/secure/projectavatar?avatarId=10324",
+                        "24x24": "https://masterbot.atlassian.net/secure/projectavatar?size=small&avatarId=10324",
+                        "16x16": "https://masterbot.atlassian.net/secure/projectavatar?size=xsmall&avatarId=10324",
+                        "32x32": "https://masterbot.atlassian.net/secure/projectavatar?size=medium&avatarId=10324"
+                    }
+                },
+                "fixVersions": [],
+                "aggregatetimespent": null,
+                "resolution": null,
+                "resolutiondate": null,
+                "workratio": -1,
+                "watches": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issue/MAS-30/watchers",
+                    "watchCount": 1,
+                    "isWatching": true
+                },
+                "lastViewed": null,
+                "created": "2017-11-03T12:16:08.518-0400",
+                "customfield_10062": null,
+                "customfield_10063": null,
+                "customfield_10064": null,
+                "customfield_10065": null,
+                "customfield_10066": null,
+                "priority": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/priority/3",
+                    "iconUrl": "https://masterbot.atlassian.net/images/icons/priorities/medium.svg",
+                    "name": "Medium",
+                    "id": "3"
+                },
+                "customfield_10067": null,
+                "customfield_10068": null,
+                "labels": [],
+                "timeestimate": null,
+                "aggregatetimeoriginalestimate": null,
+                "versions": [],
+                "issuelinks": [],
+                "assignee": null,
+                "updated": "2017-11-03T12:16:08.518-0400",
+                "status": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/status/10000",
+                    "description": "",
+                    "iconUrl": "https://masterbot.atlassian.net/",
+                    "name": "To Do",
+                    "id": "10000",
+                    "statusCategory": {
+                        "self": "https://masterbot.atlassian.net/rest/api/2/statuscategory/2",
+                        "id": 2,
+                        "key": "new",
+                        "colorName": "blue-gray",
+                        "name": "To Do"
+                    }
+                },
+                "components": [],
+                "timeoriginalestimate": null,
+                "description": "Creating of an issue using project keys and issue type names using the REST API",
+                "customfield_10010": [],
+                "customfield_10011": "1|i00013:",
+                "customfield_10012": null,
+                "customfield_10013": null,
+                "customfield_10008": null,
+                "aggregatetimeestimate": null,
+                "customfield_10009": null,
+                "summary": "REST ye merry gentlemen 22222222222222.",
+                "creator": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=admin",
+                    "name": "admin",
+                    "key": "admin",
+                    "accountId": "557058:f886df53-eb81-4db8-9024-8ca80372e1bb",
+                    "emailAddress": "aarora6@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Ankit Arora",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "subtasks": [],
+                "reporter": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=admin",
+                    "name": "admin",
+                    "key": "admin",
+                    "accountId": "557058:f886df53-eb81-4db8-9024-8ca80372e1bb",
+                    "emailAddress": "aarora6@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Ankit Arora",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "aggregateprogress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "customfield_10000": "{}",
+                "customfield_10001": null,
+                "customfield_10002": null,
+                "customfield_10003": null,
+                "customfield_10004": null,
+                "environment": null,
+                "duedate": null,
+                "progress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "votes": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issue/MAS-30/votes",
+                    "votes": 0,
+                    "hasVoted": false
+                }
+            }
+        },
+        {
+            "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+            "id": "10028",
+            "self": "https://masterbot.atlassian.net/rest/api/2/issue/10028",
+            "key": "MAS-29",
+            "fields": {
+                "issuetype": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issuetype/10002",
+                    "id": "10002",
+                    "description": "A task that needs to be done.",
+                    "iconUrl": "https://masterbot.atlassian.net/secure/viewavatar?size=xsmall&avatarId=10318&avatarType=issuetype",
+                    "name": "Task",
+                    "subtask": false,
+                    "avatarId": 10318
+                },
+                "timespent": null,
+                "project": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/project/10000",
+                    "id": "10000",
+                    "key": "MAS",
+                    "name": "MasterBot",
+                    "avatarUrls": {
+                        "48x48": "https://masterbot.atlassian.net/secure/projectavatar?avatarId=10324",
+                        "24x24": "https://masterbot.atlassian.net/secure/projectavatar?size=small&avatarId=10324",
+                        "16x16": "https://masterbot.atlassian.net/secure/projectavatar?size=xsmall&avatarId=10324",
+                        "32x32": "https://masterbot.atlassian.net/secure/projectavatar?size=medium&avatarId=10324"
+                    }
+                },
+                "fixVersions": [],
+                "aggregatetimespent": null,
+                "resolution": null,
+                "resolutiondate": null,
+                "workratio": -1,
+                "watches": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issue/MAS-29/watchers",
+                    "watchCount": 1,
+                    "isWatching": true
+                },
+                "lastViewed": "2017-11-05T22:42:32.363-0500",
+                "created": "2017-11-03T12:09:27.397-0400",
+                "customfield_10062": null,
+                "customfield_10063": null,
+                "customfield_10064": null,
+                "customfield_10065": null,
+                "customfield_10066": null,
+                "customfield_10067": null,
+                "priority": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/priority/3",
+                    "iconUrl": "https://masterbot.atlassian.net/images/icons/priorities/medium.svg",
+                    "name": "Medium",
+                    "id": "3"
+                },
+                "customfield_10068": null,
+                "labels": [],
+                "aggregatetimeoriginalestimate": null,
+                "timeestimate": null,
+                "versions": [],
+                "issuelinks": [],
+                "assignee": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=apshukla",
+                    "name": "apshukla",
+                    "key": "apshukla",
+                    "accountId": "59f939da87b3f8190d7dbe69",
+                    "emailAddress": "apshukla@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/c9738ad96f69b5500d2e09427fd6f99b?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2Fc9738ad96f69b5500d2e09427fd6f99b%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/c9738ad96f69b5500d2e09427fd6f99b?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2Fc9738ad96f69b5500d2e09427fd6f99b%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/c9738ad96f69b5500d2e09427fd6f99b?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2Fc9738ad96f69b5500d2e09427fd6f99b%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/c9738ad96f69b5500d2e09427fd6f99b?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2Fc9738ad96f69b5500d2e09427fd6f99b%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Akanksha",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "updated": "2017-11-03T14:03:11.183-0400",
+                "status": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/status/10000",
+                    "description": "",
+                    "iconUrl": "https://masterbot.atlassian.net/",
+                    "name": "To Do",
+                    "id": "10000",
+                    "statusCategory": {
+                        "self": "https://masterbot.atlassian.net/rest/api/2/statuscategory/2",
+                        "id": 2,
+                        "key": "new",
+                        "colorName": "blue-gray",
+                        "name": "To Do"
+                    }
+                },
+                "components": [],
+                "timeoriginalestimate": null,
+                "description": "Test description",
+                "customfield_10010": [],
+                "customfield_10011": "1|i0000v:",
+                "customfield_10012": null,
+                "customfield_10013": null,
+                "customfield_10008": null,
+                "aggregatetimeestimate": null,
+                "customfield_10009": null,
+                "summary": "REST ye merry gentlemen.",
+                "creator": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=admin",
+                    "name": "admin",
+                    "key": "admin",
+                    "accountId": "557058:f886df53-eb81-4db8-9024-8ca80372e1bb",
+                    "emailAddress": "aarora6@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Ankit Arora",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "subtasks": [],
+                "reporter": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=admin",
+                    "name": "admin",
+                    "key": "admin",
+                    "accountId": "557058:f886df53-eb81-4db8-9024-8ca80372e1bb",
+                    "emailAddress": "aarora6@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Ankit Arora",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "customfield_10000": "{}",
+                "aggregateprogress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "customfield_10001": null,
+                "customfield_10002": null,
+                "customfield_10003": null,
+                "customfield_10004": null,
+                "environment": null,
+                "duedate": null,
+                "progress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "votes": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issue/MAS-29/votes",
+                    "votes": 0,
+                    "hasVoted": false
+                }
+            }
+        },
+        {
+            "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+            "id": "10027",
+            "self": "https://masterbot.atlassian.net/rest/api/2/issue/10027",
+            "key": "MAS-28",
+            "fields": {
+                "issuetype": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issuetype/10001",
+                    "id": "10001",
+                    "description": "A user story. Created by Jira Software - do not edit or delete.",
+                    "iconUrl": "https://masterbot.atlassian.net/images/icons/issuetypes/story.svg",
+                    "name": "Story",
+                    "subtask": false
+                },
+                "timespent": null,
+                "project": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/project/10000",
+                    "id": "10000",
+                    "key": "MAS",
+                    "name": "MasterBot",
+                    "avatarUrls": {
+                        "48x48": "https://masterbot.atlassian.net/secure/projectavatar?avatarId=10324",
+                        "24x24": "https://masterbot.atlassian.net/secure/projectavatar?size=small&avatarId=10324",
+                        "16x16": "https://masterbot.atlassian.net/secure/projectavatar?size=xsmall&avatarId=10324",
+                        "32x32": "https://masterbot.atlassian.net/secure/projectavatar?size=medium&avatarId=10324"
+                    }
+                },
+                "fixVersions": [],
+                "aggregatetimespent": null,
+                "resolution": null,
+                "resolutiondate": null,
+                "workratio": -1,
+                "lastViewed": "2017-11-03T15:54:21.912-0400",
+                "watches": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issue/MAS-28/watchers",
+                    "watchCount": 2,
+                    "isWatching": true
+                },
+                "created": "2017-11-02T16:20:21.839-0400",
+                "customfield_10062": null,
+                "customfield_10063": null,
+                "customfield_10064": null,
+                "customfield_10065": null,
+                "customfield_10066": null,
+                "customfield_10067": null,
+                "priority": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/priority/3",
+                    "iconUrl": "https://masterbot.atlassian.net/images/icons/priorities/medium.svg",
+                    "name": "Medium",
+                    "id": "3"
+                },
+                "customfield_10068": null,
+                "labels": [
+                    "Integration",
+                    "JobProfler"
+                ],
+                "timeestimate": null,
+                "aggregatetimeoriginalestimate": null,
+                "versions": [],
+                "issuelinks": [],
+                "assignee": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=apshukla",
+                    "name": "apshukla",
+                    "key": "apshukla",
+                    "accountId": "59f939da87b3f8190d7dbe69",
+                    "emailAddress": "apshukla@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/c9738ad96f69b5500d2e09427fd6f99b?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2Fc9738ad96f69b5500d2e09427fd6f99b%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/c9738ad96f69b5500d2e09427fd6f99b?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2Fc9738ad96f69b5500d2e09427fd6f99b%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/c9738ad96f69b5500d2e09427fd6f99b?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2Fc9738ad96f69b5500d2e09427fd6f99b%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/c9738ad96f69b5500d2e09427fd6f99b?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2Fc9738ad96f69b5500d2e09427fd6f99b%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Akanksha",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "updated": "2017-11-03T12:32:40.141-0400",
+                "status": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/status/10000",
+                    "description": "",
+                    "iconUrl": "https://masterbot.atlassian.net/",
+                    "name": "To Do",
+                    "id": "10000",
+                    "statusCategory": {
+                        "self": "https://masterbot.atlassian.net/rest/api/2/statuscategory/2",
+                        "id": 2,
+                        "key": "new",
+                        "colorName": "blue-gray",
+                        "name": "To Do"
+                    }
+                },
+                "components": [],
+                "timeoriginalestimate": null,
+                "description": "Check if the description could be used",
+                "customfield_10010": [],
+                "customfield_10011": "1|i0000n:",
+                "customfield_10012": "2017-11-03T11:23:36.667-0400",
+                "customfield_10013": null,
+                "customfield_10059": null,
+                "customfield_10008": null,
+                "customfield_10009": null,
+                "aggregatetimeestimate": null,
+                "summary": "Lioaosdasd",
+                "creator": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=admin",
+                    "name": "admin",
+                    "key": "admin",
+                    "accountId": "557058:f886df53-eb81-4db8-9024-8ca80372e1bb",
+                    "emailAddress": "aarora6@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Ankit Arora",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "subtasks": [],
+                "reporter": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=admin",
+                    "name": "admin",
+                    "key": "admin",
+                    "accountId": "557058:f886df53-eb81-4db8-9024-8ca80372e1bb",
+                    "emailAddress": "aarora6@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Ankit Arora",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "customfield_10000": "{}",
+                "aggregateprogress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "customfield_10001": null,
+                "customfield_10002": null,
+                "customfield_10003": null,
+                "customfield_10004": null,
+                "environment": null,
+                "duedate": null,
+                "progress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "votes": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issue/MAS-28/votes",
+                    "votes": 0,
+                    "hasVoted": false
+                }
+            }
+        },
+        {
+            "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+            "id": "10026",
+            "self": "https://masterbot.atlassian.net/rest/api/2/issue/10026",
+            "key": "MAS-27",
+            "fields": {
+                "issuetype": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issuetype/10001",
+                    "id": "10001",
+                    "description": "A user story. Created by Jira Software - do not edit or delete.",
+                    "iconUrl": "https://masterbot.atlassian.net/images/icons/issuetypes/story.svg",
+                    "name": "Story",
+                    "subtask": false
+                },
+                "timespent": null,
+                "project": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/project/10000",
+                    "id": "10000",
+                    "key": "MAS",
+                    "name": "MasterBot",
+                    "avatarUrls": {
+                        "48x48": "https://masterbot.atlassian.net/secure/projectavatar?avatarId=10324",
+                        "24x24": "https://masterbot.atlassian.net/secure/projectavatar?size=small&avatarId=10324",
+                        "16x16": "https://masterbot.atlassian.net/secure/projectavatar?size=xsmall&avatarId=10324",
+                        "32x32": "https://masterbot.atlassian.net/secure/projectavatar?size=medium&avatarId=10324"
+                    }
+                },
+                "fixVersions": [],
+                "aggregatetimespent": null,
+                "resolution": null,
+                "resolutiondate": null,
+                "workratio": -1,
+                "lastViewed": "2017-11-02T16:17:04.404-0400",
+                "watches": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issue/MAS-27/watchers",
+                    "watchCount": 1,
+                    "isWatching": true
+                },
+                "created": "2017-11-02T16:17:04.066-0400",
+                "customfield_10062": null,
+                "customfield_10063": null,
+                "customfield_10064": null,
+                "customfield_10065": null,
+                "customfield_10066": null,
+                "priority": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/priority/3",
+                    "iconUrl": "https://masterbot.atlassian.net/images/icons/priorities/medium.svg",
+                    "name": "Medium",
+                    "id": "3"
+                },
+                "customfield_10067": null,
+                "customfield_10068": null,
+                "labels": [],
+                "aggregatetimeoriginalestimate": null,
+                "timeestimate": null,
+                "versions": [],
+                "issuelinks": [],
+                "assignee": null,
+                "updated": "2017-11-02T16:17:04.066-0400",
+                "status": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/status/10000",
+                    "description": "",
+                    "iconUrl": "https://masterbot.atlassian.net/",
+                    "name": "To Do",
+                    "id": "10000",
+                    "statusCategory": {
+                        "self": "https://masterbot.atlassian.net/rest/api/2/statuscategory/2",
+                        "id": 2,
+                        "key": "new",
+                        "colorName": "blue-gray",
+                        "name": "To Do"
+                    }
+                },
+                "components": [],
+                "timeoriginalestimate": null,
+                "description": null,
+                "customfield_10010": [],
+                "customfield_10011": "1|i0000f:",
+                "customfield_10012": null,
+                "customfield_10013": null,
+                "customfield_10059": null,
+                "customfield_10008": null,
+                "customfield_10009": null,
+                "aggregatetimeestimate": null,
+                "summary": "Sample for notification",
+                "creator": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=admin",
+                    "name": "admin",
+                    "key": "admin",
+                    "accountId": "557058:f886df53-eb81-4db8-9024-8ca80372e1bb",
+                    "emailAddress": "aarora6@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Ankit Arora",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "subtasks": [],
+                "reporter": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=admin",
+                    "name": "admin",
+                    "key": "admin",
+                    "accountId": "557058:f886df53-eb81-4db8-9024-8ca80372e1bb",
+                    "emailAddress": "aarora6@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Ankit Arora",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "customfield_10000": "{}",
+                "aggregateprogress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "customfield_10001": null,
+                "customfield_10002": null,
+                "customfield_10003": null,
+                "customfield_10004": null,
+                "environment": null,
+                "duedate": null,
+                "progress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "votes": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issue/MAS-27/votes",
+                    "votes": 0,
+                    "hasVoted": false
+                }
+            }
+        },
+        {
+            "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+            "id": "10025",
+            "self": "https://masterbot.atlassian.net/rest/api/2/issue/10025",
+            "key": "MAS-26",
+            "fields": {
+                "issuetype": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issuetype/10002",
+                    "id": "10002",
+                    "description": "A task that needs to be done.",
+                    "iconUrl": "https://masterbot.atlassian.net/secure/viewavatar?size=xsmall&avatarId=10318&avatarType=issuetype",
+                    "name": "Task",
+                    "subtask": false,
+                    "avatarId": 10318
+                },
+                "timespent": null,
+                "project": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/project/10000",
+                    "id": "10000",
+                    "key": "MAS",
+                    "name": "MasterBot",
+                    "avatarUrls": {
+                        "48x48": "https://masterbot.atlassian.net/secure/projectavatar?avatarId=10324",
+                        "24x24": "https://masterbot.atlassian.net/secure/projectavatar?size=small&avatarId=10324",
+                        "16x16": "https://masterbot.atlassian.net/secure/projectavatar?size=xsmall&avatarId=10324",
+                        "32x32": "https://masterbot.atlassian.net/secure/projectavatar?size=medium&avatarId=10324"
+                    }
+                },
+                "fixVersions": [],
+                "aggregatetimespent": null,
+                "resolution": null,
+                "resolutiondate": null,
+                "workratio": -1,
+                "lastViewed": "2017-11-02T16:20:16.255-0400",
+                "watches": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issue/MAS-26/watchers",
+                    "watchCount": 1,
+                    "isWatching": true
+                },
+                "created": "2017-10-31T23:01:20.798-0400",
+                "customfield_10062": null,
+                "customfield_10063": null,
+                "customfield_10064": null,
+                "customfield_10065": null,
+                "customfield_10066": null,
+                "priority": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/priority/3",
+                    "iconUrl": "https://masterbot.atlassian.net/images/icons/priorities/medium.svg",
+                    "name": "Medium",
+                    "id": "3"
+                },
+                "customfield_10067": null,
+                "customfield_10068": null,
+                "labels": [],
+                "timeestimate": null,
+                "aggregatetimeoriginalestimate": null,
+                "versions": [],
+                "issuelinks": [],
+                "assignee": null,
+                "updated": "2017-11-02T16:18:10.950-0400",
+                "status": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/status/10000",
+                    "description": "",
+                    "iconUrl": "https://masterbot.atlassian.net/",
+                    "name": "To Do",
+                    "id": "10000",
+                    "statusCategory": {
+                        "self": "https://masterbot.atlassian.net/rest/api/2/statuscategory/2",
+                        "id": 2,
+                        "key": "new",
+                        "colorName": "blue-gray",
+                        "name": "To Do"
+                    }
+                },
+                "components": [],
+                "timeoriginalestimate": null,
+                "description": "Creating of an issue using project keys and issue type names using the REST API",
+                "customfield_10010": [],
+                "customfield_10011": "1|i00007:",
+                "customfield_10012": null,
+                "customfield_10013": null,
+                "customfield_10008": null,
+                "aggregatetimeestimate": null,
+                "customfield_10009": null,
+                "summary": "REST ye merry gentlemen.",
+                "creator": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=admin",
+                    "name": "admin",
+                    "key": "admin",
+                    "accountId": "557058:f886df53-eb81-4db8-9024-8ca80372e1bb",
+                    "emailAddress": "aarora6@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Ankit Arora",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "subtasks": [],
+                "reporter": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=admin",
+                    "name": "admin",
+                    "key": "admin",
+                    "accountId": "557058:f886df53-eb81-4db8-9024-8ca80372e1bb",
+                    "emailAddress": "aarora6@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Ankit Arora",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "customfield_10000": "{}",
+                "aggregateprogress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "customfield_10001": null,
+                "customfield_10002": null,
+                "customfield_10003": null,
+                "customfield_10004": null,
+                "environment": null,
+                "duedate": null,
+                "progress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "votes": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issue/MAS-26/votes",
+                    "votes": 0,
+                    "hasVoted": false
+                }
+            }
+        },
+        {
+            "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+            "id": "10024",
+            "self": "https://masterbot.atlassian.net/rest/api/2/issue/10024",
+            "key": "MAS-25",
+            "fields": {
+                "issuetype": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issuetype/10001",
+                    "id": "10001",
+                    "description": "A user story. Created by Jira Software - do not edit or delete.",
+                    "iconUrl": "https://masterbot.atlassian.net/images/icons/issuetypes/story.svg",
+                    "name": "Story",
+                    "subtask": false
+                },
+                "timespent": null,
+                "project": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/project/10000",
+                    "id": "10000",
+                    "key": "MAS",
+                    "name": "MasterBot",
+                    "avatarUrls": {
+                        "48x48": "https://masterbot.atlassian.net/secure/projectavatar?avatarId=10324",
+                        "24x24": "https://masterbot.atlassian.net/secure/projectavatar?size=small&avatarId=10324",
+                        "16x16": "https://masterbot.atlassian.net/secure/projectavatar?size=xsmall&avatarId=10324",
+                        "32x32": "https://masterbot.atlassian.net/secure/projectavatar?size=medium&avatarId=10324"
+                    }
+                },
+                "fixVersions": [],
+                "aggregatetimespent": null,
+                "resolution": null,
+                "resolutiondate": null,
+                "workratio": -1,
+                "lastViewed": "2017-10-31T22:50:41.198-0400",
+                "watches": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issue/MAS-25/watchers",
+                    "watchCount": 1,
+                    "isWatching": true
+                },
+                "created": "2017-10-31T22:50:41.039-0400",
+                "customfield_10062": null,
+                "customfield_10063": null,
+                "customfield_10064": null,
+                "customfield_10065": null,
+                "customfield_10066": null,
+                "priority": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/priority/3",
+                    "iconUrl": "https://masterbot.atlassian.net/images/icons/priorities/medium.svg",
+                    "name": "Medium",
+                    "id": "3"
+                },
+                "customfield_10067": null,
+                "customfield_10068": null,
+                "labels": [],
+                "aggregatetimeoriginalestimate": null,
+                "timeestimate": null,
+                "versions": [],
+                "issuelinks": [],
+                "assignee": null,
+                "updated": "2017-10-31T22:50:41.719-0400",
+                "status": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/status/10000",
+                    "description": "",
+                    "iconUrl": "https://masterbot.atlassian.net/",
+                    "name": "To Do",
+                    "id": "10000",
+                    "statusCategory": {
+                        "self": "https://masterbot.atlassian.net/rest/api/2/statuscategory/2",
+                        "id": 2,
+                        "key": "new",
+                        "colorName": "blue-gray",
+                        "name": "To Do"
+                    }
+                },
+                "components": [],
+                "timeoriginalestimate": null,
+                "description": null,
+                "customfield_10010": [],
+                "customfield_10011": "1|hzzzuz:",
+                "customfield_10012": null,
+                "customfield_10013": null,
+                "customfield_10059": null,
+                "customfield_10008": null,
+                "aggregatetimeestimate": null,
+                "customfield_10009": null,
+                "summary": "Story",
+                "creator": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=admin",
+                    "name": "admin",
+                    "key": "admin",
+                    "accountId": "557058:f886df53-eb81-4db8-9024-8ca80372e1bb",
+                    "emailAddress": "aarora6@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Ankit Arora",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "subtasks": [],
+                "reporter": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=admin",
+                    "name": "admin",
+                    "key": "admin",
+                    "accountId": "557058:f886df53-eb81-4db8-9024-8ca80372e1bb",
+                    "emailAddress": "aarora6@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Ankit Arora",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "customfield_10000": "{}",
+                "aggregateprogress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "customfield_10001": null,
+                "customfield_10002": null,
+                "customfield_10003": null,
+                "customfield_10004": null,
+                "environment": null,
+                "duedate": null,
+                "progress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "votes": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issue/MAS-25/votes",
+                    "votes": 0,
+                    "hasVoted": false
+                }
+            }
+        },
+        {
+            "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+            "id": "10023",
+            "self": "https://masterbot.atlassian.net/rest/api/2/issue/10023",
+            "key": "MAS-24",
+            "fields": {
+                "issuetype": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issuetype/10001",
+                    "id": "10001",
+                    "description": "A user story. Created by Jira Software - do not edit or delete.",
+                    "iconUrl": "https://masterbot.atlassian.net/images/icons/issuetypes/story.svg",
+                    "name": "Story",
+                    "subtask": false
+                },
+                "timespent": null,
+                "project": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/project/10000",
+                    "id": "10000",
+                    "key": "MAS",
+                    "name": "MasterBot",
+                    "avatarUrls": {
+                        "48x48": "https://masterbot.atlassian.net/secure/projectavatar?avatarId=10324",
+                        "24x24": "https://masterbot.atlassian.net/secure/projectavatar?size=small&avatarId=10324",
+                        "16x16": "https://masterbot.atlassian.net/secure/projectavatar?size=xsmall&avatarId=10324",
+                        "32x32": "https://masterbot.atlassian.net/secure/projectavatar?size=medium&avatarId=10324"
+                    }
+                },
+                "fixVersions": [],
+                "aggregatetimespent": null,
+                "resolution": null,
+                "resolutiondate": null,
+                "workratio": -1,
+                "watches": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issue/MAS-24/watchers",
+                    "watchCount": 1,
+                    "isWatching": true
+                },
+                "lastViewed": "2017-10-31T23:01:47.729-0400",
+                "created": "2017-10-31T22:29:44.623-0400",
+                "customfield_10062": null,
+                "customfield_10063": null,
+                "customfield_10064": null,
+                "customfield_10065": null,
+                "customfield_10066": null,
+                "customfield_10067": null,
+                "priority": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/priority/3",
+                    "iconUrl": "https://masterbot.atlassian.net/images/icons/priorities/medium.svg",
+                    "name": "Medium",
+                    "id": "3"
+                },
+                "customfield_10068": null,
+                "labels": [],
+                "aggregatetimeoriginalestimate": null,
+                "timeestimate": null,
+                "versions": [],
+                "issuelinks": [],
+                "assignee": null,
+                "updated": "2017-10-31T22:29:44.623-0400",
+                "status": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/status/10000",
+                    "description": "",
+                    "iconUrl": "https://masterbot.atlassian.net/",
+                    "name": "To Do",
+                    "id": "10000",
+                    "statusCategory": {
+                        "self": "https://masterbot.atlassian.net/rest/api/2/statuscategory/2",
+                        "id": 2,
+                        "key": "new",
+                        "colorName": "blue-gray",
+                        "name": "To Do"
+                    }
+                },
+                "components": [],
+                "timeoriginalestimate": null,
+                "description": null,
+                "customfield_10010": [],
+                "customfield_10011": "1|hzzzuv:",
+                "customfield_10012": null,
+                "customfield_10013": null,
+                "customfield_10059": null,
+                "customfield_10008": null,
+                "customfield_10009": null,
+                "aggregatetimeestimate": null,
+                "summary": "New",
+                "creator": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=admin",
+                    "name": "admin",
+                    "key": "admin",
+                    "accountId": "557058:f886df53-eb81-4db8-9024-8ca80372e1bb",
+                    "emailAddress": "aarora6@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Ankit Arora",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "subtasks": [],
+                "reporter": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=admin",
+                    "name": "admin",
+                    "key": "admin",
+                    "accountId": "557058:f886df53-eb81-4db8-9024-8ca80372e1bb",
+                    "emailAddress": "aarora6@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Ankit Arora",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "aggregateprogress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "customfield_10000": "{}",
+                "customfield_10001": null,
+                "customfield_10002": null,
+                "customfield_10003": null,
+                "customfield_10004": null,
+                "environment": null,
+                "duedate": null,
+                "progress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "votes": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issue/MAS-24/votes",
+                    "votes": 0,
+                    "hasVoted": false
+                }
+            }
+        },
+        {
+            "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+            "id": "10022",
+            "self": "https://masterbot.atlassian.net/rest/api/2/issue/10022",
+            "key": "MAS-23",
+            "fields": {
+                "issuetype": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issuetype/10001",
+                    "id": "10001",
+                    "description": "A user story. Created by Jira Software - do not edit or delete.",
+                    "iconUrl": "https://masterbot.atlassian.net/images/icons/issuetypes/story.svg",
+                    "name": "Story",
+                    "subtask": false
+                },
+                "timespent": null,
+                "project": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/project/10000",
+                    "id": "10000",
+                    "key": "MAS",
+                    "name": "MasterBot",
+                    "avatarUrls": {
+                        "48x48": "https://masterbot.atlassian.net/secure/projectavatar?avatarId=10324",
+                        "24x24": "https://masterbot.atlassian.net/secure/projectavatar?size=small&avatarId=10324",
+                        "16x16": "https://masterbot.atlassian.net/secure/projectavatar?size=xsmall&avatarId=10324",
+                        "32x32": "https://masterbot.atlassian.net/secure/projectavatar?size=medium&avatarId=10324"
+                    }
+                },
+                "fixVersions": [
+                    {
+                        "self": "https://masterbot.atlassian.net/rest/api/2/version/10000",
+                        "id": "10000",
+                        "name": "Version 1.0",
+                        "archived": false,
+                        "released": true,
+                        "releaseDate": "2017-10-24"
+                    }
+                ],
+                "aggregatetimespent": null,
+                "resolution": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/resolution/10000",
+                    "id": "10000",
+                    "description": "Work has been completed on this issue.",
+                    "name": "Done"
+                },
+                "resolutiondate": "2017-10-22T20:42:54.808-0400",
+                "workratio": -1,
+                "lastViewed": null,
+                "watches": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issue/MAS-23/watchers",
+                    "watchCount": 0,
+                    "isWatching": false
+                },
+                "created": "2017-10-10T12:07:54.808-0400",
+                "customfield_10062": null,
+                "customfield_10063": null,
+                "customfield_10064": null,
+                "customfield_10065": null,
+                "customfield_10066": null,
+                "customfield_10067": null,
+                "priority": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/priority/3",
+                    "iconUrl": "https://masterbot.atlassian.net/images/icons/priorities/medium.svg",
+                    "name": "Medium",
+                    "id": "3"
+                },
+                "customfield_10068": null,
+                "labels": [],
+                "timeestimate": null,
+                "aggregatetimeoriginalestimate": null,
+                "versions": [],
+                "issuelinks": [],
+                "assignee": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=admin",
+                    "name": "admin",
+                    "key": "admin",
+                    "accountId": "557058:f886df53-eb81-4db8-9024-8ca80372e1bb",
+                    "emailAddress": "aarora6@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Ankit Arora",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "updated": "2017-10-22T20:42:54.808-0400",
+                "status": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/status/10001",
+                    "description": "",
+                    "iconUrl": "https://masterbot.atlassian.net/",
+                    "name": "Done",
+                    "id": "10001",
+                    "statusCategory": {
+                        "self": "https://masterbot.atlassian.net/rest/api/2/statuscategory/3",
+                        "id": 3,
+                        "key": "done",
+                        "colorName": "green",
+                        "name": "Done"
+                    }
+                },
+                "components": [],
+                "timeoriginalestimate": null,
+                "description": null,
+                "customfield_10010": [
+                    "com.atlassian.greenhopper.service.sprint.Sprint@1bf1d379[id=2,rapidViewId=1,state=CLOSED,name=Sample Sprint 1,goal=<null>,startDate=2017-10-10T16:07:57.034Z,endDate=2017-10-24T16:07:57.034Z,completeDate=2017-10-24T14:47:57.034Z,sequence=2]"
+                ],
+                "customfield_10011": "1|hzzzzz:",
+                "customfield_10012": null,
+                "customfield_10013": "10000_*:*_1_*:*_1067700000_*|*_10001_*:*_1_*:*_0",
+                "customfield_10059": 2,
+                "customfield_10008": null,
+                "customfield_10009": null,
+                "aggregatetimeestimate": null,
+                "summary": "As a user, I'd like a historical story to show in reports",
+                "creator": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=admin",
+                    "name": "admin",
+                    "key": "admin",
+                    "accountId": "557058:f886df53-eb81-4db8-9024-8ca80372e1bb",
+                    "emailAddress": "aarora6@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Ankit Arora",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "subtasks": [],
+                "reporter": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=admin",
+                    "name": "admin",
+                    "key": "admin",
+                    "accountId": "557058:f886df53-eb81-4db8-9024-8ca80372e1bb",
+                    "emailAddress": "aarora6@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Ankit Arora",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "customfield_10000": "{}",
+                "aggregateprogress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "customfield_10001": null,
+                "customfield_10002": null,
+                "customfield_10003": null,
+                "customfield_10004": null,
+                "environment": null,
+                "duedate": null,
+                "progress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "votes": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issue/MAS-23/votes",
+                    "votes": 0,
+                    "hasVoted": false
+                }
+            }
+        },
+        {
+            "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+            "id": "10021",
+            "self": "https://masterbot.atlassian.net/rest/api/2/issue/10021",
+            "key": "MAS-22",
+            "fields": {
+                "issuetype": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issuetype/10001",
+                    "id": "10001",
+                    "description": "A user story. Created by Jira Software - do not edit or delete.",
+                    "iconUrl": "https://masterbot.atlassian.net/images/icons/issuetypes/story.svg",
+                    "name": "Story",
+                    "subtask": false
+                },
+                "timespent": null,
+                "project": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/project/10000",
+                    "id": "10000",
+                    "key": "MAS",
+                    "name": "MasterBot",
+                    "avatarUrls": {
+                        "48x48": "https://masterbot.atlassian.net/secure/projectavatar?avatarId=10324",
+                        "24x24": "https://masterbot.atlassian.net/secure/projectavatar?size=small&avatarId=10324",
+                        "16x16": "https://masterbot.atlassian.net/secure/projectavatar?size=xsmall&avatarId=10324",
+                        "32x32": "https://masterbot.atlassian.net/secure/projectavatar?size=medium&avatarId=10324"
+                    }
+                },
+                "fixVersions": [
+                    {
+                        "self": "https://masterbot.atlassian.net/rest/api/2/version/10000",
+                        "id": "10000",
+                        "name": "Version 1.0",
+                        "archived": false,
+                        "released": true,
+                        "releaseDate": "2017-10-24"
+                    }
+                ],
+                "aggregatetimespent": null,
+                "resolution": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/resolution/10000",
+                    "id": "10000",
+                    "description": "Work has been completed on this issue.",
+                    "name": "Done"
+                },
+                "resolutiondate": "2017-10-20T19:04:54.808-0400",
+                "workratio": -1,
+                "watches": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issue/MAS-22/watchers",
+                    "watchCount": 0,
+                    "isWatching": false
+                },
+                "lastViewed": null,
+                "created": "2017-10-10T12:07:54.808-0400",
+                "customfield_10062": null,
+                "customfield_10063": null,
+                "customfield_10064": null,
+                "customfield_10065": null,
+                "customfield_10066": null,
+                "customfield_10067": null,
+                "priority": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/priority/3",
+                    "iconUrl": "https://masterbot.atlassian.net/images/icons/priorities/medium.svg",
+                    "name": "Medium",
+                    "id": "3"
+                },
+                "customfield_10068": null,
+                "labels": [],
+                "timeestimate": null,
+                "aggregatetimeoriginalestimate": null,
+                "versions": [],
+                "issuelinks": [],
+                "assignee": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=admin",
+                    "name": "admin",
+                    "key": "admin",
+                    "accountId": "557058:f886df53-eb81-4db8-9024-8ca80372e1bb",
+                    "emailAddress": "aarora6@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Ankit Arora",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "updated": "2017-10-20T19:04:54.808-0400",
+                "status": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/status/10001",
+                    "description": "",
+                    "iconUrl": "https://masterbot.atlassian.net/",
+                    "name": "Done",
+                    "id": "10001",
+                    "statusCategory": {
+                        "self": "https://masterbot.atlassian.net/rest/api/2/statuscategory/3",
+                        "id": 3,
+                        "key": "done",
+                        "colorName": "green",
+                        "name": "Done"
+                    }
+                },
+                "components": [],
+                "timeoriginalestimate": null,
+                "description": null,
+                "customfield_10010": [
+                    "com.atlassian.greenhopper.service.sprint.Sprint@1bf1d379[id=2,rapidViewId=1,state=CLOSED,name=Sample Sprint 1,goal=<null>,startDate=2017-10-10T16:07:57.034Z,endDate=2017-10-24T16:07:57.034Z,completeDate=2017-10-24T14:47:57.034Z,sequence=2]"
+                ],
+                "customfield_10011": "1|hzzzzr:",
+                "customfield_10012": null,
+                "customfield_10013": "10000_*:*_1_*:*_889020000_*|*_10001_*:*_1_*:*_0",
+                "customfield_10059": 2,
+                "customfield_10008": null,
+                "customfield_10009": null,
+                "aggregatetimeestimate": null,
+                "summary": "As a user, I'd like a historical story to show in reports",
+                "creator": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=admin",
+                    "name": "admin",
+                    "key": "admin",
+                    "accountId": "557058:f886df53-eb81-4db8-9024-8ca80372e1bb",
+                    "emailAddress": "aarora6@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Ankit Arora",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "subtasks": [],
+                "reporter": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=admin",
+                    "name": "admin",
+                    "key": "admin",
+                    "accountId": "557058:f886df53-eb81-4db8-9024-8ca80372e1bb",
+                    "emailAddress": "aarora6@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Ankit Arora",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "aggregateprogress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "customfield_10000": "{}",
+                "customfield_10001": null,
+                "customfield_10002": null,
+                "customfield_10003": null,
+                "customfield_10004": null,
+                "environment": null,
+                "duedate": null,
+                "progress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "votes": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issue/MAS-22/votes",
+                    "votes": 0,
+                    "hasVoted": false
+                }
+            }
+        },
+        {
+            "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+            "id": "10020",
+            "self": "https://masterbot.atlassian.net/rest/api/2/issue/10020",
+            "key": "MAS-21",
+            "fields": {
+                "issuetype": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issuetype/10001",
+                    "id": "10001",
+                    "description": "A user story. Created by Jira Software - do not edit or delete.",
+                    "iconUrl": "https://masterbot.atlassian.net/images/icons/issuetypes/story.svg",
+                    "name": "Story",
+                    "subtask": false
+                },
+                "timespent": null,
+                "project": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/project/10000",
+                    "id": "10000",
+                    "key": "MAS",
+                    "name": "MasterBot",
+                    "avatarUrls": {
+                        "48x48": "https://masterbot.atlassian.net/secure/projectavatar?avatarId=10324",
+                        "24x24": "https://masterbot.atlassian.net/secure/projectavatar?size=small&avatarId=10324",
+                        "16x16": "https://masterbot.atlassian.net/secure/projectavatar?size=xsmall&avatarId=10324",
+                        "32x32": "https://masterbot.atlassian.net/secure/projectavatar?size=medium&avatarId=10324"
+                    }
+                },
+                "fixVersions": [
+                    {
+                        "self": "https://masterbot.atlassian.net/rest/api/2/version/10000",
+                        "id": "10000",
+                        "name": "Version 1.0",
+                        "archived": false,
+                        "released": true,
+                        "releaseDate": "2017-10-24"
+                    }
+                ],
+                "aggregatetimespent": null,
+                "resolution": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/resolution/10000",
+                    "id": "10000",
+                    "description": "Work has been completed on this issue.",
+                    "name": "Done"
+                },
+                "resolutiondate": "2017-10-18T03:44:54.808-0400",
+                "workratio": -1,
+                "watches": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issue/MAS-21/watchers",
+                    "watchCount": 0,
+                    "isWatching": false
+                },
+                "lastViewed": null,
+                "created": "2017-10-10T12:07:54.808-0400",
+                "customfield_10062": null,
+                "customfield_10063": null,
+                "customfield_10064": null,
+                "customfield_10065": null,
+                "customfield_10066": null,
+                "priority": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/priority/3",
+                    "iconUrl": "https://masterbot.atlassian.net/images/icons/priorities/medium.svg",
+                    "name": "Medium",
+                    "id": "3"
+                },
+                "customfield_10067": null,
+                "customfield_10068": null,
+                "labels": [],
+                "aggregatetimeoriginalestimate": null,
+                "timeestimate": null,
+                "versions": [],
+                "issuelinks": [],
+                "assignee": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=admin",
+                    "name": "admin",
+                    "key": "admin",
+                    "accountId": "557058:f886df53-eb81-4db8-9024-8ca80372e1bb",
+                    "emailAddress": "aarora6@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Ankit Arora",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "updated": "2017-10-18T03:44:54.808-0400",
+                "status": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/status/10001",
+                    "description": "",
+                    "iconUrl": "https://masterbot.atlassian.net/",
+                    "name": "Done",
+                    "id": "10001",
+                    "statusCategory": {
+                        "self": "https://masterbot.atlassian.net/rest/api/2/statuscategory/3",
+                        "id": 3,
+                        "key": "done",
+                        "colorName": "green",
+                        "name": "Done"
+                    }
+                },
+                "components": [],
+                "timeoriginalestimate": null,
+                "description": null,
+                "customfield_10010": [
+                    "com.atlassian.greenhopper.service.sprint.Sprint@1bf1d379[id=2,rapidViewId=1,state=CLOSED,name=Sample Sprint 1,goal=<null>,startDate=2017-10-10T16:07:57.034Z,endDate=2017-10-24T16:07:57.034Z,completeDate=2017-10-24T14:47:57.034Z,sequence=2]"
+                ],
+                "customfield_10011": "1|hzzzzj:",
+                "customfield_10012": null,
+                "customfield_10013": "10000_*:*_1_*:*_661019999_*|*_10001_*:*_1_*:*_0",
+                "customfield_10059": 1,
+                "customfield_10008": null,
+                "customfield_10009": null,
+                "aggregatetimeestimate": null,
+                "summary": "As a user, I'd like a historical story to show in reports",
+                "creator": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=admin",
+                    "name": "admin",
+                    "key": "admin",
+                    "accountId": "557058:f886df53-eb81-4db8-9024-8ca80372e1bb",
+                    "emailAddress": "aarora6@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Ankit Arora",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "subtasks": [],
+                "reporter": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/user?username=admin",
+                    "name": "admin",
+                    "key": "admin",
+                    "accountId": "557058:f886df53-eb81-4db8-9024-8ca80372e1bb",
+                    "emailAddress": "aarora6@ncsu.edu",
+                    "avatarUrls": {
+                        "48x48": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue",
+                        "24x24": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue",
+                        "16x16": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue",
+                        "32x32": "https://avatar-cdn.atlassian.com/74978c9c34a7ae63767ec43258d84086?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F74978c9c34a7ae63767ec43258d84086%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue"
+                    },
+                    "displayName": "Ankit Arora",
+                    "active": true,
+                    "timeZone": "America/New_York"
+                },
+                "aggregateprogress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "customfield_10000": "{}",
+                "customfield_10001": null,
+                "customfield_10002": null,
+                "customfield_10003": null,
+                "customfield_10004": null,
+                "environment": null,
+                "duedate": null,
+                "progress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "votes": {
+                    "self": "https://masterbot.atlassian.net/rest/api/2/issue/MAS-21/votes",
+                    "votes": 0,
+                    "hasVoted": false
+                }
+            }
+        }
+    ]
+}
