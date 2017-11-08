@@ -64,11 +64,60 @@ function getIssues(id, callback)
 }
 
 exports.createIssue = function(req, res) {
-    res.json("created");
-//   var new_task = new Task(req.body);
-//   new_task.save(function(err, task) {
-//     if (err)
-//       res.send(err);
-//     res.json(task);
-//   });
+/*
+  var projectName = 'MAS';
+  var options = {
+      url: urlRoot + 'issue/',
+      method: 'POST',
+      headers: {
+          "content-type": "application/json",
+          "Authorization": token
+      },
+     json: {
+      'fields': {
+        "project":
+            {
+              "key": "MAS"
+             },
+         "summary": "REST ye merry gentlemen.",
+        "description": "Creating of an issue using project keys and issue type names using the REST API",
+         "issuetype": {
+            "name": "Bug"
+           }
+      }
+      }
+  };*/
 };
+
+function createIssue(userName, callback){
+
+    var options = {
+      url: urlRoot + 'issue/',
+      method: 'POST',
+      headers: {
+          "content-type": "application/json",
+          "Authorization": token
+      },
+      json: {
+      "fields": {
+        "project":
+            {
+              "key": "MAS"
+             },
+         "summary": "REST ye merry gentlemen.",
+        "description": "Creating of an issue using project keys and issue type names using the REST API",
+         "issuetype": {
+            "name": "Bug"
+           }
+      }
+      }
+  };
+  request(options, function (error, response, body)
+    {
+        if(body){
+          //  var obj = JSON.parse(body);
+            console.log(body);
+        }
+        callback(null, { statusCode: 200, body:"Issue created and successfully assigned to : " + userName });
+    });
+}
