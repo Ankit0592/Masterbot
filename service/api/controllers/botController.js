@@ -88,8 +88,20 @@ exports.createIssue = function(req, res) {
       }
   };*/
 };
-
-function createIssue(userName, callback){
+/*
+exports.handler = (event, context, callback) => {
+    //console.log(event.body);
+    payload = decodeURIComponent(event.body);
+    json = payload.substring(8);
+    json_obj = JSON.parse(json);
+    console.log(json_obj);
+    names = json_obj.actions[0].name.split("+");
+    issueType = json_obj.actions[0].value;
+ //callback(null, { statusCode: 200, body:"Issue created and successfully assigned to : " + names[2] });
+    createIssue(names[2],callback,issueType)
+};
+*/
+function createIssue(userName, callback,issueType){
 
     var options = {
       url: urlRoot + 'issue/',
@@ -107,8 +119,9 @@ function createIssue(userName, callback){
          "summary": "REST ye merry gentlemen.",
         "description": "Creating of an issue using project keys and issue type names using the REST API",
          "issuetype": {
-            "name": "Bug"
-           }
+            "name": issueType
+           },
+           "assignee":{"name":userName}
       }
       }
   };
@@ -118,6 +131,6 @@ function createIssue(userName, callback){
           //  var obj = JSON.parse(body);
             console.log(body);
         }
-        callback(null, { statusCode: 200, body:"Issue created and successfully assigned to : " + userName });
+        callback(null, { statusCode: 200, body:"Issue "+body.key+" created and successfully assigned to : " + userName+". For furhter info click on: "+ body.self});
     });
 }
