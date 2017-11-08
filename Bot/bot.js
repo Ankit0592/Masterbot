@@ -69,7 +69,9 @@ function createIssue(title,bot,message) {
 
     // conversation thread for user summary
     convo.addQuestion('Please provide summary',function(response,convo) {
-  //convo.say('The summary is: ' + response.text + ' and the issue is {{vars.Type}}');
+    var issueType = convo.vars.Type;
+       //convo.say('The summary is: ' + response.text + ' and the issue is {{vars.Type}}');
+
       var arrayOfNames = getLikelyUsers(response.text);
 
       var button = {
@@ -96,7 +98,7 @@ function createIssue(title,bot,message) {
           "name": arrayOfNames[i],
           "text": arrayOfNames[i],
           "type": "button",
-          "value": arrayOfNames[i]
+          "value": issueType
         })
       }
 
@@ -127,7 +129,7 @@ function createIssue(title,bot,message) {
         pattern: '1',
         callback: function(response,conv) {
           // do something else...
-          convo.setVar('Type','B');
+          convo.setVar('Type','Bug');
           convo.gotoThread('summary');
         }
       },
@@ -135,7 +137,7 @@ function createIssue(title,bot,message) {
         pattern: '2',
         callback: function(response,conv) {
           // do something else...
-          convo.setVar('Type','T');
+          convo.setVar('Type','Task');
           convo.gotoThread('summary');
         }
       },
@@ -198,7 +200,7 @@ function getIssues(id,bot,message) {
 		}
 	};
 	// Send a http request to url and specify a callback that will be called upon its return.
-	ajax(options, function (error, response, body) 
+	ajax(options, function (error, response, body)
 	{
 		matchIssue(body,bot,message);
     });
