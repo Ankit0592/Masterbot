@@ -29,8 +29,8 @@
       {"text": "UPDATE: Pavneet changed status of task-2 from In Progress to Completed"}
     ],
     "notification_users":[
-      {"url": "https://hooks.slack.com/services/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"},
+      {"url": "https://hooks.slack.com/services/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"}, 
       {"url":"https://hooks.slack.com/services/T6WGAMN2G/B7MBDSYGH/dFycquI5"}
     ],
-    "likely_users":[ "Issue 5143: amedhek", "Issue 5173: apshukla", "Issue 51: admin","Issue 7709: panand4","Issue 5000: sbiswas4" ]
+    "likely_users":[ "Issue 5143: amedhek", "Issue 5173: apshukla", "Issue 51: admin","Issue 7709: panand4","Issue 5000: sbiswas4" ] 
 }
