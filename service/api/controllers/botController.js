@@ -134,3 +134,76 @@ function createIssue(userName, callback,issueType){
         callback(null, { statusCode: 200, body:"Issue "+body.key+" created and successfully assigned to : " + userName+". For furhter info click on: "+ body.self});
     });
 }
+
+    // Notification handler: use ngrok to get public url and put the url in jira webhooks
+    exports.handler = (event, context, callback) =>{
+        var json_obj = event.body;
+        if(json_obj.issue_event_type_name == "issue_generic"){
+            var emailAddress = json_obj.user.emailAddress;
+            var id = json_obj.changelog.id;
+            var fromString = json_obj.changelog.items[0].fromString !== null ? json_obj.changelog.items[0].fromString : "To Do";
+            var toString = json_obj.changelog.items[0].toString !== null ? json_obj.changelog.items[0].toString : "To Do";
+            var key = json_obj.issue.key;
+            var subtasks = json_obj.issue.fields.subtasks;
+
+            for(var i = 0; i<subtasks.length; i++){
+                var subtaskUrl = subtasks[i].self;
+                var options = {
+                    url: subtaskUrl,
+                    method: 'GET',
+                    headers: {
+                        "content-type": "application/json",
+                        "Authorization": token
+                    }
+                };
+            // Send a http request to url and specify a callback that will be called upon its return.
+                request(options, function (error, response, body) 
+                {
+                    sendNotification(body, emailAddress, fromString, toString, key);
+                });
+            }
+        }
+        
+        
+        function sendNotification(body, emailAddress, fromString, toString, key){
+            var urls = {"apshukla": "https://hooks.slack.com/services/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",
+                        "aarora6": "https://hooks.slack.com/services/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",
+                        "sbiswas4": "https://hooks.slack.com/services/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",
+                        "amedhek": "https://hooks.slack.com/services/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",
+                        "panand4": "https://hooks.slack.com/services/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"
+                        }
+            
+            var targetUser = JSON.parse(body).fields.assignee.name;
+
+            var result = "UPDATE: "+emailAddress +" changed status of task- <https://masterbot.atlassian.net/browse/"+key+"|"+key+">"; 
+            
+            var myObj = { "attachments": [ {"color":"#439FE0", "text": result, "fields": [
+                        {
+                            "title": "Previous Status",
+                            "value": fromString,
+                            "short": true
+                        },
+                        {
+                            "title": "Updated Status",
+                            "value": toString,
+                            "short": true
+                        }
+                    
+                    ] }]};
+            var myJSON = JSON.stringify(myObj);
+            
+            var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+            var request = new XMLHttpRequest();
+            // common channel url "https://hooks.slack.com/services/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"
+            
+            var url = urls[targetUser];
+            var method = "POST";
+            var postData = myJSON;
+            var async = true;
+        
+            request.open(method, url, async);
+            request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            request.send(postData);
+        }    
+    }
+

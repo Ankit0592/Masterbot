@@ -3,6 +3,11 @@ module.exports = function(app) {
   var botList = require('../controllers/botController');
 
     // Routes
+    app.route('/notifications')
+        .patch(botList.handler)
+        .post(botList.handler)
+        .get(botList.handler);
+
     app.route('/:id')
         .get(botList.getIssues);
 
