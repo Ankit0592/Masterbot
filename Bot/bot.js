@@ -162,6 +162,7 @@ function createIssue(title,bot,message) {
 
       convo.say('ok, I found these issues similar to one you are creating. Click on create against most relevant issue');
       bot.reply(message, button);
+      bot(message, button);
 
       convo.next();
 
