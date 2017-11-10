@@ -22,7 +22,7 @@
 | Deliverable   | Item   |  Tasks
 | ------------- | ------------  |  ------------
 | Use Case-2 Bot integration | Bot pulls JIRA notifications.   | [JIRA notifications](https://trello.com/c/NVGuHvO8/31-use-case-2-bot-integration) 
-| Use Case-1 Bot integration | &nbsp; | [](https://trello.com/c/0QiiSjiW/30-use-case-1-bot-integration)
+| Use Case-1 Bot integration | &nbsp; | [Use Case-1 Bot integration](https://trello.com/c/0QiiSjiW/30-use-case-1-bot-integration)
 | Use Case-1 Create Issues on JIRA API | Api to create issues with bot  | [Issue create](https://trello.com/c/7Ex0GTTU/36-use-case-1-create-issues-on-jira-api)
 
 
