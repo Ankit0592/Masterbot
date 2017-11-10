@@ -5,6 +5,7 @@ var natural = require('natural');
 var token = "Basic YWFyb3JhNkBuY3N1LmVkdTpBbmtpdDMxMTMh";
 var urlRoot = "https://masterbot.atlassian.net/rest/api/2/";
 var config = require('../../config.js');
+var pos = require('pos');
 
 exports.getIssues = function(req, res) {
   console.log('In get Issues');
@@ -105,7 +106,64 @@ callback('Kinnetic');
 
 };
 
+function labelMatching(summary,callback ){
 
+     arrayOfLabels = extractLabels(summary);
+     var projectName = 'MAS';
+     var options = {
+         url: urlRoot + '/search?jql=project=' + projectName + "&maxResults=15",
+         method: 'GET',
+         headers: {
+             "content-type": "application/json",
+             "Authorization": token
+         }
+     };
+     // Send a http request to url and specify a callback that will be called upon its return.
+     request(options, function (error, response, body)
+     {
+         var matchedIssues=[];
+         if(body) {
+             var obj = JSON.parse(body);
+             var issueDescription = '';
+             for(var i =0; i<obj.issues.length; i++){
+                 if(obj.issues[i].key === id){
+                     issueDescription = obj.issues[i].fields.summary;
+                     obj.issues.splice(i,1);
+                     break;
+                 }
+             }
+             if (issueDescription.length > 0) {
+                 for(var i =0; i<obj.issues.length; i++){
+                     var summaryOverlap = getMatch(issueDescription, obj.issues[i].fields.summary);
+                     if(summaryOverlap > 0.7){
+                         var link="https://masterbot.atlassian.net/browse/"
+                         matchedIssues.push(link+''+obj.issues[i].key);
+                     }
+                 }
+             }
+         }
+         callback(matchedIssues);
+     });
+
+
+}
+//console.log(extractLabels('Bugs exist in code. Deployment fails on Jenkins'))
+function extractLabels(summary){
+  var retArray = [];
+  var words = new pos.Lexer().lex(summary);
+  var tagger = new pos.Tagger();
+  var taggedWords = tagger.tag(words);
+  for (var i in taggedWords) {
+    var taggedWord = taggedWords[i];
+    var word = taggedWord[0];
+    var tag = taggedWord[1];
+    //console.log(word + " /" + tag);
+    if(tag == 'NN' || tag == 'NNP' ||  tag == 'NNPS' ||  tag == 'NNS' ){
+    retArray.push(word);
+    }
+  }
+  return retArray;
+}
 
 /*
 exports.handler = (event, context, callback) => {
