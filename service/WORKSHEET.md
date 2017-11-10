@@ -14,8 +14,8 @@
 | Deliverable   | Item   |  Tasks
 | ------------- | ------------  |  ------------
 | Node Server Setup | Creating Node server  | [Node Server](https://trello.com/c/uxzFAOIw/28-node-server-setup)
-| Use Case-3 Fetch similar issues  | Algo to fetch all similar issues from JIRA | [similar issues](https://trello.com/c/3hbDzvhi/34-use-case-3-fetch-similar-issues-api)
-| Bot Integration | Interaction case 1   | [Trello](https://trello.com/c/W0zRaAYD/9-user-interaction-use-case-1)
+| Use Case-3 Fetch similar issues  | Algo to fetch all similar issues from JIRA | [Similar issues](https://trello.com/c/3hbDzvhi/34-use-case-3-fetch-similar-issues-api)
+| Use Case-3 Bot integration | Integrate Api for finding similar issues   | [Similar issues Api](https://trello.com/c/FZ2nETvy/32-use-case-3-bot-integration)
 
 ### Week 3
 
