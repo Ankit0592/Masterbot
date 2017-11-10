@@ -7,12 +7,12 @@
 | Retrospective meeting | BOT milestone shortcomings | [Retrospective](https://trello.com/c/9l2Nvzyp/24-retrospective-meeting)
 | Planning meeting | For Service milestone | [Planning](https://trello.com/c/Xr0HXP2h/25-planning-meeting)
 | Brainstorming session | Server architecture discussed | [Brainstorming](https://trello.com/c/LOCKyHMA/26-brainstorming-session)
+| JIRA setup |  Setup & Access JIRA APIs.  | [JIRA setup](https://trello.com/c/TUlrnLIl/29-jira-setup) 
 
 ### Week 2
 
 | Deliverable   | Item   |  Tasks
 | ------------- | ------------  |  ------------
-| JIRA setup |  Setup & Access JIRA APIs.  | [JIRA setup](https://trello.com/c/TUlrnLIl/29-jira-setup) 
 | Use Cases Refinement | 3 Use Cases     | [Refinement](https://trello.com/c/5RjuVMoJ/2-use-case-refinement)
 | Bot Platform | &nbsp; | [Trello](https://trello.com/c/GKjGuoWi/4-bot-platform)
 | Bot Integration | Interaction case 1   | [Trello](https://trello.com/c/W0zRaAYD/9-user-interaction-use-case-1)
