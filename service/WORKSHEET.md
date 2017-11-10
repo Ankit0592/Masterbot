@@ -13,7 +13,7 @@
 
 | Deliverable   | Item   |  Tasks
 | ------------- | ------------  |  ------------
-| Use Cases Refinement | 3 Use Cases     | [Refinement](https://trello.com/c/5RjuVMoJ/2-use-case-refinement)
+| Node Server Setup | Creating Node server  | [Node Server](https://trello.com/c/uxzFAOIw/28-node-server-setup)
 | Bot Platform | &nbsp; | [Trello](https://trello.com/c/GKjGuoWi/4-bot-platform)
 | Bot Integration | Interaction case 1   | [Trello](https://trello.com/c/W0zRaAYD/9-user-interaction-use-case-1)
 
