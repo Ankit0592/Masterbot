@@ -12,7 +12,7 @@
 
 | Deliverable   | Item   |  Tasks
 | ------------- | ------------  |  ------------
-| Redesign (StoryBoard, Wireframe) | 3 Use Cases   | [StoryBoard](https://trello.com/c/nvt1EyT1/15-storyboarding) [Wireframe](https://trello.com/c/sJxJWA4J/16-wireframe)
+| JIRA setup |  Setup & Access JIRA APIs.  | [JIRA setup](https://trello.com/c/TUlrnLIl/29-jira-setup) 
 | Use Cases Refinement | 3 Use Cases     | [Refinement](https://trello.com/c/5RjuVMoJ/2-use-case-refinement)
 | Bot Platform | &nbsp; | [Trello](https://trello.com/c/GKjGuoWi/4-bot-platform)
 | Bot Integration | Interaction case 1   | [Trello](https://trello.com/c/W0zRaAYD/9-user-interaction-use-case-1)
