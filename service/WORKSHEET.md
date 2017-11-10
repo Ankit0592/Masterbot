@@ -4,9 +4,9 @@
 
 | Deliverable   | Item   | Tasks
 | ------------- | ------------  |  ------------
-| Retrospective meeting | BOT milestone shortcomings | [Trello](https://trello.com/c/W0zRaAYD/9-user-interaction-use-case-1);
-| Planning meeting | For Service milestone | [Trello](https://trello.com/c/W0zRaAYD/9-user-interaction-use-case-1);
-| Brainstorming session | Server architecture discussed | [Trello](https://trello.com/c/W0zRaAYD/9-user-interaction-use-case-1);
+| Retrospective meeting | BOT milestone shortcomings | [Retrospective](https://trello.com/c/W0zRaAYD/9-user-interaction-use-case-1)
+| Planning meeting | For Service milestone | [Planning](https://trello.com/c/W0zRaAYD/9-user-interaction-use-case-1)
+| Brainstorming session | Server architecture discussed | [Brainstorming](https://trello.com/c/LOCKyHMA/26-brainstorming-session)
 
 ### Week 2
 
