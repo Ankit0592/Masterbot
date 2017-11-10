@@ -8,12 +8,16 @@ module.exports = function(app) {
         .post(botList.handler)
         .get(botList.handler);
 
+        app.route('/summary')
+                .get(botList.labelMatching);
+
     app.route('/:id')
         .get(botList.getIssues);
 
     app.route('/issues')
         .get(botList.getIssues)
         .post(botList.createIssue);
+
 
 
     // This should always be at bottom of routes

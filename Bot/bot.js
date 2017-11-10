@@ -2,11 +2,16 @@ var service = require('../service/api/controllers/botController.js');
 var ajax = require('request');
 var Botkit = require('botkit');
 var mockData = require('./mock.json');
-//var button = require('./button.json');
+var issueButton = require('./Issue.json');
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 var nock = require('nock');
 var request = new XMLHttpRequest();
 var issue_id = 0;
+var express = require('express');
+var bodyParser = require('body-parser')
+var app = express()
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
+
 
 var controller = Botkit.slackbot({
   interactive_replies: true,
@@ -33,6 +38,17 @@ controller.setupWebserver(process.env.port,function(err,webserver) {
   });
 });
 */
+app.post('/slackactions', urlencodedParser, (req, res) =>{
+  console.log('hinata');
+    res.status(200).end() // best practice to respond with 200 status
+    var actionJSONPayload = JSON.parse(req.body.payload) // parse URL-encoded payload JSON string
+    /*var message = {
+        "text": actionJSONPayload.user.name+" clicked: "+actionJSONPayload.actions[0].name,
+        "replace_original": false
+    }*/
+    //sendMessageToSlackResponseURL(actionJSONPayload.response_url, message)
+    console.log(actionJSONPayload);
+});
 controller.spawn({
   token: process.env.SLACKTOKEN,
 }).startRTM();
@@ -71,40 +87,42 @@ function createIssue(title,bot,message) {
     convo.addQuestion('Please provide summary',function(response,convo) {
     var issueType = convo.vars.Type;
        //convo.say('The summary is: ' + response.text + ' and the issue is {{vars.Type}}');
+     var callback = function(arrayOfNames){
+        var button = {
+          text: 'ok, I found these issues similar to one you are creating. Click on create against most relevant issue: ',
+          attachments: [
+              {
+                  text: "Click the most relevant user",
+                  color: "#3AA3E3",
+                  callback_id: 'C12',
+                  attachment_type: "default",
+                  actions: [],
+              }
+          ],
 
-      var arrayOfNames = getLikelyUsers(response.text);
+        }
+        if(arrayOfNames.length == 0){
+        bot.reply(message, 'No user has worked on similar issues');
+        }
+        // displaying buttons in bot UI
+        else{
+        for (var i = 0; i < arrayOfNames.length; i++) {
+          button.attachments[0].actions.push(
+          {
+            "name": arrayOfNames[i],
+            "text": arrayOfNames[i],
+            "type": "button",
+            "value": issueType
+          })
+        }
 
-      var button = {
-        text: 'ok, I found these issues similar to one you are creating. Click on create against most relevant issue: ',
-        attachments: [
-            {
-                text: "Click the most relevant user",
-                color: "#3AA3E3",
-                callback_id: 'C12',
-                attachment_type: "default",
-                actions: [],
-            }
-        ],
+        bot.reply(message, button);
+  }
+        convo.next();
 
       }
-      if(arrayOfNames.length == 0){
-      bot.reply(message, 'No user has worked on similar issues');
-      }
-      // displaying buttons in bot UI
-      else{
-      for (var i = 0; i < arrayOfNames.length; i++) {
-        button.attachments[0].actions.push(
-        {
-          "name": arrayOfNames[i],
-          "text": arrayOfNames[i],
-          "type": "button",
-          "value": issueType
-        })
-      }
 
-      bot.reply(message, button);
-}
-      convo.next();
+getLikelyUsers(response.text,bot,message,callback);
 
     },{},'summary');
 
@@ -118,7 +136,7 @@ function createIssue(title,bot,message) {
 
       },'Exit');
 
-    convo.addQuestion('Please enter issue type? 1) Bug 2) Task 3) Exit',[
+    convo.addQuestion('Please enter issue type? 1 Bug 2 Task 3 Exit',[
       {
         pattern: '3',
         callback: function(response,conv) {
@@ -150,6 +168,13 @@ function createIssue(title,bot,message) {
       }
     ],{},'default');
 
+/*convo.addQuestion(issueButton,function(response,convo){
+
+ console.log('Look where I am');
+
+
+},{},'default');*/
+
     convo.activate();
 
   });
@@ -176,25 +201,42 @@ function createIssue(title,bot,message) {
 
 }
 
+//var hasReturned = false;
+
 // fetch mock data for likely users in use case-1
-function getLikelyUsers(message){
-
-  if(message == 'old issue'){
-     return [];
-  }
-
-    var data=nock("https://jira.atlassian.com/rest/api/2")
-    .get("/search?jql=project=123")
-    .reply(200, mockData["likely_users"]);
-    var result=data.interceptors[0].body;
-    return JSON.parse(result);
+////////////////////////////////////
+/*function getLikelyUsers(summary,bot, message){
+  console.log(summary);
+  var options = {
+  		url: 'http://localhost:3000/' + 'MAS-45',
+		method: 'GET',
+		headers: {
+			"content-type": "application/json"
+		}
+	};
+  ajax(options, function (error, response, body)
+  {
+    console.log('in ajax');
+    returnUsers(body,bot,message);
+    });
+//    return JSON.parse(result);
+while(true){
 
 }
+//console.log('How did i get here?');
+};
 
+function returnUsers(body,bot,message){
+  console.log('body');
+  return [ "Issue 5143: amedhek", "Issue 5173: apshukla", "Issue 51: admin","Issue 7709: panand4","Issue 5000: sbiswas4" ];
+}*/
+//////////////////////////////////////////////////////////////////////////////////////
 // Call Service
 function getIssues(id,bot,message) {
+  console.log(id);
 	var options = {
-  		url: 'http://localhost:3000/' + id,
+  		//url: 'http://localhost:3000/' + id,
+      url: 'http://localhost:3000/' + 'MAS-45',
 		method: 'GET',
 		headers: {
 			"content-type": "application/json"
@@ -228,6 +270,49 @@ function matchIssue(body,bot,message) {
 //    notifications(message, bot);
 //  }, 2000 );
 }
+
+function getLikelyUsers(summary,bot,message,callback) {
+  //console.log(summary);
+	var options = {
+  		//url: 'http://localhost:3000/' + id,
+      url: 'http://localhost:3000/summary',
+		method: 'GET',
+		headers: {
+			"content-type": "application/json"
+		},
+    json: {
+      "summary": summary
+    }
+	};
+
+	// Send a http request to url and specify a callback that will be called upon its return.
+  ajax(options, function (error, response, body)
+  {
+    //console.log('In ajax');
+  //  mreturnnames(body,bot,message);
+//  var data = JSON.parse(body).matching_issues;
+  console.log(body);
+  checknmes = ["Issue 5143: amedhek", "Issue 5173: apshukla", "Issue 51: admin","Issue 7709: panand4","Issue 5000: sbiswas4"];
+  callback(checknmes);
+    });
+};
+
+
+
+
+
+// fetch mock data for duplicate issues in use case-3
+function mreturnnames(body,bot,message) {
+//  console.log('inside mreturnnames');
+
+	if(body){
+    return ["Issue 5143: amedhek", "Issue 5173: apshukla", "Issue 51: admin","Issue 7709: panand4","Issue 5000: sbiswas4"];
+	}
+//  setTimeout( function(){
+//    notifications(message, bot);
+//  }, 2000 );
+}
+
 // Notifications for Use case-2
 function notifications(message, bot){
   var mocked=nock("https://jira.atlassian.com/rest/api/2")

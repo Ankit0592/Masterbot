@@ -7,6 +7,7 @@ var urlRoot = "https://masterbot.atlassian.net/rest/api/2/";
 var config = require('../../config.js');
 
 exports.getIssues = function(req, res) {
+  console.log('In get Issues');
     var callback=function(matchedIssues){
         res.status(200).json({
             matching_issues: matchedIssues
@@ -89,6 +90,23 @@ exports.createIssue = function(req, res) {
       }
   };*/
 };
+
+exports.labelMatching = function(req, res) {
+
+  console.log(req.body);
+  var callback=function(matchedIssues){
+      res.status(200).json({
+          matching_issues: matchedIssues
+      });
+  }
+  //getIssues(req.params.id, callback);
+callback('Kinnetic');
+
+
+};
+
+
+
 /*
 exports.handler = (event, context, callback) => {
     //console.log(event.body);
@@ -158,20 +176,20 @@ exports.handler = (event, context, callback) =>{
                 }
             };
         // Send a http request to url and specify a callback that will be called upon its return.
-            request(options, function (error, response, body) 
+            request(options, function (error, response, body)
             {
                 sendNotification(body, emailAddress, fromString, toString, key);
             });
         }
     }
-    
-    
+
+
     function sendNotification(body, emailAddress, fromString, toString, key){
         var targetUser = JSON.parse(body).fields.assignee.name;
         var url = config.team_members[0][targetUser];
 
-        var result = "UPDATE: "+emailAddress +" changed status of task- <https://masterbot.atlassian.net/browse/"+key+"|"+key+">"; 
-        
+        var result = "UPDATE: "+emailAddress +" changed status of task- <https://masterbot.atlassian.net/browse/"+key+"|"+key+">";
+
         var myObj = { "attachments": [ {"color":"#439FE0", "text": result, "fields": [
                     {
                         "title": "Previous Status",
@@ -183,22 +201,21 @@ exports.handler = (event, context, callback) =>{
                         "value": toString,
                         "short": true
                     }
-                
+
                 ] }]};
         var myJSON = JSON.stringify(myObj);
-        
+
         var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
         var request = new XMLHttpRequest();
         // common channel url "https://hooks.slack.com/services/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"
-        
+
         //var url = urls[targetUser];
         var method = "POST";
         var postData = myJSON;
         var async = true;
-    
+
         request.open(method, url, async);
         request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         request.send(postData);
-    }    
+    }
 }
-
