@@ -4,7 +4,7 @@
 
 | Deliverable   | Item   | Tasks
 | ------------- | ------------  |  ------------
-| Brainstorming (splitting tasks & time estimates) | 3 Use Cases   | &nbsp;
+| Retrospective meeting | BOT milestone shortcomings | &nbsp;
 
 ### Week 2
 
