@@ -5,6 +5,7 @@
 | Deliverable   | Item   | Tasks
 | ------------- | ------------  |  ------------
 | Retrospective meeting | BOT milestone shortcomings | &nbsp;
+| Planning meeting | For Service milestone | &nbsp;
 
 ### Week 2
 
