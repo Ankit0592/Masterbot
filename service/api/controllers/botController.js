@@ -94,24 +94,39 @@ exports.createIssue = function(req, res) {
 
 exports.labelMatching = function(req, res) {
 
-  console.log(req.body);
-  var callback=function(matchedIssues){
+  //console.log(req.body);
+  var callback=function(userIssuesAndLabels){
       res.status(200).json({
-          matching_issues: matchedIssues
+          user_issues: userIssuesAndLabels
       });
   }
   //getIssues(req.params.id, callback);
-callback('Kinnetic');
-
+//callback('Kinnetic');
+labelMatching(req.body.summary,callback);
 
 };
 
+function Comparator(arr1, arr2) {
+  if (arr1[2] < arr2[2])
+  {
+    return 1;
+  }
+  else if (arr1[2] > arr2[2])
+  {
+    return -1;
+  }
+  else{
+     return 0;
+  }
+
+}
+
 function labelMatching(summary,callback ){
 
-     arrayOfLabels = extractLabels(summary);
+     var arrayOfLabels = extractLabels(summary);
      var projectName = 'MAS';
      var options = {
-         url: urlRoot + '/search?jql=project=' + projectName + "&maxResults=15",
+         url: urlRoot + '/search?jql=project=' + projectName + "&expand=labels",
          method: 'GET',
          headers: {
              "content-type": "application/json",
@@ -121,31 +136,57 @@ function labelMatching(summary,callback ){
      // Send a http request to url and specify a callback that will be called upon its return.
      request(options, function (error, response, body)
      {
-         var matchedIssues=[];
+         var countArray = [];
+         var thLength = (arrayOfLabels.length)/2 ;
+         //console.log(arrayOfLabels);
+         //console.log(arrayOfLabels.length);
+        // var matchedIssues=[];
+        //var userIssues = '';
+        var userIssues = [];
          if(body) {
-             var obj = JSON.parse(body);
-             var issueDescription = '';
+             var obj = JSON.parse(body)
              for(var i =0; i<obj.issues.length; i++){
-                 if(obj.issues[i].key === id){
-                     issueDescription = obj.issues[i].fields.summary;
-                     obj.issues.splice(i,1);
-                     break;
+                // console.log(obj.issues[i].labels);
+                 var ct = countNoOfSims(obj.issues[i].fields.labels,arrayOfLabels);
+                 if(ct >= thLength){
+                   var arrToAdd = [];
+                   arrToAdd.push(obj.issues[i].key);
+                   arrToAdd.push(obj.issues[i].fields.assignee.name);
+                   arrToAdd.push(ct);
+                   countArray.push(arrToAdd);
                  }
+
              }
-             if (issueDescription.length > 0) {
-                 for(var i =0; i<obj.issues.length; i++){
-                     var summaryOverlap = getMatch(issueDescription, obj.issues[i].fields.summary);
-                     if(summaryOverlap > 0.7){
-                         var link="https://masterbot.atlassian.net/browse/"
-                         matchedIssues.push(link+''+obj.issues[i].key);
-                     }
-                 }
+            // console.log(countArray.length);
+             countArray = countArray.sort(Comparator);
+             for(var i =0; (i<countArray.length && i < 5); i++){
+                  var issueArr = countArray[i];
+                  //userIssues = userIssues + issueArr[0] + ' : ' + issueArr[1] + ', ';
+                  userIssues.push(issueArr[0] + ' : ' + issueArr[1]);
              }
+            //console.log(myArray);
          }
-         callback(matchedIssues);
+         //console.log(userIssues);
+         //console.log(arrayOfLabels);
+         callback([userIssues,arrayOfLabels]);
      });
 
 
+}
+
+function countNoOfSims(inputLabelsArray, issueLabelsArray){
+       var retCount = 0;
+       var candidate = '';
+       for(var i=0; i < inputLabelsArray.length; i++){
+         candidate = inputLabelsArray[i];
+         for(var j=0; j < issueLabelsArray.length; j++){
+           if(issueLabelsArray[j] == candidate){
+              retCount = retCount + 1;
+              break;
+           }
+         }
+       }
+      return retCount;
 }
 //console.log(extractLabels('Bugs exist in code. Deployment fails on Jenkins'))
 function extractLabels(summary){

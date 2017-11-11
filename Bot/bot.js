@@ -87,32 +87,65 @@ function createIssue(title,bot,message) {
     convo.addQuestion('Please provide summary',function(response,convo) {
     var issueType = convo.vars.Type;
        //convo.say('The summary is: ' + response.text + ' and the issue is {{vars.Type}}');
-     var callback = function(arrayOfNames){
-        var button = {
-          text: 'ok, I found these issues similar to one you are creating. Click on create against most relevant issue: ',
-          attachments: [
-              {
-                  text: "Click the most relevant user",
-                  color: "#3AA3E3",
-                  callback_id: 'C12',
-                  attachment_type: "default",
-                  actions: [],
-              }
-          ],
-
-        }
+     var callback = function(arrayOfNames, labels){
         if(arrayOfNames.length == 0){
-        bot.reply(message, 'No user has worked on similar issues');
+          console.log(issueType);
+          console.log(response.text);
+          console.log(labels);
+          var button = {
+            text: 'No user has worked on similar issues. Create issue anyway?',
+            attachments: [
+                {
+                    text: "Click on relevant option",
+                    color: "#3AA3E3",
+                    callback_id: 'C_no_user',
+                    attachment_type: "default",
+                    actions: [],
+                }
+            ],
+
+          };
+          button.attachments[0].actions.push(
+          {
+            "name": 'Create',
+            "text": 'Create',
+            "type": "button",
+            //"value": [issueType, response.text, labels]
+            "value": issueType + ":"+response.text + ":"+ labels,
+                        
+          });
+          button.attachments[0].actions.push(
+          {
+            "name": 'Exit',
+            "text": 'Exit',
+            "type": "button",
+            "value": []
+          });
+      //  bot.reply(message, 'No user has worked on similar issues. Create issue any way?');
+          bot.reply(message, button);
         }
         // displaying buttons in bot UI
         else{
+          var button = {
+            text: 'ok, I found these issues similar to one you are creating. Click on create against most relevant issue: ',
+            attachments: [
+                {
+                    text: "Click the most relevant user",
+                    color: "#3AA3E3",
+                    callback_id: 'C_user_select',
+                    attachment_type: "default",
+                    actions: [],
+                }
+            ],
+
+          };
         for (var i = 0; i < arrayOfNames.length; i++) {
           button.attachments[0].actions.push(
           {
             "name": arrayOfNames[i],
             "text": arrayOfNames[i],
             "type": "button",
-            "value": issueType
+            "value": issueType + ":"+response.text + ":"+ labels
           })
         }
 
@@ -122,7 +155,7 @@ function createIssue(title,bot,message) {
 
       }
 
-getLikelyUsers(response.text,bot,message,callback);
+     getLikelyUsers(response.text,bot,message,callback);
 
     },{},'summary');
 
@@ -288,30 +321,13 @@ function getLikelyUsers(summary,bot,message,callback) {
 	// Send a http request to url and specify a callback that will be called upon its return.
   ajax(options, function (error, response, body)
   {
-    //console.log('In ajax');
-  //  mreturnnames(body,bot,message);
-//  var data = JSON.parse(body).matching_issues;
-  console.log(body);
-  checknmes = ["Issue 5143: amedhek", "Issue 5173: apshukla", "Issue 51: admin","Issue 7709: panand4","Issue 5000: sbiswas4"];
-  callback(checknmes);
+  //var data = JSON.parse(body).user_issues;
+  var data = body.user_issues;
+      console.log(data);
+      callback(data[0],data[1]);
     });
 };
 
-
-
-
-
-// fetch mock data for duplicate issues in use case-3
-function mreturnnames(body,bot,message) {
-//  console.log('inside mreturnnames');
-
-	if(body){
-    return ["Issue 5143: amedhek", "Issue 5173: apshukla", "Issue 51: admin","Issue 7709: panand4","Issue 5000: sbiswas4"];
-	}
-//  setTimeout( function(){
-//    notifications(message, bot);
-//  }, 2000 );
-}
 
 // Notifications for Use case-2
 function notifications(message, bot){
