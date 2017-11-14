@@ -29,9 +29,10 @@ function getMatch(str1, str2) {
 
 function getIssues(id, callback)
 {
+  console.log(id);
     var projectName = 'MAS';
     var options = {
-        url: urlRoot + '/search?jql=project=' + projectName + "&maxResults=15",
+        url: urlRoot + '/search?jql=project=' + projectName, //+ "&maxResults=15",
         method: 'GET',
         headers: {
             "content-type": "application/json",
@@ -159,7 +160,7 @@ function labelMatching(summary,callback ){
              }
             // console.log(countArray.length);
              countArray = countArray.sort(Comparator);
-             for(var i =0; (i<countArray.length && i < 5); i++){
+             for(var i =0; (i<countArray.length && i < 4); i++){
                   var issueArr = countArray[i];
                   //userIssues = userIssues + issueArr[0] + ' : ' + issueArr[1] + ', ';
                   userIssues.push(issueArr[0] + ' : ' + issueArr[1]);
@@ -284,11 +285,12 @@ exports.handler = (event, context, callback) =>{
 
 
     function sendNotification(body, emailAddress, fromString, toString, key){
-        var targetUser = JSON.parse(body).fields.assignee.name;
+        //var targetUser = JSON.parse(body).fields.assignee.name;
+        var targetUser = JSON.parse(body).fields.assignee.emailAddress.split('@')[0];
         var url = config.team_members[0][targetUser];
 
         var result = "UPDATE: "+emailAddress +" changed status of task- <https://masterbot.atlassian.net/browse/"+key+"|"+key+">";
-
+        if(emailAddress != JSON.parse(body).fields.assignee.emailAddress){
         var myObj = { "attachments": [ {"color":"#439FE0", "text": result, "fields": [
                     {
                         "title": "Previous Status",
@@ -316,5 +318,6 @@ exports.handler = (event, context, callback) =>{
         request.open(method, url, async);
         request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         request.send(postData);
+      }
     }
 }

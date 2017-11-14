@@ -14,17 +14,27 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 
 var controller = Botkit.slackbot({
-  interactive_replies: true,
-  debug: false
-});
-/*
-.configureSlackApp({
+  //interactive_replies: true,
+  debug: false,
   clientId: process.env.clientId,
+  clientSecret: process.env.clientSecret,
+  scopes: ['bot'],
+  //redirectUri: 'http://localhost:3001/oauth',
+  redirectUri: 'https://7b2fd2f1.ngrok.io/oauth',
+  json_file_store: __dirname + '/.data/db/'
+
+});
+
+/*.configureSlackApp({
+    clientId: process.env.clientId,
     clientSecret: process.env.clientSecret,
     scopes: ['bot'],
+    //redirectUri: 'http://localhost:3001/oauth',
+    redirectUri: 'https://7b2fd2f1.ngrok.io/oauth',
+    json_file_store: __dirname + '/.data/db/'
     //Bot AppID
-});
-*/
+});*/
+
 /*
 controller.setupWebserver(process.env.port,function(err,webserver) {
   controller.createWebhookEndpoints(controller.webserver);
@@ -36,9 +46,9 @@ controller.setupWebserver(process.env.port,function(err,webserver) {
       res.send('Success!');
     }
   });
-});
-*/
-app.post('/slackactions', urlencodedParser, (req, res) =>{
+});*/
+
+app.post('/slack/actions', urlencodedParser, (req, res) =>{
   console.log('hinata');
     res.status(200).end() // best practice to respond with 200 status
     var actionJSONPayload = JSON.parse(req.body.payload) // parse URL-encoded payload JSON string
@@ -49,6 +59,14 @@ app.post('/slackactions', urlencodedParser, (req, res) =>{
     //sendMessageToSlackResponseURL(actionJSONPayload.response_url, message)
     console.log(actionJSONPayload);
 });
+
+controller.startTicking();
+
+controller.createOauthEndpoints(app);
+controller.createWebhookEndpoints(app);
+
+
+
 controller.spawn({
   token: process.env.SLACKTOKEN,
 }).startRTM();
@@ -70,9 +88,10 @@ controller.on(['direct_mention','direct_message'],function(bot,message) {
   }
 });
 
-controller.on('interactive_message_callback', function(bot, message) {
+  controller.on('interactive_message_callback', function(bot, message) {
+  //controller.on('interactive_message', function(bot, message) {
     console.log("Please come here");
-    bot.replyInteractive(message,'Please come here');
+  //  bot.replyInteractive(message,'Please come here');
    //var ids = message.callback_id.split(/\-/);
     //var user_id = ids[0];
     //var item_id = ids[1];
@@ -112,7 +131,7 @@ function createIssue(title,bot,message) {
             "type": "button",
             //"value": [issueType, response.text, labels]
             "value": issueType + ":"+response.text + ":"+ labels,
-                        
+
           });
           button.attachments[0].actions.push(
           {
@@ -123,6 +142,7 @@ function createIssue(title,bot,message) {
           });
       //  bot.reply(message, 'No user has worked on similar issues. Create issue any way?');
           bot.reply(message, button);
+          //console.log('did i come here?');
         }
         // displaying buttons in bot UI
         else{
@@ -146,10 +166,19 @@ function createIssue(title,bot,message) {
             "text": arrayOfNames[i],
             "type": "button",
             "value": issueType + ":"+response.text + ":"+ labels
-          })
+          });
         }
-
+         console.log('bfr new?');
+        button.attachments[0].actions.push(
+        {
+          "name": 'Exit',
+          "text": 'Exit',
+          "type": "button",
+          "value": 'null'
+        });
+       console.log('afr new?');
         bot.reply(message, button);
+      //  console.log('did i come here?');
   }
         convo.next();
 
@@ -205,71 +234,31 @@ function createIssue(title,bot,message) {
 
  console.log('Look where I am');
 
+setTimeout( function(){
+  //bot.reply(message, result);
+  convo.gotoThread('summary');
+}, 1000 );
 
 },{},'default');*/
 
+  /*  convo.addMessage(issueButton,function(convo){
+
+     //console.log('Look where I am');
+    convo.gotoThread('summary');
+
+  },{},'default');*/
     convo.activate();
+//    convo.gotoThread('summary');
 
   });
-
-
-/*
-  bot.startConversation(message,function(err,convo) {
-    console.log("hiiC2");
-    convo.addQuestion('Please provide summary',function(response,convo) {
-
-      convo.say('ok, I found these issues similar to one you are creating. Click on create against most relevant issue');
-      bot.reply(message, button);
-      bot(message, button);
-
-      convo.next();
-
-    },{},'default');
-
-  });
-  */
-  //var issues = findIssue(title,bot);
-
-      //var issues = findIssue(title,bot);
-
 }
 
-//var hasReturned = false;
-
-// fetch mock data for likely users in use case-1
-////////////////////////////////////
-/*function getLikelyUsers(summary,bot, message){
-  console.log(summary);
-  var options = {
-  		url: 'http://localhost:3000/' + 'MAS-45',
-		method: 'GET',
-		headers: {
-			"content-type": "application/json"
-		}
-	};
-  ajax(options, function (error, response, body)
-  {
-    console.log('in ajax');
-    returnUsers(body,bot,message);
-    });
-//    return JSON.parse(result);
-while(true){
-
-}
-//console.log('How did i get here?');
-};
-
-function returnUsers(body,bot,message){
-  console.log('body');
-  return [ "Issue 5143: amedhek", "Issue 5173: apshukla", "Issue 51: admin","Issue 7709: panand4","Issue 5000: sbiswas4" ];
-}*/
-//////////////////////////////////////////////////////////////////////////////////////
 // Call Service
 function getIssues(id,bot,message) {
   console.log(id);
 	var options = {
   		//url: 'http://localhost:3000/' + id,
-      url: 'http://localhost:3000/' + 'MAS-45',
+      url: 'http://localhost:3000/' + id,
 		method: 'GET',
 		headers: {
 			"content-type": "application/json"
@@ -323,7 +312,7 @@ function getLikelyUsers(summary,bot,message,callback) {
   {
   //var data = JSON.parse(body).user_issues;
   var data = body.user_issues;
-      console.log(data);
+      //console.log(data);
       callback(data[0],data[1]);
     });
 };
