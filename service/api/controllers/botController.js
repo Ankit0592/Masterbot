@@ -39,6 +39,7 @@ function getIssues(id, callback)
             "Authorization": token
         }
     };
+  //Use case 3
     // Send a http request to url and specify a callback that will be called upon its return.
     request(options, function (error, response, body)
     {
@@ -220,6 +221,8 @@ exports.handler = (event, context, callback) => {
     createIssue(names[2],callback,issueType)
 };
 */
+
+//Use case 1
 function createIssue(userName, callback,issueType){
 
     var options = {
@@ -253,7 +256,7 @@ function createIssue(userName, callback,issueType){
         callback(null, { statusCode: 200, body:"Issue "+body.key+" created and successfully assigned to : " + userName+". For furhter info click on: "+ body.self});
     });
 }
-
+//Use Case 2
 // Notification handler: use ngrok to get public url and put the url in jira webhooks
 exports.handler = (event, context, callback) =>{
     var json_obj = event.body;
@@ -283,9 +286,8 @@ exports.handler = (event, context, callback) =>{
         }
     }
 
-
+    // Use Case 2
     function sendNotification(body, emailAddress, fromString, toString, key){
-        //var targetUser = JSON.parse(body).fields.assignee.name;
         var targetUser = JSON.parse(body).fields.assignee.emailAddress.split('@')[0];
         var url = config.team_members[0][targetUser];
 
@@ -308,9 +310,6 @@ exports.handler = (event, context, callback) =>{
 
         var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
         var request = new XMLHttpRequest();
-        // common channel url "https://hooks.slack.com/services/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"
-
-        //var url = urls[targetUser];
         var method = "POST";
         var postData = myJSON;
         var async = true;
