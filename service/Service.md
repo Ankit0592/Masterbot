@@ -5,7 +5,7 @@
 [Use case-2](URL)<br>
 [Use case-3](URL) <br>
 
-[Code](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/tree/master/service) </br>
+[Code repo for service](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/tree/master/service) </br>
 
 'Master-Bot' provides suggestions, creates issues on JIRA, and assigns them to team members depending on input from the user. It also notifies the team members whenever the state of a task changes on JIRA(In Progress, Completed etc.) which is useful when different team members are working on subtasks within a task and their tasks have dependency on each other. 
 
