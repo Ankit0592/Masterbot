@@ -13,6 +13,20 @@
 ## Use Case 1: Issue creation and auto assign on Jira 
 Preconditions: Bot must be able to access Jira API
 
+Sub flows:
+[S1] User enters ‘Create {project id}’ to the bot. </br>
+[S2] Bot requests user to enter issue type and user provides the same. </br>
+[S3] Bot asks for description of issue and user enters the text. </br>
+[S4] Bot gives list of similar issues along with the name of team member who worked on it and a "Create" button against each similar issue. </br>
+[S5] User go through those issues and after finding out the most relevant one, clicks on corresponding 'Create' button. </br>
+[S6] Bot creates the issue with provided description on Jira and assigns it to a team member who worked on the similar issue (from S5, the most relevant similar issue as per the user who created this issue). </br>
+[s7] Bot acknowledges the successful creation of issue.
+
+Alternate flows:
+[E1] No similar issues found. Bot provides an option saying "Click Create if most releavant similar issue does not exists" along with a create button. User can click on this create button for issue creation and assign it someone later. </br>
+[E2] User does not click on create button for creation of an issue. In this case bot conversation terminates. </br>
+[E3] User wants to assign the issue to some other developer (other than the ones suggested by bot). In this case the issue can be created without any assignee. </br>
+
 We are making use of slack's interactive messaging feature for implementing the buttons that we use for the first test case. This requires us to provide a end point where slack sends a post message when we claick on any button. This end point has been implemented using the Lambda function on Amazon AWS
 
 #### Use Case 2: Notify relevant team members about Status change of an issue. 
