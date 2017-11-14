@@ -10,7 +10,7 @@
 'Master-Bot' provides suggestions, creates issues on JIRA, and assigns them to team members depending on input from the user. It also notifies the team members whenever the state of a task changes on JIRA(In Progress, Completed etc.) which is useful when different team members are working on subtasks within a task and their tasks have dependency on each other. 
 
 #### Use Cases
-## Use Case 1: Issue creation and auto assign on Jira 
+#### Use Case 1: Issue creation and auto assign on Jira 
 Preconditions: Bot must be able to access Jira API
 
 Sub flows:
@@ -40,4 +40,16 @@ Sub flows:
 [S1] A developer named Foo changes the status of an issue from “In Progress” to “Completed”. </br>
 [S2] Bot sends notification to other team members who are working on the same as: UPDATE TEST-1234 has been marked as ‘Completed’ by Foo. </br>
 
+
+#### Use Case 3:  Find duplicate issues of a given issue on Jira
+Preconditions: Bot must be able to access Jira API
+
+Main: User asks bot to provide duplicate issues of a given issue. Bot lists the duplicate issue number and url for the same. 
+
+Sub flows:
+[S1] User types "Duplicate {issue id}". </br>
+[S2] Bot provides list of duplicate issues.</br>
+
+Alternate flows:
+[E1] No duplicate issue found.
 
