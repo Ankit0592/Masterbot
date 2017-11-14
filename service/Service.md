@@ -31,3 +31,13 @@ We are making use of slack's interactive messaging feature for implementing the 
 
 #### Use Case 2: Notify relevant team members about Status change of an issue. 
 Preconditions: JIRA is configured to push update to BOT service.
+
+[S1] Developer changes the status of an issue from “In Progress” to “Completed”. </br>
+[S2] Bot receives notification from Jira about this event. </br>
+[S3] Bot sends message about this to relevant team members on Slack. </br>
+
+Sub flows:
+[S1] A developer named Foo changes the status of an issue from “In Progress” to “Completed”. </br>
+[S2] Bot sends notification to other team members who are working on the same as: UPDATE TEST-1234 has been marked as ‘Completed’ by Foo. </br>
+
+
