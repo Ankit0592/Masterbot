@@ -4,3 +4,7 @@
 [Case-1](URL)<br>
 [Use case-2](URL)<br>
 [Use case-3](URL) <br>
+
+#### Use Cases
+## Use Case 1: Issue creation and auto assign on Jira 
+Preconditions: Bot must be able to access Jira API
