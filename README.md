@@ -11,4 +11,7 @@
 [Link](./DESIGN.md) to design file.   
     
 ## Bot Milestone
-[Link](./BOT.md) to bot file.  
+[Link](./BOT.md) to bot file.   
+        
+## Service Milestone
+[Link](./service/Service.md) to bot file. 
