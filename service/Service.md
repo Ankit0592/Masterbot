@@ -2,6 +2,7 @@
 ## Code
 [Code for service](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/tree/master/service) </br>
 [Code for bot](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Bot/bot.js)</br>
+[Code for Usecase1 AWS](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/service/Usecase1_AWS.js)</br>
 
 ## Use Cases
 #### Use Case 1: Issue creation and auto assign on Jira
