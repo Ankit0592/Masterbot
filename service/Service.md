@@ -1,55 +1,186 @@
-#### Task Tracking : [WORKSHEET2.md](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/service/WORKSHEET.md)<br>
 
-#### Screencasts:
-[Use case-1](URL)<br>
-[Use case-2](URL)<br>
-[Use case-3](URL) <br>
+## Code
+[Code for service](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/tree/master/service) </br>
+[Code for bot](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Bot/bot.js)</br>
 
-[Code repo for service](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/tree/master/service) </br>
+## Use Cases
+#### Use Case 1: Issue creation and auto assign on Jira
 
-'Master-Bot' provides suggestions, creates issues on JIRA, and assigns them to team members depending on input from the user. It also notifies the team members whenever the state of a task changes on JIRA(In Progress, Completed etc.) which is useful when different team members are working on subtasks within a task and their tasks have dependency on each other. 
+Preconditions: Bot must be able to access Jira API</br>
 
-#### Use Cases
-#### Use Case 1: Issue creation and auto assign on Jira 
-Preconditions: Bot must be able to access Jira API
+Main: User requests creation of a task on Jira [s1] and provide issue type and description of the issue to the bot [s2][s3]. </br> 
+Bot will return links of similar issues along with a create button against each issue [s4]. </br>
+User can check them and click submit corresponding to the most relevant issue [s5]. </br>
 
-Sub flows:
-[S1] User enters ‘Create {project id}’ to the bot. </br>
-[S2] Bot requests user to enter issue type and user provides the same. </br>
-[S3] Bot asks for description of issue and user enters the text. </br>
-[S4] Bot gives list of similar issues along with the name of team member who worked on it and a "Create" button against each similar issue. </br>
-[S5] User go through those issues and after finding out the most relevant one, clicks on corresponding 'Create' button. </br>
-[S6] Bot creates the issue with provided description on Jira and assigns it to a team member who worked on the similar issue (from S5, the most relevant similar issue as per the user who created this issue). </br>
-[s7] Bot acknowledges the successful creation of issue.
+Bot creates the issue with provided description and assigns to a team member who worked on that selected relevant similar issue. Bot also provides a create button if user cannot find any relevant similar issue. If user clicks on this create button, new isse is created and not assigned to anyone at this point (can be assigned later). </br>
 
-Alternate flows:
-[E1] No similar issues found. Bot provides an option saying "Click Create if most releavant similar issue does not exists" along with a create button. User can click on this create button for issue creation and assign it someone later. </br>
+Sub flows: [S1] User enters ‘Create {project id}’ to the bot. </br>
+           [S2] Bot requests user to enter issue type and user provides the same. </br>
+           [S3] Bot asks for description of issue and user enters the text. </br>
+           [S4] Bot gives list of similar issues along with the name of team member who worked on it and a "Create" button against each similar issue. </br>
+           [S5] User go through those issues and after finding out the most relevant one, clicks on corresponding 'Create' button. </br>
+           [S6] Bot creates the issue with provided description on Jira and assigns it to a team member who worked on the similar issue (from S5, the most relevant similar issue as per the user who created this issue). </br>
+           [s7] Bot acknowledges the successful creation of issue. </br>
+
+Alternate flows: [E1] No similar issues found. Bot provides an option saying "Click Create if most releavant similar issue does not exists" along with a create button. User can click on this create button for issue creation and assign it someone later. </br>
 [E2] User does not click on create button for creation of an issue. In this case bot conversation terminates. </br>
-[E3] User wants to assign the issue to some other developer (other than the ones suggested by bot). In this case the issue can be created without any assignee. </br>
+[E3] User wants to assign the issue to some other developer (other than the ones suggested by bot). In this case the issue can be created without any assignee. 
 
-We are making use of slack's interactive messaging feature for implementing the buttons that we use for the first test case. This requires us to provide a end point where slack sends a post message when we claick on any button. This end point has been implemented using the Lambda function on Amazon AWS
+#### Use Case 2: Notify relevant team members about Status change of an issue.
+This use case demonstrates how this bot can notify relevant team members about status changes on the tasks they are working on. This is useful when there's a dependency on team member working. Simply updating the team immediately is useful in many situations. </br>
 
-#### Use Case 2: Notify relevant team members about Status change of an issue. 
-Preconditions: JIRA is configured to push update to BOT service.
+Preconditions: JIRA is configured to push update to BOT service. </br>
+Main: Whenever a team member changes the status of an issue, all other team members working on the same will be notfied of the change on slack by this bot. [S1] Developer changes the status of an issue from “In Progress” to “Completed”. </br>
+                   [S2] Bot receives notification from Jira about this event. </br>
+                   [S3] Bot sends message about this to relevant team members on Slack. </br>
 
-[S1] Developer changes the status of an issue from “In Progress” to “Completed”. </br>
-[S2] Bot receives notification from Jira about this event. </br>
-[S3] Bot sends message about this to relevant team members on Slack. </br>
+Sub flows: [S1] A developer named Foo changes the status of an issue from “In Progress” to “Completed”. </br>
+           [S2] Bot sends notification to other team members who are working on the same as: UPDATE TEST-1234 has been marked as ‘Completed’ by Foo. </br>
 
-Sub flows:
-[S1] A developer named Foo changes the status of an issue from “In Progress” to “Completed”. </br>
-[S2] Bot sends notification to other team members who are working on the same as: UPDATE TEST-1234 has been marked as ‘Completed’ by Foo. </br>
+#### Use Case 3: Find duplicate issues of a given issue on Jira
+Preconditions: Bot must be able to access Jira API </br>
+Main: User asks bot to provide duplicate issues of a given issue. Bot lists the duplicate issue number and url for the same.
+Sub flows: [S1] User types "Duplicate {issue id}". 
+            [S2] Bot provides list of duplicate issues.
+Alternate flows: [E1] No duplicate issue found. </br>
 
+## Implementation Architecture: 
+![Image](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/Arch.png)       
+           
+#### Use Case 2 Implementation:  
+For Notifications, we are using Webhooks on JIRA and Slack. When user modifies the status of a task on JIRA(To Do, In Progress, Done), webhook on JIRA sends subtasks associated with the task to express server. The server then notifies all the users associated with the subtasks about the status updates.        
+           
+## Task Tracking : [WORKSHEET2.md](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/service/WORKSHEET.md)<br>
 
-#### Use Case 3:  Find duplicate issues of a given issue on Jira
-Preconditions: Bot must be able to access Jira API
+## Screencast:
+[See Screencast](URL)<br>
 
-Main: User asks bot to provide duplicate issues of a given issue. Bot lists the duplicate issue number and url for the same. 
+```javascript
+//var json_obj ;
+var request = require('request');
+var token = "Basic YWFyb3JhNkBuY3N1LmVkdTpBbmtpdDMxMTMh";
+var urlRoot = "https://masterbot.atlassian.net/rest/api/2/";
+exports.handler = (event, context, callback) => {
+    //console.log(event.body);
+    payload = decodeURIComponent(event.body);
+    json = payload.substring(8);
+    json_obj = JSON.parse(json);
+    console.log(json_obj);
+    callback_id = json_obj.callback_id;
+    
+    if(callback_id == 'C_no_user'){
+        if(json_obj.actions[0].name == 'Create'){
+            is_sum_la_arr = json_obj.actions[0].value.split(":");
+            issueType = is_sum_la_arr[0];
+            summary = process_summary(is_sum_la_arr[1]);
+            labels = process_labels(is_sum_la_arr[2]);
+            createIssue('admin',callback,issueType,summary,labels );
+            
+        }
+        else{
+            callback(null, { statusCode: 200, body: "Exit succesfull" });
+        }
+        
+    }
+    else if(callback_id == 'C_user_select'){
+        if(json_obj.actions[0].name == 'Exit'){
+            callback(null, { statusCode: 200, body: "Exit succesfull" });
+        }
+        else{
+      is_sum_la_arr = json_obj.actions[0].value.split(":");
+      issueType = is_sum_la_arr[0];
+      summary = process_summary(is_sum_la_arr[1]);
+      labels = process_labels(is_sum_la_arr[2]);
+      names = json_obj.actions[0].name.split("+");
+      createIssue(names[2],callback,issueType,summary,labels );
+        }
+    }
+    else if(callback_id =='issue_selection'){
+        //issue_selection(callback);
+       callback(null, { statusCode: 200, body:'' }); 
+    }
+ //callback(null, { statusCode: 200, body:"Issue created and successfully assigned to : " + names[2] });
+    
+};
 
-Sub flows:
-[S1] User types "Duplicate {issue id}". </br>
-[S2] Bot provides list of duplicate issues.</br>
+function process_summary(summary){
+    var retSummary = '';
+    summr_arr = summary.split("+");
+    for(var i=0; i < summr_arr.length; i++){
+      retSummary = retSummary +" "+ summr_arr[i];   
+    }
+    return retSummary;
+}
 
-Alternate flows:
-[E1] No duplicate issue found.
+function process_labels(labels){
+    
+    return labels.split(",");
+    
+}
+
+/*
+function issue_selection(callback){
+    var options = {
+      //url: 'https://7b2fd2f1.ngrok.io/slack/actions',
+      url: 'https://7b2fd2f1.ngrok.io/slack/receive',
+      method: 'POST',
+      headers: {
+          "content-type": "application/json",
+          
+      },
+      json: {
+      "Check": "c1"
+      }
+  };
+    request(options, function (error, response, body)
+    {
+       // if(body){
+          //  var obj = JSON.parse(body);
+          //  console.log(body);
+      //  }
+        //var url = body.self;
+       // url = url.substring(0,url.indexOf("/rest")) + "/browse/"+body.key;
+        callback(null, {statusCode: 200, body:'dddd'});
+    });
+  
+}
+*/
+function createIssue(userName, callback,issueType,summary,labels){
+    
+    var options = {
+      url: urlRoot + 'issue/',
+      method: 'POST',
+      headers: {
+          "content-type": "application/json",
+          "Authorization": token
+      },
+      json: {
+      "fields": {
+        "project":
+            {
+              "key": "MAS"
+             },
+         "summary": summary,
+        "description": "Creating of an issue using project keys and issue type names using the REST API",
+         "issuetype": {
+            "name": issueType
+           },
+           "assignee":{"name":userName},
+           "labels" : labels
+      }
+      }
+  };
+  request(options, function (error, response, body)
+    {
+        if(body){
+          //  var obj = JSON.parse(body);
+            console.log(body);
+        }
+        var url = body.self;
+        url = url.substring(0,url.indexOf("/rest")) + "/browse/"+body.key;
+        callback(null, { statusCode: 200, body:"Issue created and assigned to: " + userName+". Link: "+ url});
+    });
+}
+```
+
 
