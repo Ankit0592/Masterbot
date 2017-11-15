@@ -44,9 +44,12 @@ Sub flows: [S1] User types "Duplicate {issue id}".
             [S2] Bot provides list of duplicate issues.
 Alternate flows: [E1] No duplicate issue found. </br>
 
-## Implementation Architecture : 
-![Image](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/Arch.png)
-
+## Implementation Architecture: 
+![Image](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/Arch.png)       
+           
+#### Use Case 2 Implementation:  
+For Notifications, we are using Webhooks on JIRA and Slack. When user modifies the status of a task on JIRA(To Do, In Progress, Done), webhook on JIRA sends subtasks associated with the task to express server. The server then notifies all the users associated with the subtasks about the status updates.        
+           
 ## Task Tracking : [WORKSHEET2.md](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/service/WORKSHEET.md)<br>
 
 ## Screencast:
