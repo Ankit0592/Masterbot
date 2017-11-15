@@ -56,10 +56,10 @@ When user selects whom he wants to assign the issue to, this value is sent to th
 Success result and a link of the created issue is returned to the user.
            
 #### Use Case 2 Implementation:  
-For Notifications, we are using Webhooks on JIRA and Slack. When user modifies the status of a task on JIRA(To Do, In Progress, Done), webhook on JIRA sends subtasks associated with the task to express server. The server then notifies all the users associated with the subtasks about the status updates.        
+For Notifications, we are using Webhooks on JIRA and Slack. When user modifies the status of a task on JIRA(To Do, In Progress, Done), webhook on JIRA sends subtasks associated with the task to express server. The server then notifies all the users associated with the subtasks about the status updates through direct message.     
 
 #### Use Case 3 Implementation:
-Once the issues whoose duplicates are to be found is sent to the Express Server, we querry the Jira Api, get a list of all issues and compare their summaries with the summary of the current issue. We use the JaroWinklerDistance in the 'natural' module for text comparison and look for an overlap of over 70%.
+Once the issue whose duplicates are to be found is sent to the Express Server, we query the Jira Api, get a list of all issues and compare their summaries with the summary of the current issue. We use the JaroWinklerDistance in the 'natural' module for text comparison and look for an overlap of over 70%. Any such issues are according to current confirguration reported as duplicate.
 
 
 ## Task Tracking : [WORKSHEET2.md](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/service/WORKSHEET.md)<br>
