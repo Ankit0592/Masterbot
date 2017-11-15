@@ -44,6 +44,9 @@ Sub flows: [S1] User types "Duplicate {issue id}".
             [S2] Bot provides list of duplicate issues.
 Alternate flows: [E1] No duplicate issue found. </br>
 
+## Implementation Architecture : 
+![Image](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/Arch.png)
+
 ## Task Tracking : [WORKSHEET2.md](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/service/WORKSHEET.md)<br>
 
 ## Screencast:
