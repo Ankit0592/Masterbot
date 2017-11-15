@@ -14,9 +14,9 @@ module.exports = function(app) {
     app.route('/:id')
         .get(botList.getIssues);
 
-    app.route('/issues')
+    /*app.route('/issues')
         .get(botList.getIssues)
-        .post(botList.createIssue);
+        .post(botList.createIssue);*/
 
 
 

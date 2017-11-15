@@ -1,8 +1,7 @@
 'use strict';
 var request = require('request');
 var natural = require('natural');
-//var mockData = require('./mock.json');
-var token = "Basic YWFyb3JhNkBuY3N1LmVkdTpBbmtpdDMxMTMh";
+var token = process.env.JIRATOKEN;
 var urlRoot = "https://masterbot.atlassian.net/rest/api/2/";
 var config = require('../../config.js');
 var pos = require('pos');
@@ -16,11 +15,6 @@ exports.getIssues = function(req, res) {
     }
     getIssues(req.params.id, callback);
 
-//   Task.find({}, function(err, task) {
-//     if (err)
-//       res.send(err);
-//     res.json(task);
-//   });
 };
 
 function getMatch(str1, str2) {
@@ -29,8 +23,9 @@ function getMatch(str1, str2) {
 
 function getIssues(id, callback)
 {
-  console.log(id);
-    var projectName = 'MAS';
+  //console.log(id);
+  var project_id = id.split("-")[0];
+    var projectName = project_id;
     var options = {
         url: urlRoot + '/search?jql=project=' + projectName, //+ "&maxResults=15",
         method: 'GET',
@@ -67,31 +62,6 @@ function getIssues(id, callback)
     });
 }
 
-exports.createIssue = function(req, res) {
-/*
-  var projectName = 'MAS';
-  var options = {
-      url: urlRoot + 'issue/',
-      method: 'POST',
-      headers: {
-          "content-type": "application/json",
-          "Authorization": token
-      },
-     json: {
-      'fields': {
-        "project":
-            {
-              "key": "MAS"
-             },
-         "summary": "REST ye merry gentlemen.",
-        "description": "Creating of an issue using project keys and issue type names using the REST API",
-         "issuetype": {
-            "name": "Bug"
-           }
-      }
-      }
-  };*/
-};
 
 exports.labelMatching = function(req, res) {
 
@@ -101,9 +71,8 @@ exports.labelMatching = function(req, res) {
           user_issues: userIssuesAndLabels
       });
   }
-  //getIssues(req.params.id, callback);
-//callback('Kinnetic');
-labelMatching(req.body.summary,callback);
+
+labelMatching(req.body.summary,req.body.project_id,callback);
 
 };
 
@@ -122,10 +91,10 @@ function Comparator(arr1, arr2) {
 
 }
 
-function labelMatching(summary,callback ){
+function labelMatching(summary,project_id,callback ){
 
      var arrayOfLabels = extractLabels(summary);
-     var projectName = 'MAS';
+     var projectName = project_id;
      var options = {
          url: urlRoot + '/search?jql=project=' + projectName + "&expand=labels",
          method: 'GET',
@@ -207,52 +176,6 @@ function extractLabels(summary){
   return retArray;
 }
 
-/*
-exports.handler = (event, context, callback) => {
-    //console.log(event.body);
-    payload = decodeURIComponent(event.body);
-    json = payload.substring(8);
-    json_obj = JSON.parse(json);
-    console.log(json_obj);
-    names = json_obj.actions[0].name.split("+");
-    issueType = json_obj.actions[0].value;
- //callback(null, { statusCode: 200, body:"Issue created and successfully assigned to : " + names[2] });
-    createIssue(names[2],callback,issueType)
-};
-*/
-function createIssue(userName, callback,issueType){
-
-    var options = {
-      url: urlRoot + 'issue/',
-      method: 'POST',
-      headers: {
-          "content-type": "application/json",
-          "Authorization": token
-      },
-      json: {
-      "fields": {
-        "project":
-            {
-              "key": "MAS"
-             },
-         "summary": "REST ye merry gentlemen.",
-        "description": "Creating of an issue using project keys and issue type names using the REST API",
-         "issuetype": {
-            "name": issueType
-           },
-           "assignee":{"name":userName}
-      }
-      }
-  };
-  request(options, function (error, response, body)
-    {
-        if(body){
-          //  var obj = JSON.parse(body);
-            console.log(body);
-        }
-        callback(null, { statusCode: 200, body:"Issue "+body.key+" created and successfully assigned to : " + userName+". For furhter info click on: "+ body.self});
-    });
-}
 
 // Notification handler: use ngrok to get public url and put the url in jira webhooks
 exports.handler = (event, context, callback) =>{

@@ -2,7 +2,7 @@ var service = require('../service/api/controllers/botController.js');
 var ajax = require('request');
 var Botkit = require('botkit');
 var mockData = require('./mock.json');
-var issueButton = require('./Issue.json');
+//var issueButton = require('./Issue.json');
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 var nock = require('nock');
 var request = new XMLHttpRequest();
@@ -14,58 +14,8 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 
 var controller = Botkit.slackbot({
-  //interactive_replies: true,
   debug: false,
-  clientId: process.env.clientId,
-  clientSecret: process.env.clientSecret,
-  scopes: ['bot'],
-  //redirectUri: 'http://localhost:3001/oauth',
-  redirectUri: 'https://7b2fd2f1.ngrok.io/oauth',
-  json_file_store: __dirname + '/.data/db/'
-
 });
-
-/*.configureSlackApp({
-    clientId: process.env.clientId,
-    clientSecret: process.env.clientSecret,
-    scopes: ['bot'],
-    //redirectUri: 'http://localhost:3001/oauth',
-    redirectUri: 'https://7b2fd2f1.ngrok.io/oauth',
-    json_file_store: __dirname + '/.data/db/'
-    //Bot AppID
-});*/
-
-/*
-controller.setupWebserver(process.env.port,function(err,webserver) {
-  controller.createWebhookEndpoints(controller.webserver);
-
-  controller.createOauthEndpoints(controller.webserver,function(err,req,res) {
-    if (err) {
-      res.status(500).send('ERROR: ' + err);
-    } else {
-      res.send('Success!');
-    }
-  });
-});*/
-
-app.post('/slack/actions', urlencodedParser, (req, res) =>{
-  console.log('hinata');
-    res.status(200).end() // best practice to respond with 200 status
-    var actionJSONPayload = JSON.parse(req.body.payload) // parse URL-encoded payload JSON string
-    /*var message = {
-        "text": actionJSONPayload.user.name+" clicked: "+actionJSONPayload.actions[0].name,
-        "replace_original": false
-    }*/
-    //sendMessageToSlackResponseURL(actionJSONPayload.response_url, message)
-    console.log(actionJSONPayload);
-});
-
-controller.startTicking();
-
-controller.createOauthEndpoints(app);
-controller.createWebhookEndpoints(app);
-
-
 
 controller.spawn({
   token: process.env.SLACKTOKEN,
@@ -76,6 +26,7 @@ controller.on(['direct_mention','direct_message'],function(bot,message) {
   var msg = message.text;
   var command = msg.split(' ')[0];
   var id = msg.split(' ')[1];
+
 
   if(command.toLowerCase() == 'create' && id) { // Use Case-1
 	  createIssue(id,bot,message);
@@ -88,15 +39,6 @@ controller.on(['direct_mention','direct_message'],function(bot,message) {
   }
 });
 
-  controller.on('interactive_message_callback', function(bot, message) {
-  //controller.on('interactive_message', function(bot, message) {
-    console.log("Please come here");
-  //  bot.replyInteractive(message,'Please come here');
-   //var ids = message.callback_id.split(/\-/);
-    //var user_id = ids[0];
-    //var item_id = ids[1];
-    ///bot.reply(message,'Please come here');
-});
 
 // start conversation for use case-1
 function createIssue(title,bot,message) {
@@ -130,7 +72,7 @@ function createIssue(title,bot,message) {
             "text": 'Create',
             "type": "button",
             //"value": [issueType, response.text, labels]
-            "value": issueType + ":"+response.text + ":"+ labels,
+            "value": issueType + ":"+response.text + ":"+ labels + ":" + title
 
           });
           button.attachments[0].actions.push(
@@ -165,10 +107,10 @@ function createIssue(title,bot,message) {
             "name": arrayOfNames[i],
             "text": arrayOfNames[i],
             "type": "button",
-            "value": issueType + ":"+response.text + ":"+ labels
+            "value": issueType + ":"+response.text + ":"+ labels + ":" + title
           });
         }
-         console.log('bfr new?');
+         //console.log('bfr new?');
         button.attachments[0].actions.push(
         {
           "name": 'Exit',
@@ -176,7 +118,7 @@ function createIssue(title,bot,message) {
           "type": "button",
           "value": 'null'
         });
-       console.log('afr new?');
+       //console.log('afr new?');
         bot.reply(message, button);
       //  console.log('did i come here?');
   }
@@ -184,7 +126,7 @@ function createIssue(title,bot,message) {
 
       }
 
-     getLikelyUsers(response.text,bot,message,callback);
+     getLikelyUsers(response.text,title,bot,message,callback);
 
     },{},'summary');
 
@@ -255,7 +197,7 @@ setTimeout( function(){
 
 // Call Service
 function getIssues(id,bot,message) {
-  console.log(id);
+  //console.log(id);
 	var options = {
   		//url: 'http://localhost:3000/' + id,
       url: 'http://localhost:3000/' + id,
@@ -293,7 +235,7 @@ function matchIssue(body,bot,message) {
 //  }, 2000 );
 }
 
-function getLikelyUsers(summary,bot,message,callback) {
+function getLikelyUsers(summary,project_id,bot,message,callback) {
   //console.log(summary);
 	var options = {
   		//url: 'http://localhost:3000/' + id,
@@ -303,7 +245,8 @@ function getLikelyUsers(summary,bot,message,callback) {
 			"content-type": "application/json"
 		},
     json: {
-      "summary": summary
+      "summary": summary,
+      "project_id": project_id
     }
 	};
 
