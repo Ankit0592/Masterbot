@@ -46,11 +46,22 @@ Sub flows: [S1] User types "Duplicate {issue id}".
 Alternate flows: [E1] No duplicate issue found. </br>
 
 ## Implementation Architecture: 
-![Image](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/Arch.png)       
+![Image](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/Arch.png) 
+
+#### Use Case 1 Implementation:  
+When user provides summary of the issue, we send this summary to the express server, where key words(common and proper nouns) are extracted using the 'pos' package in node. 
+We then match these keywords(labels) with those of existing issues (fetched from Jira API) and choose the top 4 issues who have more than a 50% match in terms of number of matching labels.
+We send these back to slack in terms of user buttons for user to choose from.
+When user selects whom he wants to assign the issue to, this value is sent to the Lambda function deployed on AWS, which uses the sent details to create an issue on Jira using the Jira API for creation.
+Success result and a link of the created issue is returned to the user.
            
 #### Use Case 2 Implementation:  
 For Notifications, we are using Webhooks on JIRA and Slack. When user modifies the status of a task on JIRA(To Do, In Progress, Done), webhook on JIRA sends subtasks associated with the task to express server. The server then notifies all the users associated with the subtasks about the status updates.        
-           
+
+#### Use Case 3 Implementation:
+Once the issues whoose duplicates are to be found is sent to the Express Server, we querry the Jira Api, get a list of all issues and compare their summaries with the summary of the current issue. We use the JaroWinklerDistance in the 'natural' module for text comparison and look for an overlap of over 70%.
+
+
 ## Task Tracking : [WORKSHEET2.md](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/service/WORKSHEET.md)<br>
 
 ## Screencast:
