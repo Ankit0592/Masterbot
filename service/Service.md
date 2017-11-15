@@ -1,13 +1,6 @@
-#### Task Tracking : [WORKSHEET2.md](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/service/WORKSHEET.md)<br>
 
-#### Screencasts:
-[Use case-1](URL)<br>
-[Use case-2](URL)<br>
-[Use case-3](URL) <br>
-
+#### Code
 [Code repo for service](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/tree/master/service) </br>
-
-'Master-Bot' provides suggestions, creates issues on JIRA, and assigns them to team members depending on input from the user. It also notifies the team members whenever the state of a task changes on JIRA(In Progress, Completed etc.) which is useful when different team members are working on subtasks within a task and their tasks have dependency on each other. 
 
 #### Use Cases
 #### Use Case 1: Issue creation and auto assign on Jira 
@@ -52,4 +45,13 @@ Sub flows:
 
 Alternate flows:
 [E1] No duplicate issue found.
+
+
+#### Task Tracking : [WORKSHEET2.md](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/service/WORKSHEET.md)<br>
+
+#### Screencast:
+[See Screencast](URL)<br>
+
+
+'Master-Bot' provides suggestions, creates issues on JIRA, and assigns them to team members depending on input from the user. It also notifies the team members whenever the state of a task changes on JIRA(In Progress, Completed etc.) which is useful when different team members are working on subtasks within a task and their tasks have dependency on each other. 
 
