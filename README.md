@@ -14,4 +14,4 @@
 [Link](./BOT.md) to bot file.   
         
 ## Service Milestone
-[Link](./service/Service.md) to bot file. 
+[Link](./service/Service.md) to service file. 
