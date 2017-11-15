@@ -55,6 +55,9 @@ For Notifications, we are using Webhooks on JIRA and Slack. When user modifies t
 ## Screencast:
 [See Screencast](URL)<br>
 
-
+```javascript
+var s = "JavaScript syntax highlighting";
+alert(s);
+```
 
 
