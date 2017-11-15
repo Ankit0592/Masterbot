@@ -65,7 +65,7 @@ Once the issues whoose duplicates are to be found is sent to the Express Server,
 ## Task Tracking : [WORKSHEET2.md](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/service/WORKSHEET.md)<br>
 
 ## Screencast:
-[See Screencast](URL)<br>
+Click [here](https://youtu.be/7eLuWAoiC3A) to view the screencast.<br>
 
 
 
