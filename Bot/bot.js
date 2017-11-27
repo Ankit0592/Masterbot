@@ -223,8 +223,18 @@ function matchIssue(body,bot,message) {
 			var result = '';
 			for(var i = 0; i < data.length; ++i) {
 				result += data[i] + '\n';
-			}
-			bot.reply(message, "Found following duplicate issues:");
+      }
+      
+      var reply_with_attachments = {
+        'attachments': [
+          {
+            'text': 'Found following duplicate issues: ',
+            'color': '#7CD197'
+          }
+        ],
+        }
+
+			bot.reply(message, reply_with_attachments);
 			setTimeout( function(){
 				bot.reply(message, result);
 			}, 1000 );
