@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "botkit": "^0.5.8",
+    "botkit-helper-slack": "0.0.1",
     "nock": "^9.0.25",
     "request": "^2.83.0",
     "slackbots": "^0.5.1",
