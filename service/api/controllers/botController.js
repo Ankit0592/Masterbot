@@ -2,12 +2,12 @@
 var request = require('request');
 var natural = require('natural');
 var token = process.env.JIRATOKEN;
-var urlRoot = "https://masterbot.atlassian.net/rest/api/2/";
+var urlRoot = "https://masterbot.atlassian.net/rest/api/2";
 var config = require('../../config.js');
 var pos = require('pos');
 
 exports.getIssues = function(req, res) {
-  console.log('In get Issues');
+
     var callback=function(matchedIssues){
         res.status(200).json({
             matching_issues: matchedIssues
@@ -109,10 +109,7 @@ function labelMatching(summary,project_id,callback ){
      {
          var countArray = [];
          var thLength = (arrayOfLabels.length)/2 ;
-         //console.log(arrayOfLabels);
-         //console.log(arrayOfLabels.length);
-        // var matchedIssues=[];
-        //var userIssues = '';
+         
         var userIssues = [];
          if(body) {
              var obj = JSON.parse(body)
@@ -180,6 +177,7 @@ function extractLabels(summary){
 // Notification handler: use ngrok to get public url and put the url in jira webhooks
 exports.handler = (event, context, callback) =>{
     var json_obj = event.body;
+
     if(json_obj.issue_event_type_name == "issue_generic"){
         var emailAddress = json_obj.user.emailAddress;
         var id = json_obj.changelog.id;
@@ -212,7 +210,8 @@ exports.handler = (event, context, callback) =>{
         var url = config.team_members[0][targetUser];
 
         var result = "UPDATE: "+emailAddress +" changed status of task- <https://masterbot.atlassian.net/browse/"+key+"|"+key+">";
-        if(emailAddress != JSON.parse(body).fields.assignee.emailAddress){
+        
+        if(url!= undefined && emailAddress != JSON.parse(body).fields.assignee.emailAddress){
         var myObj = { "attachments": [ {"color":"#439FE0", "text": result, "fields": [
                     {
                         "title": "Previous Status",
