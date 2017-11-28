@@ -42,36 +42,36 @@ UserID:  tamasterbot@gmail.com Password: tamaster <br>
 
 ### Edge Cases(Use Case: 1)
 
-User enters wrong project name: Create "Invalid Project"
-Result: User is shown message for invalid project id
+User enters wrong project name: Create "Invalid Project" <br>
+Result: User is shown message for invalid project id <br>
+<br>
+User enters wrong option in Issue Type (say, 4) <br>
+Result: User is shown message for invalid issue type <br>
 
-User enters wrong option in Issue Type (say, 4)
-Result: User is shown message for invalid issue type
+User enters valid project id and valid issue type <br>
+Result: User should be able to create issue and issue is assigned to correct user. <br>
 
-User enters valid project id and valid issue type
-Result: User should be able to create issue and issue is assigned to correct user.
+### Edge Cases(Use Case: 2) <br>
 
-### Edge Cases(Use Case: 2)
+User exist on JIRA, but not on Slack.<br>
+Result: No Notification is sent and no exception is thrown.<br>
 
-User exist on JIRA, but not on Slack.
-Result: No Notification is sent and no exception is thrown.
+User exist on Slack, but not on JIRA.<br>
+Result: No notification and sent and no exception is thrown.<br>
 
-User exist on Slack, but not on JIRA.
-Result: No notification and sent and no exception is thrown.
-
-User exists on both slack and JIRA (given same email id on both platforms)
-Result: Notification is sent to users who are assigned subtasks when status of main task changes.
+User exists on both slack and JIRA (given same email id on both platforms)<br>
+Result: Notification is sent to users who are assigned subtasks when status of main task changes.<br>
 
 ### Edge Cases(Use Case: 3)
 
-User enters wrong issue number or project id.
-Result: User is shown message for invalid project/number accordingly.
+User enters wrong issue number or project id.<br>
+Result: User is shown message for invalid project/number accordingly.<br>
 
-User enters Duplicate (no issue number given)
-Result: User is shown message for invalid issue.
+User enters Duplicate (no issue number given)<br>
+Result: User is shown message for invalid issue.<br>
 
-User enters Duplicate MAS-77 (Happy case)
-Result: User is shown duplicate issue links if they exist.
+User enters Duplicate MAS-77 (Happy case)<br>
+Result: User is shown duplicate issue links if they exist.<br>
 
 
 ## Screencast Videos:
