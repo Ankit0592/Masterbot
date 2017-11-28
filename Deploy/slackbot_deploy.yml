@@ -61,11 +61,11 @@
     - name: use forever to start service server.js app
       become: false
       command: forever start /home/ubuntu/Slackbot/service/server.js
-#      when: forever_apps.stdout.find('/home/ubuntu/Slackbot/service/server.js') == -1
+      when: forever_apps.stdout.find('/home/ubuntu/Slackbot/service/server.js') == -1
     - name: use forever to start Bot bot.js app
       become: false
       command: forever start /home/ubuntu/Slackbot/Bot/bot.js
-#      when: forever_apps.stdout.find('/home/ubuntu/Slackbot/Bot/bot.js') == -1
+      when: forever_apps.stdout.find('/home/ubuntu/Slackbot/Bot/bot.js') == -1
 
 
 
