@@ -1,0 +1,150 @@
+---
+- hosts: nodes
+  become: yes
+  gather_facts: False
+  pre_tasks:
+     - name: 'install python2'
+       raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+
+
+  tasks:
+    - name: Create the Github SSH public key file
+      copy: src="/home/vagrant/.ssh/id_rsa.pub"
+            dest="~/.ssh/id_rsa"
+            mode=0400
+            owner=ubuntu
+            group=ubuntu
+
+    - name: Create the Github SSH private key file
+      copy: src="/home/vagrant/.ssh/id_rsa"
+            dest="~/.ssh/id_rsa"
+            mode=0400
+            owner=ubuntu
+            group=ubuntu
+
+    - name: Adding slack token
+      lineinfile: dest=/etc/environment line='export SLACKTOKEN="<slack token>"' insertafter='EOF' state=present
+
+    - name: Adding jira token
+      lineinfile: dest=/etc/environment line='export JIRATOKEN="<jira token>"' insertafter='EOF' state=present
+
+    - name: Adding webhook token
+      lineinfile: dest=/etc/environment line='export tamasterbot="<user hook url>"' insertafter='EOF' state=present
+
+    - name: Install node.js
+      apt: pkg=nodejs state=present update_cache=yes
+    - name: Install npm
+      apt: pkg=npm state=present update_cache=yes
+    - name: Install forever
+      npm: name=forever global=yes state=present
+    - name: Install git
+      apt: pkg=git state=present update_cache=yes
+
+    - name: Git clone
+      become: false
+      git: repo=git@github.ncsu.edu:sbiswas4/CSC510_Fall17_Project.git dest=./Slackbot clone=yes accept_hostkey=yes
+
+    - name: npm install packages from package.json for Bot
+      npm:
+       path: /home/ubuntu/Slackbot/Bot
+
+    - name: npm install packages from package.json for service
+      npm:
+       path: /home/ubuntu/Slackbot/service
+
+    - name: link to proper bin
+      file: src=/usr/bin/nodejs dest=/usr/bin/node state=link
+    - name: Check if application is already running.
+      command: forever list
+      register: forever_apps
+      changed_when: false
+    - name: use forever to start service server.js app
+      become: false
+      command: forever start /home/ubuntu/Slackbot/service/server.js
+#      when: forever_apps.stdout.find('/home/ubuntu/Slackbot/service/server.js') == -1
+    - name: use forever to start Bot bot.js app
+      become: false
+      command: forever start /home/ubuntu/Slackbot/Bot/bot.js
+#      when: forever_apps.stdout.find('/home/ubuntu/Slackbot/Bot/bot.js') == -1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
