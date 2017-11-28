@@ -41,6 +41,11 @@ function getIssues(id, callback)
         var matchedIssues=[];
         if(body) {
             var obj = JSON.parse(body);
+            if(!obj.issues){
+              matchedIssues.push("Invalid");
+              callback(matchedIssues);
+              return 0;
+            }
             var issueDescription = '';
             for(var i =0; i<obj.issues.length; i++){
                 if(obj.issues[i].key === id){
@@ -94,7 +99,7 @@ function Comparator(arr1, arr2) {
 
 function labelMatching(summary,project_id,callback ){
 
-     var arrayOfLabels = extractLabels(summary);
+
      var projectName = project_id;
      var options = {
          url: urlRoot + '/search?jql=project=' + projectName + "&expand=labels",
@@ -108,11 +113,16 @@ function labelMatching(summary,project_id,callback ){
      request(options, function (error, response, body)
      {
          var countArray = [];
-         var thLength = (arrayOfLabels.length)/2 ;
-         
-        var userIssues = [];
+         var userIssues = [];
          if(body) {
              var obj = JSON.parse(body)
+             if(!obj.issues){
+               userIssues.push('Invalid');
+               callback([userIssues,[]]);
+               return 0;
+             }
+              var arrayOfLabels = extractLabels(summary);
+              var thLength = (arrayOfLabels.length)/2 ;
              for(var i =0; i<obj.issues.length; i++){
                 // console.log(obj.issues[i].labels);
                  var ct = countNoOfSims(obj.issues[i].fields.labels,arrayOfLabels);
@@ -210,7 +220,7 @@ exports.handler = (event, context, callback) =>{
         var url = config.team_members[0][targetUser];
 
         var result = "UPDATE: "+emailAddress +" changed status of task- <https://masterbot.atlassian.net/browse/"+key+"|"+key+">";
-        
+
         if(url!= undefined && emailAddress != JSON.parse(body).fields.assignee.emailAddress){
         var myObj = { "attachments": [ {"color":"#439FE0", "text": result, "fields": [
                     {

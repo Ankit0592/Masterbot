@@ -63,6 +63,7 @@ function createIssue(title,bot,message) {
       var issueType = convo.vars.Type;
 
       var callback = function(arrayOfNames, labels){
+
         if(arrayOfNames.length == 0){
           var button = {
             text: 'No user has worked on similar issues. Create issue anyway?',
@@ -96,6 +97,9 @@ function createIssue(title,bot,message) {
       //  bot.reply(message, 'No user has worked on similar issues. Create issue any way?');
           bot.reply(message, button);
           //console.log('did i come here?');
+        }
+        else if(arrayOfNames[0] == 'Invalid'){
+             bot.reply(message, 'Invalid Input');
         }
         // displaying buttons in bot UI
         else{
@@ -227,30 +231,42 @@ function matchIssue(body,bot,message) {
       }
 			bot.reply(message, reply_with_attachments);
 		} else {
-			var result = '';
-			for(var i = 0; i < data.length; ++i) {
-				result += data[i] + '\n';
-      }
-      
-      var reply_with_attachments = {
-        'attachments': [
-          {
-            'text': 'Found following duplicate issues: ',
-            'color': '#7CD197'
-          }
-        ],
-      }
+      if(data[0]==='Invalid'){
+        var reply_with_attachments = {
+          'attachments': [
+            {
+              'text': 'Invalid Input',
+              'color': '#7CD197'
+            }
+          ],
+        }
+        bot.reply(message, reply_with_attachments);
+      } else {
+  			var result = '';
+  			for(var i = 0; i < data.length; ++i) {
+  				result += data[i] + '\n';
+        }
 
-			bot.reply(message, reply_with_attachments);
-			setTimeout( function(){
-				bot.reply(message, result);
-			}, 1000 );
+        var reply_with_attachments = {
+          'attachments': [
+            {
+              'text': 'Found following duplicate issues: ',
+              'color': '#7CD197'
+            }
+          ],
+        }
+
+  			bot.reply(message, reply_with_attachments);
+  			setTimeout( function(){
+  				bot.reply(message, result);
+  			}, 1000 );
+      }
 		}
 	}
 }
 
 function getLikelyUsers(summary,project_id,bot,message,callback) {
-  
+
 	var options = {
   		//url: 'http://localhost:3000/' + id,
       url: 'http://localhost:3000/summary',
