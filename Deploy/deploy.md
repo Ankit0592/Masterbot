@@ -29,6 +29,8 @@ We have made 2 dummy TA users : <br>
   1.UserID:  tamasterbot@gmail.com Password: tamaster  Slack_Username: tamaster <br>
   2.UserID:  tamasterbot2@gmail.com Password: tamaster2  Slack_Username: tamaster2 <br>
   
+Please log into the channel using the above credentials.
+  
  
   
  
