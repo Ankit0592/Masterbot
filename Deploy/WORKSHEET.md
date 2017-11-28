@@ -14,7 +14,7 @@
 | Deliverable   | Item   |  Tasks
 | ------------- | ------------  |  ------------
 | Deployment configuration- Ansible Script | Create Ansible script for automatic deployment  | [Deployment](https://trello.com/c/UrWOvpSA/39-deployment-configuration-ansible-script)
-| Use Case-3 Fetch similar issues  | Algo to fetch all similar issues from JIRA | [Similar issues](https://trello.com/c/3hbDzvhi/34-use-case-3-fetch-similar-issues-api)
+| Check if no hard coding in project  | &nbsp; | [Hard code check](https://trello.com/c/aJMUaGON/45-check-if-no-hard-coding-in-project)
 | Use Case-3 Bot integration | Integrate Api for finding similar issues   | [Similar issues Api](https://trello.com/c/FZ2nETvy/32-use-case-3-bot-integration)
 
 
