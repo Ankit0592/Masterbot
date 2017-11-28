@@ -23,25 +23,13 @@
             group=ubuntu
 
     - name: Adding slack token
-      lineinfile: dest=/etc/environment line='export SLACKTOKEN="xoxb-260381565366-UKrTEODDlOWdrDBp8dkfq6JD"' insertafter='EOF' state=present
+      lineinfile: dest=/etc/environment line='export SLACKTOKEN="<slack token>"' insertafter='EOF' state=present
 
     - name: Adding jira token
-      lineinfile: dest=/etc/environment line='export JIRATOKEN="Basic YWFyb3JhNkBuY3N1LmVkdTpBbmtpdDMxMTMh"' insertafter='EOF' state=present
+      lineinfile: dest=/etc/environment line='export JIRATOKEN="<jira token>"' insertafter='EOF' state=present
 
     - name: Adding webhook token
-      lineinfile: dest=/etc/environment line='export aarora6="https://hooks.slack.com/services/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"' insertafter='EOF' state=present
-
-    - name: Adding webhook token
-      lineinfile: dest=/etc/environment line='export amedhek="https://hooks.slack.com/services/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"' insertafter='EOF' state=present
-
-    - name: Adding webhook token
-      lineinfile: dest=/etc/environment line='export apshukla="https://hooks.slack.com/services/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"' insertafter='EOF' state=present
-
-    - name: Adding webhook token
-      lineinfile: dest=/etc/environment line='export panand4="https://hooks.slack.com/services/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"' insertafter='EOF' state=present
-
-    - name: Adding webhook token
-      lineinfile: dest=/etc/environment line='export panand4="https://hooks.slack.com/services/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"' insertafter='EOF' state=present
+      lineinfile: dest=/etc/environment line='export tamasterbot="<user hook url>"' insertafter='EOF' state=present
 
     - name: Install node.js
       apt: pkg=nodejs state=present update_cache=yes
