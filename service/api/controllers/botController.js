@@ -3,6 +3,7 @@ var request = require('request');
 var natural = require('natural');
 var token = process.env.JIRATOKEN;
 var urlRoot = "https://masterbot.atlassian.net/rest/api/2";
+var browseIssueURL = "https://masterbot.atlassian.net/browse/"
 var config = require('../../config.js');
 var pos = require('pos');
 
@@ -58,8 +59,7 @@ function getIssues(id, callback)
                 for(var i =0; i<obj.issues.length; i++){
                     var summaryOverlap = getMatch(issueDescription, obj.issues[i].fields.summary);
                     if(summaryOverlap > 0.7){
-                        var link="https://masterbot.atlassian.net/browse/"
-                        matchedIssues.push(link+''+obj.issues[i].key);
+                        matchedIssues.push(browseIssueURL+''+obj.issues[i].key);
                     }
                 }
             }
@@ -219,7 +219,7 @@ exports.handler = (event, context, callback) =>{
         var targetUser = JSON.parse(body).fields.assignee.emailAddress.split('@')[0];
         var url = config.team_members[0][targetUser];
 
-        var result = "UPDATE: "+emailAddress +" changed status of task- <https://masterbot.atlassian.net/browse/"+key+"|"+key+">";
+        var result = "UPDATE: "+emailAddress +" changed status of task- <" + browseIssueURL + key+"|"+key+">";
 
         if(url!= undefined && emailAddress != JSON.parse(body).fields.assignee.emailAddress){
         var myObj = { "attachments": [ {"color":"#439FE0", "text": result, "fields": [

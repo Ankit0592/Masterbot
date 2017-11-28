@@ -7,7 +7,7 @@ exports.handler = (event, context, callback) => {
     payload = decodeURIComponent(event.body);
     json = payload.substring(8);
     json_obj = JSON.parse(json);
-    console.log(json_obj);
+    //console.log(json_obj);
     callback_id = json_obj.callback_id;
     
     if(callback_id == 'C_no_user'){
