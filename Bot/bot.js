@@ -203,7 +203,7 @@ function createIssue(title,bot,message) {
 function getIssues(id,bot,message) {
 
 	var options = {
-      url: 'http://localhost:3000/' + id,
+      url: 'http://ec2-34-214-77-95.us-west-2.compute.amazonaws.com:80/' + id,
 		method: 'GET',
 		headers: {
 			"content-type": "application/json"
@@ -269,7 +269,7 @@ function getLikelyUsers(summary,project_id,bot,message,callback) {
 
 	var options = {
   		//url: 'http://localhost:3000/' + id,
-      url: 'http://localhost:3000/summary',
+      url: 'http://ec2-34-214-77-95.us-west-2.compute.amazonaws.com:80/summary',
 		method: 'GET',
 		headers: {
 			"content-type": "application/json"

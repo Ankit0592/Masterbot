@@ -10,5 +10,6 @@ module.exports =
             tamasterbot2: process.env.tamasterbot2,
             tamasterbot: process.env.tamasterbot
         }
-    ]
+    ],
+    jiratoken: process.env.JIRATOKEN
 } 

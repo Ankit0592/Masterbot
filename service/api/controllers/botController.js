@@ -1,11 +1,11 @@
 'use strict';
 var request = require('request');
 var natural = require('natural');
-var token = process.env.JIRATOKEN;
 var urlRoot = "https://masterbot.atlassian.net/rest/api/2";
 var browseIssueURL = "https://masterbot.atlassian.net/browse/"
 var config = require('../../config.js');
 var pos = require('pos');
+var token = config.jiratoken;
 
 exports.getIssues = function(req, res) {
 
