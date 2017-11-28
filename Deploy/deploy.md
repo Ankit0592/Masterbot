@@ -25,7 +25,7 @@ sudo apt-get install ansible
 8. Created Ansible playbook slackbot_deploy.yml on ansible machine which will install node, clone git repository, install forever and npm packages, start app. 
 9. Ran this file using command : ```ansible-playbook -i inventory slackbot_deploy.yml``` which will execute all defined tasks in this file. 
 
-[Ansible Playbook]()
+[Ansible Playbook](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Deploy/slackbot_deploy.yml)
 
 ## Screencast Videos:
   
