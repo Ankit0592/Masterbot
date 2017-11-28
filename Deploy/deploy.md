@@ -2,7 +2,7 @@
 
 We have deployed Masterbot to Amazon-AWS instance and for this we have used following Ansible Playbook :
 
-#### Setup
+#### Configuration
 
 1. Created virtual machine (ubuntu) on aws ec2 and using winScp to connect to this machine using public ip.
 2. Installed vagrant
@@ -29,11 +29,14 @@ sudo apt-get install ansible
 
 10. We have deployed the chat bot to slack channel- this https://se-projecthq.slack.com/
 
-We have made 2 dummy TA users : <br>
-  1.UserID:  tamasterbot@gmail.com Password: tamaster <br>
-  2.UserID:  tamasterbot2@gmail.com Password: tamaster2 <br>
+We have made dummy TA user : <br>
+  UserID:  tamasterbot@gmail.com Password: tamaster <br>
   
 Please log into the channel using the above credentials.
+
+11. This is jira account we are using: [Jira Account](https://masterbot.atlassian.net/projects/MAS/issues/MAS-88?filter=allissues)
+Login with following credentials for testing use case 2:
+UserID:  tamasterbot@gmail.com Password: tamaster <br>
 
 ## Acceptance Tests
 
