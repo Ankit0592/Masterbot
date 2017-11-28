@@ -24,3 +24,11 @@ Purpose of bot:
 
 
 We have deployed the chat bot to slack channel- this https://se-projecthq.slack.com/
+
+We have made 2 dummy TA users :
+  1.UserID:  tamasterbot@gmail.com Password: tamaster  Slack_Username: tamaster
+  2.UserID:  tamasterbot2@gmail.com Password: tamaster2  Slack_Username: tamaster2
+  
+ 
+  
+ 
