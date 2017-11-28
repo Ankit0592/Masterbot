@@ -18,10 +18,10 @@ sudo apt-get install ansible
 ```
 
 6. Created inventory file in configuration server having location of private key of virtual machine with public ip 34.214.77.95.
-'''
+```
 [nodes]
 34.214.77.95 ansible_ssh_user=ubuntu ansible_ssh_private_key_file=./keys/ubuntu.key
-'''
+```
 7. Created directory keys and stored private key of ubuntu machine in node0.key in this directory of ansible machine. Also, make this executable using chmod 600 keys/ubuntu.key 
 
 8. Created Ansible playbook slackbot_deploy.yml on ansible machine which will install node, clone git repository, install forever and npm packages, start app. 
