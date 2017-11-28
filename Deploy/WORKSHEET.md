@@ -5,7 +5,7 @@
 | Deliverable   | Item   | Tasks
 | ------------- | ------------  |  ------------
 | Sprint Planning | Create road map to deploy milestone, Break and assign tasks, Choose deploy platform- AWS | [Planning](https://trello.com/c/hCCGWO5H/46-sprint-planning)
-| Create User Account on Slack | [Create TA User Account](https://trello.com/c/7sAf4mWR/44-create-user-account-on-slack)
+| Create User Account on Slack |  Create TA accounts and test the working of use cases with TA accounts.  | [Create TA User Account](https://trello.com/c/7sAf4mWR/44-create-user-account-on-slack)
 | Define acceptance criterias, Check Edge cases |  Edge cases  | [JIRA setup](https://trello.com/c/cJlzcdwq/41-define-acceptance-criterias-check-edge-cases) 
 
 ### Week 2
