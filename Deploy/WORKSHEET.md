@@ -15,7 +15,9 @@
 | ------------- | ------------  |  ------------
 | Deployment configuration- Ansible Script | Create Ansible script for automatic deployment  | [Deployment](https://trello.com/c/UrWOvpSA/39-deployment-configuration-ansible-script)
 | Check if no hard coding in project  | &nbsp; | [Hard code check](https://trello.com/c/aJMUaGON/45-check-if-no-hard-coding-in-project)
-| Use Case-3 Bot integration | Integrate Api for finding similar issues   | [Similar issues Api](https://trello.com/c/FZ2nETvy/32-use-case-3-bot-integration)
+| Documentation |  &nbsp;  | [Similar issues Api](https://trello.com/c/GS3qhm52/47-documentation)
+| Deploy on Platform |  &nbsp;  | [Deploy on Platform](https://trello.com/c/EfmConij/40-deploy-on-platform)
+| Screencast |  &nbsp;  | [Deploy on Platform](https://trello.com/c/Y67gFAzs/43-screencast)
 
 
 
