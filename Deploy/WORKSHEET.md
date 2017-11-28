@@ -4,7 +4,7 @@
 
 | Deliverable   | Item   | Tasks
 | ------------- | ------------  |  ------------
-| Retrospective meeting | BOT milestone shortcomings | [Retrospective](https://trello.com/c/9l2Nvzyp/24-retrospective-meeting)
+| Sprint Planning | Create road map for deploy milestone, Break and assign tasks, Choose deploy platform- heroku | [Retrospective](https://trello.com/c/hCCGWO5H/46-sprint-planning)
 | Planning meeting | For Service milestone | [Planning](https://trello.com/c/Xr0HXP2h/25-planning-meeting)
 | Brainstorming session | Server architecture discussed | [Brainstorming](https://trello.com/c/LOCKyHMA/26-brainstorming-session)
 | JIRA setup |  Setup & Access JIRA APIs.  | [JIRA setup](https://trello.com/c/TUlrnLIl/29-jira-setup) 
