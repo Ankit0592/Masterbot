@@ -8,15 +8,16 @@ module.exports = function(app) {
         .post(botList.handler)
         .get(botList.handler);
 
-        app.route('/summary')
+   app.route('/summary')
                 .get(botList.labelMatching);
 
-    app.route('/:id')
+  app.route('/validate')
+                        .get(botList.validate);
+
+  app.route('/:id')
         .get(botList.getIssues);
 
-    /*app.route('/issues')
-        .get(botList.getIssues)
-        .post(botList.createIssue);*/
+
 
 
 

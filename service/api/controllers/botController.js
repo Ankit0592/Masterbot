@@ -82,6 +82,45 @@ labelMatching(req.body.summary,req.body.project_id,callback);
 
 };
 
+exports.validate = function(req, res) {
+
+  //console.log(req.body);
+  var callback=function(valid){
+      res.status(200).json({
+          isValid: valid
+      });
+  }
+
+validate(req.body.project_id,callback);
+
+};
+
+function validate(project_id,callback ){
+       var projectName = project_id;
+      // console.log(projectName);
+       var options = {
+           url: urlRoot + '/search?jql=project='  + projectName + "&maxResults=1",
+           method: 'GET',
+           headers: {
+               "content-type": "application/json",
+               "Authorization": token
+           }
+       };
+       // Send a http request to url and specify a callback that will be called upon its return.
+       request(options, function (error, response, body)
+       {
+           var valid = "Invalid";
+           if(body) {
+               var obj = JSON.parse(body);
+               console.log(obj);
+               if(obj.issues){
+                valid = "Valid";
+               }
+              }
+           callback(valid);
+       });
+}
+
 function Comparator(arr1, arr2) {
   if (arr1[2] < arr2[2])
   {

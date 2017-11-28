@@ -28,7 +28,19 @@ controller.on(['direct_mention','direct_message'],function(bot,message) {
   var id = msg.split(' ')[1];
 
   if(command.toLowerCase() == 'create' && id) { // Use Case-1
-	  createIssue(id,bot,message);
+
+    var callback = function(valid){
+      if(valid === 'Valid'){
+          createIssue(id,bot,message);
+      }
+      else{
+        bot.reply(message,'Invalid Project ID');
+      }
+
+    };
+
+    isValidProject(id , callback);
+
   }
   else if(command.toLowerCase() == 'duplicate' && id) {// Use Case-3
 	  getIssues(id,bot,message);
@@ -45,6 +57,26 @@ controller.on(['direct_mention','direct_message'],function(bot,message) {
 	    bot.reply(message, reply_with_attachments);
   }
 });
+
+function isValidProject(project_id , callback){
+//  console.log(project_id);
+  var options = {
+    //  url: 'http://localhost:80/validate',
+      url: 'http://ec2-34-214-77-95.us-west-2.compute.amazonaws.com:80/validate',
+    method: 'GET',
+    headers: {
+      "content-type": "application/json"
+    },
+    json: {
+      "project_id": project_id
+    }
+  };
+  	// Send a http request to url and specify a callback that will be called upon its return.
+  	ajax(options, function (error, response, body)
+  	{
+  		callback(body.isValid);
+    });
+}
 
 
 // start conversation for use case-1
@@ -203,7 +235,8 @@ function createIssue(title,bot,message) {
 function getIssues(id,bot,message) {
 
 	var options = {
-      url: 'http://ec2-34-214-77-95.us-west-2.compute.amazonaws.com:80/' + id,
+    //  url: 'http://localhost:80/' + id,
+     url: 'http://ec2-34-214-77-95.us-west-2.compute.amazonaws.com:80/' + id,
 		method: 'GET',
 		headers: {
 			"content-type": "application/json"
@@ -268,7 +301,7 @@ function matchIssue(body,bot,message) {
 function getLikelyUsers(summary,project_id,bot,message,callback) {
 
 	var options = {
-  		//url: 'http://localhost:3000/' + id,
+  	//	url: 'http://localhost:80/summary',
       url: 'http://ec2-34-214-77-95.us-west-2.compute.amazonaws.com:80/summary',
 		method: 'GET',
 		headers: {
