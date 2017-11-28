@@ -13,7 +13,7 @@ We have deployed Masterbot to Amazon-AWS instance and for this we have used foll
 5. Installed ansible on configuration server that is ansible machine.
 ```sudo apt-add-repository ppa:ansible/ansible
 sudo apt-get update
-sudo apt-get install ansible````
+sudo apt-get install ansible```
 
 6. Created inventory file in configuration server having location of private key of virtual machine with public ip 34.214.77.95.
 '''
