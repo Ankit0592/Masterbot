@@ -27,6 +27,16 @@ sudo apt-get install ansible
 
 [Ansible Playbook](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Deploy/slackbot_deploy.yml)
 
+10. We have deployed the chat bot to slack channel- this https://se-projecthq.slack.com/
+
+We have made 2 dummy TA users : <br>
+  1.UserID:  tamasterbot@gmail.com Password: tamaster <br>
+  2.UserID:  tamasterbot2@gmail.com Password: tamaster2 <br>
+  
+Please log into the channel using the above credentials.
+
+## Acceptance Tests
+
 ## Screencast Videos:
   
   Please find the deployment to Amazon-AWS in following video: 
@@ -40,18 +50,9 @@ sudo apt-get install ansible
   Please find the task tracking at 
       [WORKSHEET](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Deploy/WORKSHEET.md)
       
-## Acceptance Tests
-
-Purpose of bot: 
 
 
-We have deployed the chat bot to slack channel- this https://se-projecthq.slack.com/
-
-We have made 2 dummy TA users : <br>
-  1.UserID:  tamasterbot@gmail.com Password: tamaster <br>
-  2.UserID:  tamasterbot2@gmail.com Password: tamaster2 <br>
-  
-Please log into the channel using the above credentials.
+.
   
  
   
