@@ -16,5 +16,5 @@
 ## Service Milestone
 [Link](./service/Service.md) to service file. 
 
-## DEploy Milestone 
+## Deploy Milestone 
 [Link](./Deploy/deploy.md)
