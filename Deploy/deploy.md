@@ -29,14 +29,15 @@ sudo apt-get install ansible
 
 [Ansible Playbook](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Deploy/slackbot_deploy.yml)
 
-10. We have deployed the chat bot to slack channel- this https://se-projecthq.slack.com/
+### Instructions to run:
+1. We have deployed the chat bot to slack channel- this https://se-projecthq.slack.com/
 
 We have made dummy TA user : <br>
   UserID:  tamasterbot@gmail.com Password: tamaster <br>
   
 Please log into the channel using the above credentials.
 
-11. This is jira account we are using: [Jira Account](https://masterbot.atlassian.net/projects/MAS/issues/MAS-88?filter=allissues)
+2. This is jira account we are using: [Jira Account](https://masterbot.atlassian.net/projects/MAS/issues/MAS-88?filter=allissues)
 
 Login with following credentials:
 UserID:  tamasterbot@gmail.com Password: tamaster <br>
