@@ -105,7 +105,7 @@ II. 1. User enters ‘Duplicate MAS-97’ [MAS-97](https://masterbot.atlassian.n
 ## Screencast Videos:
   
   Please find the Deployment to Amazon-AWS + Bot interaction + Acceptance testing in following video: 
-###   [Deployment video]()
+###   [Deployment video](https://www.youtube.com/watch?v=TuzgOJFyFYQ&feature=youtu.be)
 
 
 ## Task Tracking :
