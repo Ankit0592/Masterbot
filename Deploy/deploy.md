@@ -44,9 +44,24 @@ UserID:  tamasterbot@gmail.com Password: tamaster <br>
 
 ### Use Case: 1
 
-User enters wrong project name: Create "Invalid Project" <br>
-Result: User is shown message for invalid project id <br>
-<br>
+#### Happy Path
+1. User enters ‘Create { Valid Project ID}’ to the bot.<br>
+2. User then enters issue type.<br>
+3. User then enters description.<br>
+4. Bot then provides a list of similar issues. 
+5. User can select 'Exit' 
+   i. If 'Exit' is selected no further action is taken.
+   ii. No new issue will be created. [PASS]
+or 
+5. Click on user that worked on similar issue to be assigned to new issue.
+   i. In this case a new issue will be created. [PASS]
+   
+#### Sad Path
+1. User enters ‘Create {Invalid Project ID}’ to the bot.<br>
+   i. User will be shown Invalid Project ID message. [PASS]
+2. 
+
+
 User enters wrong option in Issue Type (say, 4) <br>
 Result: User is shown message for invalid issue type <br>
 
