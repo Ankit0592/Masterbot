@@ -66,14 +66,21 @@ III.
 
 ### Use Case: 2 
 
-User exist on JIRA, but not on Slack.<br>
-Result: No Notification is sent and no exception is thrown.<br>
+[Jira Account](https://masterbot.atlassian.net/projects/MAS/issues/MAS-88?filter=allissues)
+#### Happy Path
+UserID:  tamasterbot@gmail.com Password: tamaster <br>
+1. Login as tamasterbot@gmail.com<br>
+2. Go to Jira<br>
+3. Change status from 'In Progress' to 'Done'<br>
+4. Since tamasterbot is assigned to the subtask under the above refernced issue she will get a noitfication. [PASS] <br>
 
-User exist on Slack, but not on JIRA.<br>
-Result: No notification and sent and no exception is thrown.<br>
+#### Sad Path
+UserID:  tamasterbot2@gmail.com Password: tamaster <br>
+1. Login as tamasterbot2@gmail.com<br>
+2. Go to Jira<br>
+3. Change status from 'In Progress' to 'Done'<br>
+4. Since tamasterbot2 is not assigned to the subtask under the above refernced issue she will not get a noitfication. [PASS] <br>
 
-User exists on both slack and JIRA (given same email id on both platforms)<br>
-Result: Notification is sent to users who are assigned subtasks when status of main task changes.<br>
 
 ### Use Case: 3
 
