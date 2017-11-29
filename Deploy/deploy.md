@@ -42,7 +42,7 @@ UserID:  tamasterbot@gmail.com Password: tamaster <br>
 
 ## Acceptance Tests
 
-### Edge Cases(Use Case: 1)
+### Use Case: 1
 
 User enters wrong project name: Create "Invalid Project" <br>
 Result: User is shown message for invalid project id <br>
@@ -53,7 +53,7 @@ Result: User is shown message for invalid issue type <br>
 User enters valid project id and valid issue type <br>
 Result: User should be able to create issue and issue is assigned to correct user. <br>
 
-### Edge Cases(Use Case: 2) <br>
+### Use Case: 2 <br>
 
 User exist on JIRA, but not on Slack.<br>
 Result: No Notification is sent and no exception is thrown.<br>
@@ -64,7 +64,7 @@ Result: No notification and sent and no exception is thrown.<br>
 User exists on both slack and JIRA (given same email id on both platforms)<br>
 Result: Notification is sent to users who are assigned subtasks when status of main task changes.<br>
 
-### Edge Cases(Use Case: 3)
+### Use Case: 3
 
 User enters wrong issue number or project id.<br>
 Result: User is shown message for invalid project/number accordingly.<br>
