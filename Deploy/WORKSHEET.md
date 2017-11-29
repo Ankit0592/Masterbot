@@ -14,7 +14,7 @@
 | Deliverable   | Item   |  Tasks
 | ------------- | ------------  |  ------------
 | Deployment configuration- Ansible Script | Create Ansible script for automatic deployment  | [Deployment](https://trello.com/c/UrWOvpSA/39-deployment-configuration-ansible-script)
-| Check if no hard coding in project  | &nbsp; | [Hard code check](https://trello.com/c/aJMUaGON/45-check-if-no-hard-coding-in-project)
+| Check if no hard coding in project  | All tokens moved to environment variables | [Hard code check](https://trello.com/c/aJMUaGON/45-check-if-no-hard-coding-in-project)
 | Documentation |  &nbsp;  | [Documentation](https://trello.com/c/GS3qhm52/47-documentation)
 | Deploy on Platform |  &nbsp;  | [Deploy on Platform](https://trello.com/c/EfmConij/40-deploy-on-platform)
 | Screencast |  &nbsp;  | [Screencast](https://trello.com/c/Y67gFAzs/43-screencast)
