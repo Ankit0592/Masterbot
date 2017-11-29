@@ -63,7 +63,7 @@ I. 1. User enters ‘Create Proj’ to the bot. (Proj is not a valid project ID)
 II. 1. User enters ‘Create MAS’ to the bot. (MAS is the currently hosted project ID)<br>
     2. User then enters wrong issue type like 4.<br>
        i. User is shown message for Invalid Input.<br>
-III. DECRIPTION BLANK........................................................................
+
 
 ### Use Case: 2 
 
