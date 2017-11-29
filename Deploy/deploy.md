@@ -37,7 +37,8 @@ We have made dummy TA user : <br>
 Please log into the channel using the above credentials.
 
 11. This is jira account we are using: [Jira Account](https://masterbot.atlassian.net/projects/MAS/issues/MAS-88?filter=allissues)
-Login with following credentials for testing use case 2:
+
+Login with following credentials:
 UserID:  tamasterbot@gmail.com Password: tamaster <br>
 
 ## Acceptance Tests
@@ -46,53 +47,59 @@ UserID:  tamasterbot@gmail.com Password: tamaster <br>
 
 #### Happy Path
 1. User enters ‘Create MAS’ to the bot. (MAS is the currently hosted project ID)<br>
-2. User then enters issue type.<br>
-3. User then enters description.<br>
-4. Bot then provides a list of similar issues. 
+2. User then enters issue type. (1 for Bug, 2 for Task, 3 for Exit)<br>
+3. User then enters summary.<br>
+4. Bot then provides a list users who have worked on similar issues. 
 5. User can select 'Exit' <br>
    i. If 'Exit' is selected no further action is taken.<br>
    ii. No new issue will be created. [PASS]<br>
 or 
-5. Click on user that worked on similar issue to be assigned to new issue. <br>
-   i. In this case a new issue will be created. [PASS]<br>
+5. Click on a user for the newly created issue to be assigned to the selected user. <br>
+   i. In this case a new issue will be created and assigned to the selected user. [PASS]<br>
    
 #### Sad Path
-I. 1. User enters ‘Create Proj’ to the bot.<br>
-       i. User will be shown Invalid Project ID message. [PASS]<br>
+I. 1. User enters ‘Create Proj’ to the bot. (Proj is not a valid project ID)<br>
+       i. User will be shown Invalid Input message. [PASS]<br>
 II. 1. User enters ‘Create MAS’ to the bot. (MAS is the currently hosted project ID)<br>
     2. User then enters wrong issue type like 4.<br>
-       i. User is shown message for invalid issue type <br>
-III. 
+       i. User is shown message for Invalid Input.<br>
+III. DECRIPTION BLANK........................................................................
 
 ### Use Case: 2 
 
-[Jira Account](https://masterbot.atlassian.net/projects/MAS/issues/MAS-88?filter=allissues)
+[Jira Account](https://masterbot.atlassian.net/browse/MAS-88)
 #### Happy Path
-UserID:  tamasterbot@gmail.com Password: tamaster <br>
-1. Login as tamasterbot@gmail.com<br>
-2. Go to Jira<br>
+UserID:  tamasterbot2@gmail.com Password: tamaster2 <br>
+1. Login as tamasterbot2@gmail.com on JIRA<br>
+2. Login as tamasterbot@gmail.com on Slack. (Credentials - UserID:  tamasterbot@gmail.com Password: tamaster)<br>
+2. Visit [MAS-88](https://masterbot.atlassian.net/browse/MAS-88)<br>
 3. Change status from 'In Progress' to 'Done'<br>
-4. Since tamasterbot is assigned to the subtask under the above refernced issue she will get a noitfication. [PASS] <br>
+4. Since tamasterbot is assigned to the subtask under the above referenced issue she will get a notification on slack. [PASS] <br>
 
 #### Sad Path
 UserID:  tamasterbot2@gmail.com Password: tamaster <br>
-1. Login as tamasterbot2@gmail.com<br>
+1. Login as tamasterbot2@gmail.com on JIRA as well as slack.<br>
 2. Go to Jira<br>
-3. Change status from 'In Progress' to 'Done'<br>
-4. Since tamasterbot2 is not assigned to the subtask under the above refernced issue she will not get a noitfication. [PASS] <br>
+3. Visit [MAS-88](https://masterbot.atlassian.net/browse/MAS-88).<br>
+4. Change status from 'In Progress' to 'Done' (vice versa is also true as "Done" to "In Progress" is also a status change)<br>
+5. Since tamasterbot2 is not assigned to the subtask under the above referenced issue she will not get a notification. [PASS] <br>
 
 
 ### Use Case: 3
 
-User enters wrong issue number or project id.<br>
-Result: User is shown message for invalid project/number accordingly.<br>
+LOGIN credentials:-
+TA1 UserID:  tamasterbot@gmail.com Password: tamaster <br>
+TA2 UserID:  tamasterbot2@gmail.com Password: tamaster2 <br>
+#### Happy Path
+I. 1. User (either of TA1 or TA2) enters ‘Duplicate MAS-77’ as a messageto the bot on slack. (MAS is the currently hosted project ID)<br>
+   2. Bot provides issues which is/are suspected duplicate(s) of [MAS-77](https://masterbot.atlassian.net/browse/MAS-77). The duplicates reported are [MAS-76](https://masterbot.atlassian.net/browse/MAS-76), [MAS-94](https://masterbot.atlassian.net/browse/MAS-94), [MAS-95](https://masterbot.atlassian.net/browse/MAS-95) because they have very similar summaries. 
 
-User enters Duplicate (no issue number given)<br>
-Result: User is shown message for invalid issue.<br>
+II. 1. User enters ‘Duplicate MAS-97’ [MAS-97](https://masterbot.atlassian.net/browse/MAS-97) to the bot. (MAS is the currently hosted project ID)<br>
+    2. As there are no duplicate issues, Bot returns "Cannot find any duplicate issues." 
 
-User enters Duplicate MAS-77 (Happy case)<br>
-Result: User is shown duplicate issue links if they exist.<br>
-
+#### Sad Path
+    1. User enters ‘Duplicate MAS-7’ to the bot. (MAS is the currently hosted project ID)<br>
+    2. As there are no such ID the bot returns Invalid Input message.
 
 ## Screencast Videos:
   
