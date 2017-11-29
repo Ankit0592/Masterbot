@@ -15,6 +15,7 @@
   "dependencies": {
     "express": "^4.16.2",
     "natural": "^0.5.4",
-    "request": "^2.83.0"
+    "request": "^2.83.0",
+    "xmlhttprequest": "^1.8.0"
   }
 }
