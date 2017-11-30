@@ -49,7 +49,7 @@ UserID:  tamasterbot@gmail.com Password: tamaster <br>
 #### Happy Path
 1. User enters ‘Create MAS’ to the bot. (MAS is the currently hosted project ID)<br>
 2. User then enters issue type. (1 for Bug, 2 for Task, 3 for Exit)<br>
-3. User then enters summary.<br>
+3. User then enters summary like 'Lazy loading is buggy'.<br>
 4. Bot then provides a list users who have worked on similar issues. 
 5. User can select 'Exit' <br>
    i. If 'Exit' is selected no further action is taken.<br>
