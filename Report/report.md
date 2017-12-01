@@ -17,6 +17,9 @@ Also when two or more members are working on the same issue and when one assigne
 <br>
 3. MasterBot can also pull up issues from Jira that it thinks are similar to the one provided to it
 
+### ## Implementation Architecture: 
+![Image](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/Arch.png) 
+
 ## Refelction on development proceeatures
 
 ## Limitations 
