@@ -36,7 +36,7 @@ E. Since tamasterbot is assigned to the subtask under the above referenced issue
 
 
 ### Diagram illustrating the components of the bot:
-  ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/Architecture.png) 
+  ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/design.png) 
   
 ### Implementation Architecture: 
 ![Image](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/Arch.png) 
