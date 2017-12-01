@@ -16,9 +16,8 @@ A. User enters ‘Create MAS’ to the bot. (MAS is the currently hosted project
 B. User then enters issue type. (1 for Bug, 2 for Task, 3 for Exit)<br>
 C. User then enters summary like 'Lazy loading is buggy'.<br>
 D. Bot then provides a list users who have worked on similar issues. <br>
-E. Click on a user for the newly created issue to be assigned to the selected user. <br>
-   i. In this case a new issue will be created and assigned to the selected user. <br>
-   
+E. Click on a user for the newly created issue to be assigned to the selected user. A new issue will be created and assigned to the selected user. <br>
+<br>   
 ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/MasterBOT_Demo.gif) 
 
 <br>
