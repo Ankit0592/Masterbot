@@ -12,27 +12,27 @@ Also when two or more members are working on the same issue and when one assigne
 
 ## Features
 1. MasterBot provides suggestions on who can be assigned a new issue being created based on similarity with past issues and then creates the issue on Jira assigning it to the member chosen. It ensures that the task gets assigned to a person who has already worked on similar tasks and expedites the development process. <br>
-1. User enters ‘Create MAS’ to the bot. (MAS is the currently hosted project ID)<br>
-2. User then enters issue type. (1 for Bug, 2 for Task, 3 for Exit)<br>
-3. User then enters summary like 'Lazy loading is buggy'.<br>
-4. Bot then provides a list users who have worked on similar issues. 
-5. User can select 'Exit' <br>
+A. User enters ‘Create MAS’ to the bot. (MAS is the currently hosted project ID)<br>
+B. User then enters issue type. (1 for Bug, 2 for Task, 3 for Exit)<br>
+C. User then enters summary like 'Lazy loading is buggy'.<br>
+D. Bot then provides a list users who have worked on similar issues. 
+E. User can select 'Exit' <br>
    i. If 'Exit' is selected no further action is taken.<br>
    ii. No new issue will be created. [PASS]<br>
 or 
-5. Click on a user for the newly created issue to be assigned to the selected user. <br>
+E. Click on a user for the newly created issue to be assigned to the selected user. <br>
    i. In this case a new issue will be created and assigned to the selected user. [PASS]<br>
 <br>
 2. MasterBot also notifies assignees of the change of state of a task on JIRA(In Progress, Completed etc.) which is useful when different team members are working on subtasks within a task and their tasks have dependency on each other.<br>
-1. Login as tamasterbot2@gmail.com on JIRA<br>
-2. Login as tamasterbot@gmail.com on Slack. (Credentials - UserID:  tamasterbot@gmail.com Password: tamaster)<br>
-2. Visit [MAS-88](https://masterbot.atlassian.net/browse/MAS-88)<br>
-3. Change status from 'In Progress' to 'Done'<br>
-4. Since tamasterbot is assigned to the subtask under the above referenced issue she will get a notification on slack. [PASS] <br>
+A. Login as tamasterbot2@gmail.com on JIRA<br>
+B. Login as tamasterbot@gmail.com on Slack. (Credentials - UserID:  tamasterbot@gmail.com Password: tamaster)<br>
+C. Visit [MAS-88](https://masterbot.atlassian.net/browse/MAS-88)<br>
+D. Change status from 'In Progress' to 'Done'<br>
+E. Since tamasterbot is assigned to the subtask under the above referenced issue she will get a notification on slack. [PASS] <br>
 <br>
 3. MasterBot can also pull up issues from Jira that it thinks are similar to the one provided to it. <br>
- 1. User (either of TA1 or TA2) enters ‘Duplicate MAS-77’ as a messageto the bot on slack. (MAS is the currently hosted project ID)<br>
-   2. Bot provides issues which is/are suspected duplicate(s) of [MAS-77](https://masterbot.atlassian.net/browse/MAS-77). The duplicates reported are [MAS-76](https://masterbot.atlassian.net/browse/MAS-76), [MAS-94](https://masterbot.atlassian.net/browse/MAS-94), [MAS-95](https://masterbot.atlassian.net/browse/MAS-95) because they have very similar summaries. 
+ A. User (either of TA1 or TA2) enters ‘Duplicate MAS-77’ as a messageto the bot on slack. (MAS is the currently hosted project ID)<br>
+   B. Bot provides issues which is/are suspected duplicate(s) of [MAS-77](https://masterbot.atlassian.net/browse/MAS-77). The duplicates reported are [MAS-76](https://masterbot.atlassian.net/browse/MAS-76), [MAS-94](https://masterbot.atlassian.net/browse/MAS-94), [MAS-95](https://masterbot.atlassian.net/browse/MAS-95) because they have very similar summaries. 
 
 ### ## Implementation Architecture: 
 ![Image](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/Arch.png) 
