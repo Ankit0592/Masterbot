@@ -11,9 +11,11 @@ Also when two or more members are working on the same issue and when one assigne
 <br>
 
 ## Features
-MasterBot provides suggestions on who can be assigned a new issue being created based on similarity with past issues and then creates the issue on Jira assigning it to the member chosen. It 
+1. MasterBot provides suggestions on who can be assigned a new issue being created based on similarity with past issues and then creates the issue on Jira assigning it to the member chosen. It ensures that the task gets assigned to a person who has already worked on similar tasks and expedites the development process. 
 <br>
-It can also pull up issues from Jira that it thinks are similar to 
+2. MasterBot also notifies assignees of the change of state of a task on JIRA(In Progress, Completed etc.) which is useful when different team members are working on subtasks within a task and their tasks have dependency on each other.
+<br>
+3. MasterBot can also pull up issues from Jira that it thinks are similar to the one provided to it
 
 ## Refelction on development proceeatures
 
@@ -28,6 +30,10 @@ It can also pull up issues from Jira that it thinks are similar to
 3. Abhinav Medhekar(amedhek) 
 4. Pavneet Singh Anand (panand4) 
 5. Sudipto Biswas (sbiswas4)
+
+
+## Project Presentation
+* [Screencast] (https://youtu.be/L-Ub6Lx6CrI)
 
 ## Important Milestones 
 ### Bot Design   
