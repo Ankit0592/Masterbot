@@ -26,7 +26,10 @@ A. Login as tamasterbot2@gmail.com on JIRA<br>
 B. Login as tamasterbot@gmail.com on Slack. (Credentials - UserID:  tamasterbot@gmail.com Password: tamaster)<br>
 C. Visit [MAS-88](https://masterbot.atlassian.net/browse/MAS-88)<br>
 D. Change status from 'In Progress' to 'Done'<br>
-E. Since tamasterbot is assigned to the subtask under the above referenced issue she will get a notification on slack. [PASS] <br>
+E. Since tamasterbot is assigned to the subtask under the above referenced issue she will get a notification on slack. <br>
+
+![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/MasterBOT_Demo2.gif) 
+
 <br>
 3. Redundant issue/bugs- MasterBot can reduce the number of redundant issues in the system by pulling up issues from Jira that it thinks are similar to the one provided to it. <br>
  A. User (either of TA1 or TA2) enters ‘Duplicate MAS-77’ as a messageto the bot on slack. (MAS is the currently hosted project ID)<br>
