@@ -14,7 +14,7 @@ Also when two or more members are working on the same issue and when one assigne
 1. Confusion in determining right team to assign bugs- MasterBot provides suggestions on who can be assigned a new issue being created based on similarity with past issues and then creates the issue on Jira assigning it to the member chosen. It ensures that the task gets assigned to a person who has already worked on similar tasks and expedites the development process. <br>
 A. User enters ‘Create MAS’ to the bot. (MAS is the currently hosted project ID)<br>
 B. User then enters issue type. (1 for Bug, 2 for Task, 3 for Exit)<br>
-C. User then enters summary like 'Lazy loading is buggy'.<br>
+C. User then enters summary like 'Lazy loading on profile page not working'.<br>
 D. Bot then provides a list users who have worked on similar issues. <br>
 E. Click on a user for the newly created issue to be assigned to the selected user. A new issue will be created and assigned to the selected user. <br>
 
