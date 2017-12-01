@@ -15,7 +15,7 @@ Also when two or more members are working on the same issue and when one assigne
 A. User enters ‘Create MAS’ to the bot. (MAS is the currently hosted project ID)<br>
 B. User then enters issue type. (1 for Bug, 2 for Task, 3 for Exit)<br>
 C. User then enters summary like 'Lazy loading is buggy'.<br>
-D. Bot then provides a list users who have worked on similar issues. 
+D. Bot then provides a list users who have worked on similar issues. <br>
 E. User can select 'Exit' <br>
    i. If 'Exit' is selected no further action is taken.<br>
    ii. No new issue will be created. [PASS]<br>
