@@ -23,7 +23,7 @@ or
 E. Click on a user for the newly created issue to be assigned to the selected user. <br>
    i. In this case a new issue will be created and assigned to the selected user. [PASS]<br>
    
-![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/MasterBOT_Demo.gif =250x200) 
+![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/MasterBOT_Demo.gif=250x200) 
 
 <br>
 2. Slippage of relevant notifications- MasterBot also notifies assignees of the change of state of a task on JIRA(In Progress, Completed etc.) which is useful when different team members are working on subtasks within a task and their tasks have dependency on each other. It sends push notifications as direct message/s to the relevant assignee/s of a task.<br>
