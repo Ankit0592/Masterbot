@@ -45,6 +45,7 @@ E. Since aarora6 is assigned to the subtask under the above referenced issue she
 ![Image](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/Arch.png) 
 
 ## Refelction on development proceeatures
+??
 
 ## Limitations 
 1. In our current implementation there will be a lookup every time a new issue is created. So a project with a large number of issues will be very slow as the issue to be created will have to be matched with all of those past issues. So in its current model our MasterBot will not scale up well with larger projects.<br>
