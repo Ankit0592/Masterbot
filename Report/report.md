@@ -33,7 +33,7 @@ Also when two or more members are working on the same issue and when one assigne
 
 
 ## Project Presentation
-* [Screencast] (https://youtu.be/L-Ub6Lx6CrI)
+[Screencast](https://youtu.be/L-Ub6Lx6CrI)
 
 ## Important Milestones 
 ### Bot Design   
