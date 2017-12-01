@@ -47,8 +47,13 @@ E. Since aarora6 is assigned to the subtask under the above referenced issue she
 ## Refelction on development proceeatures
 
 ## Limitations 
+1. In our current implementation there will be a lookup every time a new issue is created. So a project with a large number of issues will be very slow as the issue to be created will have to be matched with all of those past issues. So in its current model our MasterBot will not scale up well with larger projects.<br>
+2. Secondly the text matching algorithm extracts words from issue summary and uses them as labels for the particular issue. Therefore the length of an issue's summary will have a large bearing on it being matched to other issues. Long summaries will have more labels making it more likely to be matched with past issues.<br>
+3. Currently MasterBot only matches two issues based on the similarity of their summary/title.<br>
 
 ## Future work
+1. As Creation of an inde
+2. 
 
 ## Team Members:
 
