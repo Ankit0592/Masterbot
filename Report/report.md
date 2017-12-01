@@ -28,3 +28,19 @@ It can also pull up issues from Jira that it thinks are similar to
 3. Abhinav Medhekar(amedhek) 
 4. Pavneet Singh Anand (panand4) 
 5. Sudipto Biswas (sbiswas4)
+
+## Important Milestones 
+### Bot Design   
+[Link](./DESIGN.md) to design file.   
+    
+### Bot Milestone
+[Link](./BOT.md) to bot file.   
+        
+### Service Milestone
+[Link](./service/Service.md) to service file. 
+
+### Deploy Milestone 
+[Link](./Deploy/deploy.md) to deploy file
+
+### Report Milestone
+[Link](./Report/report.md)
