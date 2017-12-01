@@ -52,8 +52,9 @@ E. Since aarora6 is assigned to the subtask under the above referenced issue she
 3. Currently MasterBot only matches two issues based on the similarity of their summary/title.<br>
 
 ## Future work
-1. As Creation of an inde
-2. 
+1. There could be an index of issues and their respective assignees pertaining to a particular module that will be referenced if a new issue is being created for that module.
+2. Automatic jobs can be run to report duplicate issues in the system thereby getting rid of developers spending time on matching pairs of issues manually.
+3. When a new issue is being created it should be matched with other issues in the system to ascertain whether the issue being created is a duplicate of another.
 
 ## Team Members:
 
