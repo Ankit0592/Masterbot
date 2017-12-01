@@ -21,7 +21,7 @@ E. Click on a user for the newly created issue to be assigned to the selected us
 ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/MasterBOT_Demo.gif) 
 
 <br>
-2. __Slippage of relevant notifications__- MasterBot also notifies assignees of the change of state of a task on JIRA(In Progress, Completed etc.) which is useful when different team members are working on subtasks within a task and their tasks have dependency on each other. It sends push notifications as direct message/s to the relevant assignee/s of a task.<br>
+2.__Slippage of relevant notifications__- MasterBot also notifies assignees of the change of state of a task on JIRA(In Progress, Completed etc.) which is useful when different team members are working on subtasks within a task and their tasks have dependency on each other. It sends push notifications as direct message/s to the relevant assignee/s of a task.<br>
 A. Login as apshukla on JIRA<br>
 B. Login as aarora6 on Slack. (Credentials - UserID:  tamasterbot@gmail.com Password: tamaster)<br>
 C. Visit [MAS-1](https://masterbot.atlassian.net/browse/MAS-88)<br>
@@ -31,7 +31,7 @@ E. Since aarora6 is assigned to the subtask under the above referenced issue she
 ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/MasterBOT_Demo2.gif) 
 
 <br>
-3. **Redundant issue/bugs**- MasterBot can reduce the number of redundant issues in the system by pulling up issues from Jira that it thinks are similar to the one provided to it. <br>
+3. __Redundant issue/bugs__- MasterBot can reduce the number of redundant issues in the system by pulling up issues from Jira that it thinks are similar to the one provided to it. <br>
  A. User (either of TA1 or TA2) enters ‘Duplicate MAS-77’ as a messageto the bot on slack. (MAS is the currently hosted project ID)<br>
    B. Bot provides issues which is/are suspected duplicate(s) of [MAS-77](https://masterbot.atlassian.net/browse/MAS-77). The duplicates reported are [MAS-76](https://masterbot.atlassian.net/browse/MAS-76) <br>
    
