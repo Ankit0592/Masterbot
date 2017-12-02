@@ -1,13 +1,13 @@
 # Report
 
 ## Problem 
-During development software engineers often face the issue of having to create and manage issues they face during development process. We have tried to harness the power of collaboration through our MasterBot which allows users to not only keep track of issues she is involved in but also find out issues and their users that are similar to the one she wants to create. Thirdly, it can also tell a user whether two issues are similar or not.<br>
+During development, software engineers often face the problem of having to create and manage issues/tasks. We have tried to harness the power of collaboration through our MasterBot which allows users to not only keep track of issues they are involved in but also find out users who have worked on similar issues to make the process of issue creation and assignment smarter. Thirdly, it can also tell a user whether duplicates of an issue exist or not.<br>
 <br>
 Suppose a developer gets a defect or bug while coding for which he has to raise an issue. It is inefficient to have the developer work on this issue if it is very similar to one that has already been solved by someone else. The developer should have the ability to assign this new issue to the person who solved the similar issue in the past as he can solve it much faster due to his prior experience. So rather than fixing the new issue our developer can get back to doing more productive things. This saves hours and therefore money for the team.<br>
 <br>
-On a similar note developers and testers should also have the ability to look up two duplicate issues. This helps in reducing redundancies in the issues tracked in a system(Jira) which reduces the team's productivity. <br>
+On a similar note, developers and testers should also have the ability to look up duplicate issues. This helps in reducing redundancies in the issues tracked in a system(Jira) which may otherwise reduce the team's productivity. <br>
 <br>
-Also when two or more members are working on the same issue and when one assignee changes the status of the issue, all other assignees should get a notification alerting them the change in status. Emails, Email notifications and scrums are a cumbersome way to keep track of such assigned issues. They also take time to be triggered. A direct message should be triggered to all relevant user. This should happen instantly so the user does not need to keep checking back on the issue/emails to find its status. <br>
+Also, when two or more members are working on the same issue and when one assignee changes the status of the issue, all other assignees should get a notification alerting them the change in status. Emails, Email notifications and scrums are a cumbersome way to keep track of such assigned issues. They also take time to be triggered. A direct message should be triggered to all relevant user. This should happen instantly so the user does not need to keep checking back on the issue/emails to find its status. <br>
 <br>
 
 ## Features
@@ -21,18 +21,18 @@ E. Click on a user for the newly created issue to be assigned to the selected us
 ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/MasterBOT_Demo.gif) 
 
 <br>
-2.__Slippage of relevant notifications__- MasterBot also notifies assignees of the change of state of a task on JIRA(In Progress, Completed etc.) which is useful when different team members are working on subtasks within a task and their tasks have dependency on each other. It sends push notifications as direct message/s to the relevant assignee/s of a task.<br>
+2. __Slippage of relevant notifications__- MasterBot also notifies assignees of the change of state of a task on JIRA(In Progress, Completed etc.) which is useful when different team members are working on subtasks within a task and their tasks have dependency on each other. It sends push notifications as direct message/s to the relevant assignee/s of a task.<br>
 A. Login as apshukla on JIRA<br>
 B. Login as aarora6 on Slack. (Credentials - UserID:  tamasterbot@gmail.com Password: tamaster)<br>
 C. Visit [MAS-1](https://masterbot.atlassian.net/browse/MAS-88)<br>
 D. Change status from 'In Progress' to 'Done'<br>
-E. Since aarora6 is assigned to the subtask under the above referenced issue she will get a notification on slack. <br>
+E. Since aarora6 is assigned to the subtask under the above referenced issue he will get a notification on slack. <br>
 
 ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/MasterBOT_Demo2.gif) 
 
 <br>
-3. __Redundant issue/bugs__- MasterBot can reduce the number of redundant issues in the system by pulling up issues from Jira that it thinks are similar to the one provided to it. <br>
- A. User (either of TA1 or TA2) enters ‘Duplicate MAS-77’ as a messageto the bot on slack. (MAS is the currently hosted project ID)<br>
+3. __Redundant issue/bugs__- MasterBot can reduce the number of redundant issues in the system by pulling up issues from Jira that it thinks are duplicate to the one provided to it. <br>
+ A. User (either of TA1 or TA2) enters ‘Duplicate MAS-77’ as a message to the bot on slack. (MAS is the currently hosted project ID)<br>
    B. Bot provides issues which is/are suspected duplicate(s) of [MAS-77](https://masterbot.atlassian.net/browse/MAS-77). The duplicates reported are [MAS-76](https://masterbot.atlassian.net/browse/MAS-76) <br>
    
 ![alt text](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/MasterBOT_Demo3.gif) 
@@ -44,8 +44,8 @@ E. Since aarora6 is assigned to the subtask under the above referenced issue she
 ### Implementation Architecture: 
 ![Image](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/Arch.png) 
 
-## Refelction on development proceeatures
-While working on this project we got a good hands-on experience with the various stages in the SDLC and it is something we will take with us as we move into the industry. We got a good understanding of new tools like Ansible, got to learn about Amazon AWS services, Node.js Jira APIEach of us took naturally to particular aspects of the software engineering process, and this allowed us to easily encapsulate and accomplish our objectives. Overall, it was a challenging yet rewarding experience, and we are glad that we could accomplish the project successfully.
+## Reflection on development procedures
+While working on this project we got a good hands-on experience with the various stages in the SDLC and it is something we will take with us as we move into the industry. We got a good understanding of new tools like Ansible, got to learn about Amazon AWS services, Node.js, Jira APIs. Each of us took naturally to particular aspects of the software engineering process, and this allowed us to easily encapsulate and accomplish our objectives. Overall, it was a challenging yet rewarding experience, and we are glad that we could accomplish the project successfully.
 
 ## Limitations 
 1. In our current implementation there will be a lookup every time a new issue is created. So a project with a large number of issues will be very slow as the issue to be created will have to be matched with all of those past issues. So in its current model our MasterBot will not scale up well with larger projects.<br>
