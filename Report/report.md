@@ -45,7 +45,7 @@ E. Since aarora6 is assigned to the subtask under the above referenced issue she
 ![Image](https://github.ncsu.edu/sbiswas4/CSC510_Fall17_Project/blob/master/Images/Arch.png) 
 
 ## Refelction on development proceeatures
-??
+While working on this project we got a good hands-on experience with the various stages in the SDLC and it is something we will take with us as we move into the industry. We got a good understanding of new tools like Ansible, got to learn about Amazon AWS services, Node.js Jira APIEach of us took naturally to particular aspects of the software engineering process, and this allowed us to easily encapsulate and accomplish our objectives. Overall, it was a challenging yet rewarding experience, and we are glad that we could accomplish the project successfully.
 
 ## Limitations 
 1. In our current implementation there will be a lookup every time a new issue is created. So a project with a large number of issues will be very slow as the issue to be created will have to be matched with all of those past issues. So in its current model our MasterBot will not scale up well with larger projects.<br>
