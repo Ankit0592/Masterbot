@@ -23,7 +23,7 @@ E. Click on a user for the newly created issue to be assigned to the selected us
 
 2. **Slippage of relevant notifications** - MasterBot also notifies assignees of the change of state of a task on JIRA(In Progress, Completed etc.) which is useful when different team members are working on subtasks within a task and their tasks have dependency on each other. It sends push notifications as direct message/s to the relevant assignee/s of a task.<br>
 A. Login as apshukla on JIRA<br>
-B. Login as aarora6 on Slack. (Credentials - UserID:  tamasterbot@gmail.com Password: tamaster)<br>
+B. Login as aarora6 on Slack. <br>
 C. Visit [MAS-1](https://masterbot.atlassian.net/browse/MAS-88)<br>
 D. Change status from 'In Progress' to 'Done'<br>
 E. Since aarora6 is assigned to the subtask under the above referenced issue he will get a notification on slack. <br>
